@@ -99,6 +99,7 @@
     <Content Include="Sql\Create Schema.sql" />
     <Content Include="Sql\Employees.sql" />
     <Content Include="Sql\Food.sql" />
+    <Content Include="Sql\Get_Organization.sql" />
     <Content Include="Sql\Insert_Employee.sql" />
     <Content Include="Sql\Insert_Food.sql" />
     <Content Include="Sql\Insert_Jobs.sql" />
@@ -109,6 +110,7 @@
     <Content Include="Sql\Jobs.sql" />
     <Content Include="Sql\Organization.sql" />
     <Content Include="Sql\Restaurant.sql" />
+    <Content Include="Sql\Retrieve_Organizations.sql" />
     <Content Include="Sql\StockItems.sql" />
     <Content Include="Sql\Suppliers.sql" />
   </ItemGroup>
