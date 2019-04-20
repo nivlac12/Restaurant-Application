@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Restaurants_Database
 {
-    class EmployeeRepo
+    class RestaurantRepository
     {
+
+
     }
 }

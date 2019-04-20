@@ -12,15 +12,15 @@ namespace Restaurants_Database
         public int ResturantID { get; }
         public int JobTitleID { get; }
         public string EmployeeName { get; }
-        public bool Senority { get; }
+        public string Seniority { get; }
 
-        public Employee(int personID, int restID, int jTID, string empName, bool senior)
+        public Employee(int personID, int restID, int jTID, string empName, string senior)
         {
             PersonID = personID;
             ResturantID = restID;
             JobTitleID = jTID;
             EmployeeName = empName;
-            Senority = senior;
+            Seniority = senior;
         }
     }
 }
