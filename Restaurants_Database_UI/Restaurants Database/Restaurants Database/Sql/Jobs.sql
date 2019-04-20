@@ -1,5 +1,3 @@
-CREATE SCHEMA Employees;
-
 CREATE TABLE Employees.Jobs
 (
 	JobTitleID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,

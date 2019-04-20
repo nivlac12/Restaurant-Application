@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE Restaurants.CreateRestaurant
+CREATE OR ALTER PROCEDURE Food.CreateFood
    @SupplierID INT,
    @FoodName NVARCHAR(64),
    @SupplierPrice DECIMAL,

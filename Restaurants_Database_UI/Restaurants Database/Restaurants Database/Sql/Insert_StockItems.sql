@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE Restaurants.CreateRestaurant
+CREATE OR ALTER PROCEDURE Inventory.CreateStockItem
    @FoodID INT,
    @RestaurantID INT,
    @Quantity INT,

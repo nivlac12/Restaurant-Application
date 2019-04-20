@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,7 +61,7 @@
     <Compile Include="Table Interactions\JobsRepo.cs" />
     <Compile Include="Table Interactions\Organization.cs" />
     <Compile Include="Table Interactions\OrganizationRepo.cs" />
-    <Compile Include="Table Interactions\Program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Table Interactions\Restaurant.cs" />
     <Compile Include="Table Interactions\RestaurantRepository.cs" />
@@ -80,6 +81,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="BuildDatabase.ps1" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,6 +94,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sql\Create Schema.sql" />
+    <Content Include="Sql\Employees.sql" />
+    <Content Include="Sql\Food.sql" />
+    <Content Include="Sql\Insert_Employee.sql" />
+    <Content Include="Sql\Insert_Food.sql" />
+    <Content Include="Sql\Insert_Jobs.sql" />
+    <Content Include="Sql\Insert_Organization.sql" />
+    <Content Include="Sql\Insert_Restaurant.sql" />
+    <Content Include="Sql\Insert_StockItems.sql" />
+    <Content Include="Sql\Insert_Suppliers.sql" />
+    <Content Include="Sql\Jobs.sql" />
+    <Content Include="Sql\Organization.sql" />
+    <Content Include="Sql\Restaurant.sql" />
+    <Content Include="Sql\StockItems.sql" />
+    <Content Include="Sql\Suppliers.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

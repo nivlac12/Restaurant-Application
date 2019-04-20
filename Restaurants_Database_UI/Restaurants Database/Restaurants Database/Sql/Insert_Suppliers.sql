@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE Restaurants.CreateRestaurant
+CREATE OR ALTER PROCEDURE Supplier.CreateSupplier
    @Name NVARCHAR(64),
    @SupplierID INT OUTPUT
 AS

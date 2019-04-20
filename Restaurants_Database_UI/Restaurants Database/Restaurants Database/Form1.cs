@@ -29,7 +29,8 @@ namespace Restaurants_Database
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            string shellName = "U:\\CIS 560\\Project\\Restaurant - Application\\Restaurants_Database_UI\\Restaurants Database\\Restaurants Database\\BuildDatabase.ps1";
+            System.Diagnostics.Process.Start("C:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe ", shellName);
         }
 
         private void cRestNameLabel_Click(object sender, EventArgs e)
