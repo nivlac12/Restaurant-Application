@@ -1,6 +1,7 @@
 CREATE OR ALTER PROCEDURE Restaurants.CreateRestaurant
    @JobName NVARCHAR(64),
-   @Salary DECIMAL
+   @Salary DECIMAL,
+   @JobTitleID INT OUTPUT
 AS
 
 INSERT Employees.Jobs(JobName, Salary)

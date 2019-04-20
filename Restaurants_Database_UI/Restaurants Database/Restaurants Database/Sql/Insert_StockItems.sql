@@ -1,7 +1,8 @@
 CREATE OR ALTER PROCEDURE Restaurants.CreateRestaurant
    @FoodID INT,
    @RestaurantID INT,
-   @Quantity INT
+   @Quantity INT,
+   @InventoryID INT OUTPUT
 AS
 
 INSERT Inventory.StockItems(FoodID, RestaurantID, Quanitity)

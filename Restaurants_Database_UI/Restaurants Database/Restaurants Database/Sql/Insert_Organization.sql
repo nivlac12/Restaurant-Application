@@ -1,6 +1,7 @@
 CREATE OR ALTER PROCEDURE Restaurants.CreateRestaurant
    @OrganizationName NVARCHAR(128),
-   @DateFounded DATETIMEOFFSET
+   @DateFounded DATETIMEOFFSET,
+   @OrganizationID INT OUTPUT
 AS
 
 INSERT Restaurants.Organization(OrganizationName, DateFounded)

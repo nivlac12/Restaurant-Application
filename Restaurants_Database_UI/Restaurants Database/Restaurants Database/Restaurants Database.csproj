@@ -46,28 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee.cs" />
-    <Compile Include="EmployeeRepo.cs" />
-    <Compile Include="Food.cs" />
-    <Compile Include="FoodRepo.cs" />
+    <Compile Include="Table Interactions\Employee.cs" />
+    <Compile Include="Table Interactions\EmployeeRepo.cs" />
+    <Compile Include="Table Interactions\Food.cs" />
+    <Compile Include="Table Interactions\FoodRepo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Jobs.cs" />
-    <Compile Include="JobsRepo.cs" />
-    <Compile Include="Organization.cs" />
-    <Compile Include="OrganizationRepo.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Table Interactions\Jobs.cs" />
+    <Compile Include="Table Interactions\JobsRepo.cs" />
+    <Compile Include="Table Interactions\Organization.cs" />
+    <Compile Include="Table Interactions\OrganizationRepo.cs" />
+    <Compile Include="Table Interactions\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Restaurant.cs" />
-    <Compile Include="RestaurantRepository.cs" />
-    <Compile Include="StockItems.cs" />
-    <Compile Include="StockItemsRepo.cs" />
-    <Compile Include="Suppliers.cs" />
-    <Compile Include="SuppliersRepo.cs" />
+    <Compile Include="Table Interactions\Restaurant.cs" />
+    <Compile Include="Table Interactions\RestaurantRepository.cs" />
+    <Compile Include="Table Interactions\StockItems.cs" />
+    <Compile Include="Table Interactions\StockItemsRepo.cs" />
+    <Compile Include="Table Interactions\Suppliers.cs" />
+    <Compile Include="Table Interactions\SuppliersRepo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
