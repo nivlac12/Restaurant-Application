@@ -120,5 +120,15 @@ namespace Restaurants_Database
         {
 
         }
+
+        private void cRestDateFoundedTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cOrgPage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
