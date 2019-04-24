@@ -2,5 +2,5 @@
 AS
 
 SELECT O.OrganizationID, O.OrganizationName, O.DateFounded
-FROM Restaurants.Organization;
+FROM Restaurants.Organization O;
 GO
