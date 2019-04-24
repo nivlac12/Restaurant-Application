@@ -8,5 +8,5 @@ AS
 INSERT Inventory.StockItems(FoodID, RestaurantID, Quanitity)
 VALUES(@FoodID, @RestaurantID, @Quantity);
 
-SET @InvetoryID = SCOPE_IDENTITY();
+SET @InventoryID = SCOPE_IDENTITY();
 GO

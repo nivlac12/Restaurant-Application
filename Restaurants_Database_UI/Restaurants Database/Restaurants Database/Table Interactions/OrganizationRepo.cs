@@ -8,7 +8,7 @@ namespace Restaurants_Database
 {
     class OrganizationRepo
     {
-        const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=nivlac12;Integrated Security=SSPI;";
+        const string connectionString = @"Server=mssql.cs.ksu.edu;Database=nivlac12;Integrated Security=SSPI;";
         public void initOrgs()
         {
             string[] orgs = { "Berkshire Hathaway", "McDonald's Corp", "Restaurant Brands International" };
@@ -25,7 +25,7 @@ namespace Restaurants_Database
                 using (var connection = new SqlConnection(connectionString))
                 {
                     //Set the string parameter to call the appropriate sql function
-                    using (var command = new SqlCommand("Restaurants.Insert_Organization", connection))
+                    using (var command = new SqlCommand("Restaurants.CreateOrganization", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
@@ -45,9 +45,10 @@ namespace Restaurants_Database
                         command.ExecuteNonQuery();
 
                         transaction.Complete();
+                        string dateValue = dateParam.Value.ToString();
 
                         //This line will return a unique object of the appropriate type, keeping in mind the parameters we stored
-                        return new Organization((int)idParam.Value, OrganizationName, (string)dateParam.Value);
+                        return new Organization((int)idParam.Value, OrganizationName, dateValue);
                     }
                 }
             }
@@ -74,7 +75,7 @@ namespace Restaurants_Database
 
                     return new Organization(orgID,
                        reader.GetString(reader.GetOrdinal("OrganizationName")),
-                       reader.GetString(reader.GetOrdinal("DateFounded")));
+                       reader.GetDateTimeOffset(reader.GetOrdinal("DateFounded")).ToString());
                 }
             }
         }
@@ -95,10 +96,11 @@ namespace Restaurants_Database
 
                     while (reader.Read())
                     {
+                        string dateValue = reader.GetDateTimeOffset(reader.GetOrdinal("DateFounded")).ToString();
                         orgs.Add(new Organization(
                            reader.GetInt32(reader.GetOrdinal("OrganizationID")),
                            reader.GetString(reader.GetOrdinal("OrganizationName")),
-                           reader.GetString(reader.GetOrdinal("DateFounded"))));
+                           dateValue));
                     }
 
                     return orgs;

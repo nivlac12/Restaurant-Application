@@ -30,8 +30,15 @@ namespace Restaurants_Database
         private void button1_Click(object sender, EventArgs e)
         {
             //string shellName = "U:\\CIS 560\\Project\\Restaurant - Application\\Restaurants_Database_UI\\Restaurants Database\\Restaurants Database\\BuildDatabase.ps1";
-            string shellName = "..\\..\\BuildDatabase.ps1";
-            System.Diagnostics.Process.Start("C:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe ", "-noexit " + shellName);
+            //string shellName = "..\\..\\BuildDatabase.ps1";
+            //System.Diagnostics.Process.Start("C:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe ", "-noexit " + shellName);
+            OrganizationRepo o = new OrganizationRepo();
+
+            o.CreateOrganization("Buffet incorporated");
+            IReadOnlyList<Organization> l = o.RetrieveOrganizations();
+            Organization org = o.GetOrganization(13);
+            MessageBox.Show(org.OrganizationName);
+            MessageBox.Show(l.ToString());
         }
 
         private void cRestNameLabel_Click(object sender, EventArgs e)
