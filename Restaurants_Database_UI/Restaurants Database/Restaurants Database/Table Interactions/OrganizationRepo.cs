@@ -54,7 +54,7 @@ namespace Restaurants_Database
             }
         }
 
-        public Organization GetOrganization(int orgID)
+        public Organization GetOrganization(string orgName)
         {
             using (var connection = new SqlConnection(connectionString))
             {
@@ -64,7 +64,7 @@ namespace Restaurants_Database
 
                     //Name of Primary Key is what we pass in, everything else
                     //we get from the SQL
-                    command.Parameters.AddWithValue("OrganizationID", orgID);
+                    command.Parameters.AddWithValue("OrganizationName", orgName);
 
                     connection.Open();
 
@@ -73,9 +73,9 @@ namespace Restaurants_Database
                     if (!reader.Read())
                         return null;
 
-                    return new Organization(orgID,
-                       reader.GetString(reader.GetOrdinal("OrganizationName")),
-                       reader.GetDateTimeOffset(reader.GetOrdinal("DateFounded")).ToString());
+                    return new Organization(reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("OrganizationID"))),
+                                            orgName,
+                                            reader.GetDateTimeOffset(reader.GetOrdinal("DateFounded")).ToString());
                 }
             }
         }

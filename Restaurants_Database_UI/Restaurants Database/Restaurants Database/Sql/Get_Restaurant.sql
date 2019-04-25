@@ -1,8 +1,8 @@
 ﻿CREATE OR ALTER PROCEDURE Restaurants.GetRestaurant
-   @RestuarantID INT
+   @RestuarantName INT
 AS
 
-SELECT R.OrganizationID, R.RestaurantName, R.DateFounded, R.IsOperational
+SELECT R.RestaurantID, R.OrganizationID, R.DateFounded, R.IsOperational
 FROM Restaurants.Restaurant R
-WHERE R.RestaurantID = @RestuarantID;
+WHERE R.RestaurantName = @ResturantName;
 GO

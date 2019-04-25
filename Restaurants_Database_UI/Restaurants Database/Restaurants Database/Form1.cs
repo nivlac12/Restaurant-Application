@@ -36,11 +36,11 @@ namespace Restaurants_Database
 
             o.CreateOrganization("Buffet incorporated");
             IReadOnlyList<Organization> l = o.RetrieveOrganizations();
-            Organization org = o.GetOrganization(13);
-            MessageBox.Show(org.OrganizationName);
-            MessageBox.Show(l.ToString());
+            //Organization org = o.GetOrganization(13);
+
 
             cRestOrgComboBox.Items.Add(cOrgNameTextBox.Text);
+            orgListBox.Items.Add(cOrgNameTextBox.Text);
 
         }
 
@@ -147,6 +147,11 @@ namespace Restaurants_Database
         private void cRestNameTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void orgListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cOrgNameTextBox.Text = orgListBox.Items[orgListBox.SelectedIndex].ToString();
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿CREATE OR ALTER PROCEDURE Restaurants.GetOrganization
-   @OrganizationID INT
+   @OrganizationName NVARCHAR(128)
 AS
 
-SELECT O.OrganizationName, O.DateFounded
+SELECT O.OrganizationID, O.OrganizationName, O.DateFounded
 FROM Restaurants.Organization O
-WHERE O.OrganizationID = @OrganizationID;
+WHERE O.OrganizationName = @OrganizationName;
 GO
