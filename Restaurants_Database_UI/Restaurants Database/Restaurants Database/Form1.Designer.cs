@@ -30,6 +30,7 @@
         {
             this.cTabsControl = new System.Windows.Forms.TabControl();
             this.cOrgPage = new System.Windows.Forms.TabPage();
+            this.orgListBox = new System.Windows.Forms.ListBox();
             this.cOrgEditButton = new System.Windows.Forms.Button();
             this.cOrgIdNumLabel = new System.Windows.Forms.Label();
             this.cOrgIdLabel = new System.Windows.Forms.Label();
@@ -135,7 +136,6 @@
             this.cSupplierGrid = new System.Windows.Forms.DataGridView();
             this.SupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orgListBox = new System.Windows.Forms.ListBox();
             this.cTabsControl.SuspendLayout();
             this.cOrgPage.SuspendLayout();
             this.cRestaurantPage.SuspendLayout();
@@ -195,6 +195,16 @@
             this.cOrgPage.Text = "Organization";
             this.cOrgPage.Click += new System.EventHandler(this.cOrgPage_Click);
             // 
+            // orgListBox
+            // 
+            this.orgListBox.FormattingEnabled = true;
+            this.orgListBox.ItemHeight = 17;
+            this.orgListBox.Location = new System.Drawing.Point(793, 82);
+            this.orgListBox.Name = "orgListBox";
+            this.orgListBox.Size = new System.Drawing.Size(315, 412);
+            this.orgListBox.TabIndex = 18;
+            this.orgListBox.SelectedIndexChanged += new System.EventHandler(this.orgListBox_SelectedIndexChanged);
+            // 
             // cOrgEditButton
             // 
             this.cOrgEditButton.Location = new System.Drawing.Point(240, 384);
@@ -244,6 +254,7 @@
             this.cDateFoundedTextBox.Size = new System.Drawing.Size(293, 23);
             this.cDateFoundedTextBox.TabIndex = 4;
             this.cDateFoundedTextBox.Text = "00/00/0000";
+            this.cDateFoundedTextBox.TextChanged += new System.EventHandler(this.cDateFoundedTextBox_TextChanged);
             // 
             // cDateFoundedLabel
             // 
@@ -1258,16 +1269,6 @@
             this.SupName.HeaderText = "Supplier Name";
             this.SupName.Name = "SupName";
             this.SupName.Width = 126;
-            // 
-            // orgListBox
-            // 
-            this.orgListBox.FormattingEnabled = true;
-            this.orgListBox.ItemHeight = 17;
-            this.orgListBox.Location = new System.Drawing.Point(793, 82);
-            this.orgListBox.Name = "orgListBox";
-            this.orgListBox.Size = new System.Drawing.Size(315, 412);
-            this.orgListBox.TabIndex = 18;
-            this.orgListBox.SelectedIndexChanged += new System.EventHandler(this.orgListBox_SelectedIndexChanged);
             // 
             // cDataBaseForm
             // 

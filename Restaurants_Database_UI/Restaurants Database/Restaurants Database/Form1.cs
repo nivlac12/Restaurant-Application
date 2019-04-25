@@ -32,15 +32,23 @@ namespace Restaurants_Database
             //string shellName = "U:\\CIS 560\\Project\\Restaurant - Application\\Restaurants_Database_UI\\Restaurants Database\\Restaurants Database\\BuildDatabase.ps1";
             //string shellName = "..\\..\\BuildDatabase.ps1";
             //System.Diagnostics.Process.Start("C:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe ", "-noexit " + shellName);
-            OrganizationRepo o = new OrganizationRepo();
+            if (!String.IsNullOrEmpty(cOrgNameTextBox.Text))
+            {
+                OrganizationRepo or = new OrganizationRepo();
 
-            o.CreateOrganization("Buffet incorporated");
-            IReadOnlyList<Organization> l = o.RetrieveOrganizations();
-            //Organization org = o.GetOrganization(13);
+                Organization o = or.CreateOrganization(cOrgNameTextBox.Text);
 
+                IReadOnlyList<Organization> l = or.RetrieveOrganizations();
+                //Organization org = o.GetOrganization(13);
 
-            cRestOrgComboBox.Items.Add(cOrgNameTextBox.Text);
-            orgListBox.Items.Add(cOrgNameTextBox.Text);
+                cOrgIdNumLabel.Text = o.OrganizationID.ToString();
+                cRestOrgComboBox.Items.Add(cOrgNameTextBox.Text);
+                orgListBox.Items.Add(cOrgNameTextBox.Text);
+            }
+            else
+            {
+                MessageBox.Show("Organization name cannot be empty");
+            }
 
         }
 
@@ -151,7 +159,17 @@ namespace Restaurants_Database
 
         private void orgListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cOrgNameTextBox.Text = orgListBox.Items[orgListBox.SelectedIndex].ToString();
+            string orgName = orgListBox.Items[orgListBox.SelectedIndex].ToString();
+            cOrgNameTextBox.Text = orgName;
+            OrganizationRepo or = new OrganizationRepo();
+            Organization o = or.GetOrganization(orgName);
+            cOrgIdNumLabel.Text = o.OrganizationID.ToString();
+            cDateFoundedTextBox.Text = o.DateFounded;
+        }
+
+        private void cDateFoundedTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
