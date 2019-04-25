@@ -12,9 +12,49 @@ namespace Restaurants_Database
 {
     public partial class cDataBaseForm : Form
     {
+        OrganizationRepo _org;
+        RestaurantRepository _rest;
+        FoodRepo _food;
+        JobsRepo _jobs;
+        StockItemsRepo _stock;
+        EmployeeRepo _emp;
+        SuppliersRepo _suppliers;
+
         public cDataBaseForm()
         {
+            _org = new OrganizationRepo();
+            _rest = new RestaurantRepository();
+            _food = new FoodRepo();
+            _jobs = new JobsRepo();
+            _stock = new StockItemsRepo();
+            _emp = new EmployeeRepo();
+            _suppliers = new SuppliersRepo();
+
             InitializeComponent();
+
+            cRestOrgComboBox.Items.Clear();
+
+
+
+            IReadOnlyList<Organization> orgs = _org.RetrieveOrganizations();
+            IReadOnlyList<Restaurant> rests = _rest.RetrieveRestaurants();
+            IReadOnlyList<Employee> emps = _emp.RetrieveEmployee();
+
+            foreach (var org in orgs)
+            {
+                cRestOrgComboBox.Items.Add(org.OrganizationName);
+                orgListBox.Items.Add(org.OrganizationName);
+            }
+            foreach (var rest in rests)
+            {
+                cEmployRestComboBox.Items.Add(rest.RestaurantName);
+                restListBox.Items.Add(rest.RestaurantName);
+            }
+            foreach (var emp in emps)
+            {
+                cEmployRestComboBox.Items.Add(emp.EmployeeName);
+                restListBox.Items.Add(emp.EmployeeName);
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -119,7 +159,10 @@ namespace Restaurants_Database
 
         private void cRestAddButton_Click(object sender, EventArgs e)
         {
-            
+            Organization o = _org.GetOrganization(cRestOrgComboBox.Items[cRestOrgComboBox.SelectedIndex].ToString());
+            bool isOp = string.Equals(cRestOpComboBox.Items[cRestOpComboBox.SelectedIndex].ToString(), "Yes") ? true : false;
+            Restaurant r = _rest.CreateRestaurant(o.OrganizationID, cRestNameTextBox.Text, cDateFoundedTextBox.Text, isOp);
+            restListBox.Items.Add(r.RestaurantName);
         }
 
         private void cRestEditButton_Click(object sender, EventArgs e)
@@ -161,13 +204,35 @@ namespace Restaurants_Database
         {
             string orgName = orgListBox.Items[orgListBox.SelectedIndex].ToString();
             cOrgNameTextBox.Text = orgName;
-            OrganizationRepo or = new OrganizationRepo();
-            Organization o = or.GetOrganization(orgName);
+            Organization o = _org.GetOrganization(orgName);
             cOrgIdNumLabel.Text = o.OrganizationID.ToString();
             cDateFoundedTextBox.Text = o.DateFounded;
         }
 
         private void cDateFoundedTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void restListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string restName = restListBox.Items[restListBox.SelectedIndex].ToString();
+            Restaurant r = _rest.GetRestaurant(restName);
+            cRestIdNumLabel.Text = r.RestaurantID.ToString();
+            cRestNameTextBox.Text = r.RestaurantName;
+            cRestDateFoundedTextBox.Text = r.DateFounded;
+            Organization o = _org.GetOrganizationByID(r.OrganizationID);
+            cRestOrgComboBox.Text = o.OrganizationName;
+            cRestOpComboBox.Text = r.IsOperational ? "Yes" : "No";
+        }
+
+        private void cEmployRestComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

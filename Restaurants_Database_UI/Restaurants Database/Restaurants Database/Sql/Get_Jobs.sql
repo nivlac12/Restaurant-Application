@@ -4,5 +4,5 @@ AS
 
 SELECT  J.JobTitleID, J.Salary
 FROM Employee.Jobs J
-WHERE J.JobTitleName = @JobTitleName;
+WHERE J.JobName = @JobName;
 GO

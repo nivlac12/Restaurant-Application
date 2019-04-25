@@ -4,5 +4,5 @@ AS
 
 SELECT E.PersonID, E.RestaurantID, E.JobTitleID, E.Seniority
 FROM Employees.Employee E
-WHERE E.PersonName = @PersonName;
+WHERE E.[Name] = @PersonName;
 GO

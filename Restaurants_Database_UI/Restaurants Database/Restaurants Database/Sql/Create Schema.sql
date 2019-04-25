@@ -29,6 +29,7 @@ DROP PROCEDURE IF EXISTS Restaurants.CreateOrganization
 DROP PROCEDURE IF EXISTS Inventory.CreateStockItem
 DROP PROCEDURE IF EXISTS Food.CreateFood
 DROP PROCEDURE IF EXISTS Supplier.CreateSupplier
+DROP PROCEDURE IF EXISTS Restaurants.GetOrganizationByID
 
 DROP SCHEMA IF EXISTS Inventory
 GO

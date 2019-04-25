@@ -53,12 +53,6 @@
             this.cRestOrgLabel = new System.Windows.Forms.Label();
             this.cRestNameTextBox = new System.Windows.Forms.TextBox();
             this.cRestNameLabel = new System.Windows.Forms.Label();
-            this.cRestGrid = new System.Windows.Forms.DataGridView();
-            this.RestID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rOrgID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rDateFounded = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsOperational = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cEmployeePage = new System.Windows.Forms.TabPage();
             this.cEmployeesEditButton = new System.Windows.Forms.Button();
             this.cPersonIdNumLabel = new System.Windows.Forms.Label();
@@ -72,12 +66,6 @@
             this.cEmployJobLabel = new System.Windows.Forms.Label();
             this.cEmployeeNameTextBox = new System.Windows.Forms.TextBox();
             this.cEmployeeNameLabel = new System.Windows.Forms.Label();
-            this.cEmployeesGrid = new System.Windows.Forms.DataGridView();
-            this.PerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eRestID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JobTitleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seniority = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cJobsPage = new System.Windows.Forms.TabPage();
             this.cJobsEditButton = new System.Windows.Forms.Button();
             this.cJobIdNumLabel = new System.Windows.Forms.Label();
@@ -136,12 +124,15 @@
             this.cSupplierGrid = new System.Windows.Forms.DataGridView();
             this.SupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.restListBox = new System.Windows.Forms.ListBox();
+            this.restaurantListLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.empListBox = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.cTabsControl.SuspendLayout();
             this.cOrgPage.SuspendLayout();
             this.cRestaurantPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cRestGrid)).BeginInit();
             this.cEmployeePage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cEmployeesGrid)).BeginInit();
             this.cJobsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cJobSalaryNumUpDownBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJobsGrid)).BeginInit();
@@ -175,6 +166,7 @@
             // cOrgPage
             // 
             this.cOrgPage.BackColor = System.Drawing.Color.LightGray;
+            this.cOrgPage.Controls.Add(this.label2);
             this.cOrgPage.Controls.Add(this.orgListBox);
             this.cOrgPage.Controls.Add(this.cOrgEditButton);
             this.cOrgPage.Controls.Add(this.cOrgIdNumLabel);
@@ -199,7 +191,7 @@
             // 
             this.orgListBox.FormattingEnabled = true;
             this.orgListBox.ItemHeight = 17;
-            this.orgListBox.Location = new System.Drawing.Point(793, 82);
+            this.orgListBox.Location = new System.Drawing.Point(797, 82);
             this.orgListBox.Name = "orgListBox";
             this.orgListBox.Size = new System.Drawing.Size(315, 412);
             this.orgListBox.TabIndex = 18;
@@ -207,7 +199,7 @@
             // 
             // cOrgEditButton
             // 
-            this.cOrgEditButton.Location = new System.Drawing.Point(240, 384);
+            this.cOrgEditButton.Location = new System.Drawing.Point(240, 356);
             this.cOrgEditButton.Margin = new System.Windows.Forms.Padding(4);
             this.cOrgEditButton.Name = "cOrgEditButton";
             this.cOrgEditButton.Size = new System.Drawing.Size(136, 45);
@@ -296,6 +288,8 @@
             // cRestaurantPage
             // 
             this.cRestaurantPage.BackColor = System.Drawing.Color.LightGray;
+            this.cRestaurantPage.Controls.Add(this.restaurantListLabel);
+            this.cRestaurantPage.Controls.Add(this.restListBox);
             this.cRestaurantPage.Controls.Add(this.cRestEditButton);
             this.cRestaurantPage.Controls.Add(this.cRestIdNumLabel);
             this.cRestaurantPage.Controls.Add(this.cRestaurantIdLabel);
@@ -308,7 +302,6 @@
             this.cRestaurantPage.Controls.Add(this.cRestOrgLabel);
             this.cRestaurantPage.Controls.Add(this.cRestNameTextBox);
             this.cRestaurantPage.Controls.Add(this.cRestNameLabel);
-            this.cRestaurantPage.Controls.Add(this.cRestGrid);
             this.cRestaurantPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cRestaurantPage.ForeColor = System.Drawing.Color.Black;
             this.cRestaurantPage.Location = new System.Drawing.Point(4, 26);
@@ -333,7 +326,7 @@
             // cRestIdNumLabel
             // 
             this.cRestIdNumLabel.AutoSize = true;
-            this.cRestIdNumLabel.Location = new System.Drawing.Point(318, 34);
+            this.cRestIdNumLabel.Location = new System.Drawing.Point(190, 34);
             this.cRestIdNumLabel.Name = "cRestIdNumLabel";
             this.cRestIdNumLabel.Size = new System.Drawing.Size(16, 17);
             this.cRestIdNumLabel.TabIndex = 16;
@@ -342,7 +335,7 @@
             // cRestaurantIdLabel
             // 
             this.cRestaurantIdLabel.AutoSize = true;
-            this.cRestaurantIdLabel.Location = new System.Drawing.Point(189, 34);
+            this.cRestaurantIdLabel.Location = new System.Drawing.Point(18, 34);
             this.cRestaurantIdLabel.Name = "cRestaurantIdLabel";
             this.cRestaurantIdLabel.Size = new System.Drawing.Size(103, 17);
             this.cRestaurantIdLabel.TabIndex = 15;
@@ -446,68 +439,11 @@
             this.cRestNameLabel.Text = "Restaurant Name : ";
             this.cRestNameLabel.Click += new System.EventHandler(this.cRestNameLabel_Click);
             // 
-            // cRestGrid
-            // 
-            this.cRestGrid.BackgroundColor = System.Drawing.Color.LightGray;
-            this.cRestGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cRestGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cRestGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.RestID,
-            this.rOrgID,
-            this.RestName,
-            this.rDateFounded,
-            this.IsOperational});
-            this.cRestGrid.Location = new System.Drawing.Point(542, -2);
-            this.cRestGrid.Margin = new System.Windows.Forms.Padding(4);
-            this.cRestGrid.Name = "cRestGrid";
-            this.cRestGrid.ReadOnly = true;
-            this.cRestGrid.RowTemplate.Height = 24;
-            this.cRestGrid.Size = new System.Drawing.Size(737, 759);
-            this.cRestGrid.TabIndex = 0;
-            // 
-            // RestID
-            // 
-            this.RestID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.RestID.HeaderText = "RestaurantID";
-            this.RestID.Name = "RestID";
-            this.RestID.ReadOnly = true;
-            this.RestID.Width = 116;
-            // 
-            // rOrgID
-            // 
-            this.rOrgID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.rOrgID.HeaderText = "OrganizationID";
-            this.rOrgID.Name = "rOrgID";
-            this.rOrgID.ReadOnly = true;
-            this.rOrgID.Width = 127;
-            // 
-            // RestName
-            // 
-            this.RestName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.RestName.HeaderText = "Restaurant Name";
-            this.RestName.Name = "RestName";
-            this.RestName.ReadOnly = true;
-            this.RestName.Width = 132;
-            // 
-            // rDateFounded
-            // 
-            this.rDateFounded.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.rDateFounded.HeaderText = "DateFounded";
-            this.rDateFounded.Name = "rDateFounded";
-            this.rDateFounded.ReadOnly = true;
-            this.rDateFounded.Width = 119;
-            // 
-            // IsOperational
-            // 
-            this.IsOperational.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.IsOperational.HeaderText = "Operational";
-            this.IsOperational.Name = "IsOperational";
-            this.IsOperational.ReadOnly = true;
-            this.IsOperational.Width = 107;
-            // 
             // cEmployeePage
             // 
             this.cEmployeePage.BackColor = System.Drawing.Color.LightGray;
+            this.cEmployeePage.Controls.Add(this.label3);
+            this.cEmployeePage.Controls.Add(this.empListBox);
             this.cEmployeePage.Controls.Add(this.cEmployeesEditButton);
             this.cEmployeePage.Controls.Add(this.cPersonIdNumLabel);
             this.cEmployeePage.Controls.Add(this.cPersonIdLabel);
@@ -520,7 +456,6 @@
             this.cEmployeePage.Controls.Add(this.cEmployJobLabel);
             this.cEmployeePage.Controls.Add(this.cEmployeeNameTextBox);
             this.cEmployeePage.Controls.Add(this.cEmployeeNameLabel);
-            this.cEmployeePage.Controls.Add(this.cEmployeesGrid);
             this.cEmployeePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cEmployeePage.Location = new System.Drawing.Point(4, 26);
             this.cEmployeePage.Margin = new System.Windows.Forms.Padding(4);
@@ -544,7 +479,7 @@
             // cPersonIdNumLabel
             // 
             this.cPersonIdNumLabel.AutoSize = true;
-            this.cPersonIdNumLabel.Location = new System.Drawing.Point(253, 43);
+            this.cPersonIdNumLabel.Location = new System.Drawing.Point(154, 43);
             this.cPersonIdNumLabel.Name = "cPersonIdNumLabel";
             this.cPersonIdNumLabel.Size = new System.Drawing.Size(16, 17);
             this.cPersonIdNumLabel.TabIndex = 16;
@@ -553,7 +488,7 @@
             // cPersonIdLabel
             // 
             this.cPersonIdLabel.AutoSize = true;
-            this.cPersonIdLabel.Location = new System.Drawing.Point(153, 43);
+            this.cPersonIdLabel.Location = new System.Drawing.Point(29, 43);
             this.cPersonIdLabel.Name = "cPersonIdLabel";
             this.cPersonIdLabel.Size = new System.Drawing.Size(78, 17);
             this.cPersonIdLabel.TabIndex = 15;
@@ -578,6 +513,7 @@
             this.cEmployRestComboBox.Name = "cEmployRestComboBox";
             this.cEmployRestComboBox.Size = new System.Drawing.Size(275, 25);
             this.cEmployRestComboBox.TabIndex = 8;
+            this.cEmployRestComboBox.SelectedIndexChanged += new System.EventHandler(this.cEmployRestComboBox_SelectedIndexChanged);
             // 
             // cEmployRestIDLabel
             // 
@@ -644,59 +580,6 @@
             this.cEmployeeNameLabel.Size = new System.Drawing.Size(57, 17);
             this.cEmployeeNameLabel.TabIndex = 1;
             this.cEmployeeNameLabel.Text = "Name : ";
-            // 
-            // cEmployeesGrid
-            // 
-            this.cEmployeesGrid.BackgroundColor = System.Drawing.Color.LightGray;
-            this.cEmployeesGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cEmployeesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cEmployeesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.PerID,
-            this.eRestID,
-            this.JobTitleID,
-            this.PerName,
-            this.Seniority});
-            this.cEmployeesGrid.Location = new System.Drawing.Point(691, 0);
-            this.cEmployeesGrid.Margin = new System.Windows.Forms.Padding(4);
-            this.cEmployeesGrid.Name = "cEmployeesGrid";
-            this.cEmployeesGrid.RowTemplate.Height = 24;
-            this.cEmployeesGrid.Size = new System.Drawing.Size(587, 754);
-            this.cEmployeesGrid.TabIndex = 0;
-            // 
-            // PerID
-            // 
-            this.PerID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.PerID.HeaderText = "PersonID";
-            this.PerID.Name = "PerID";
-            this.PerID.Width = 91;
-            // 
-            // eRestID
-            // 
-            this.eRestID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.eRestID.HeaderText = "RestaurantID";
-            this.eRestID.Name = "eRestID";
-            this.eRestID.Width = 116;
-            // 
-            // JobTitleID
-            // 
-            this.JobTitleID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.JobTitleID.HeaderText = "JobTitleID";
-            this.JobTitleID.Name = "JobTitleID";
-            this.JobTitleID.Width = 96;
-            // 
-            // PerName
-            // 
-            this.PerName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.PerName.HeaderText = "Name";
-            this.PerName.Name = "PerName";
-            this.PerName.Width = 70;
-            // 
-            // Seniority
-            // 
-            this.Seniority.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Seniority.HeaderText = "Seniority";
-            this.Seniority.Name = "Seniority";
-            this.Seniority.Width = 88;
             // 
             // cJobsPage
             // 
@@ -1270,6 +1153,53 @@
             this.SupName.Name = "SupName";
             this.SupName.Width = 126;
             // 
+            // restListBox
+            // 
+            this.restListBox.FormattingEnabled = true;
+            this.restListBox.ItemHeight = 17;
+            this.restListBox.Location = new System.Drawing.Point(797, 82);
+            this.restListBox.Name = "restListBox";
+            this.restListBox.Size = new System.Drawing.Size(315, 412);
+            this.restListBox.TabIndex = 19;
+            this.restListBox.SelectedIndexChanged += new System.EventHandler(this.restListBox_SelectedIndexChanged);
+            // 
+            // restaurantListLabel
+            // 
+            this.restaurantListLabel.AutoSize = true;
+            this.restaurantListLabel.Location = new System.Drawing.Point(794, 62);
+            this.restaurantListLabel.Name = "restaurantListLabel";
+            this.restaurantListLabel.Size = new System.Drawing.Size(169, 17);
+            this.restaurantListLabel.TabIndex = 22;
+            this.restaurantListLabel.Text = "Restaurants in Database:";
+            this.restaurantListLabel.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(794, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 17);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Organizations in Database:";
+            // 
+            // empListBox
+            // 
+            this.empListBox.FormattingEnabled = true;
+            this.empListBox.ItemHeight = 17;
+            this.empListBox.Location = new System.Drawing.Point(797, 82);
+            this.empListBox.Name = "empListBox";
+            this.empListBox.Size = new System.Drawing.Size(315, 412);
+            this.empListBox.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(794, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(161, 17);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Employees in Database:";
+            // 
             // cDataBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1287,10 +1217,8 @@
             this.cOrgPage.PerformLayout();
             this.cRestaurantPage.ResumeLayout(false);
             this.cRestaurantPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cRestGrid)).EndInit();
             this.cEmployeePage.ResumeLayout(false);
             this.cEmployeePage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cEmployeesGrid)).EndInit();
             this.cJobsPage.ResumeLayout(false);
             this.cJobsPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cJobSalaryNumUpDownBox)).EndInit();
@@ -1326,14 +1254,8 @@
         private System.Windows.Forms.Button cOrgAddButton;
         private System.Windows.Forms.TextBox cDateFoundedTextBox;
         private System.Windows.Forms.Label cDateFoundedLabel;
-        private System.Windows.Forms.DataGridView cRestGrid;
         private System.Windows.Forms.TextBox cRestNameTextBox;
         private System.Windows.Forms.Label cRestNameLabel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RestID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rOrgID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RestName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rDateFounded;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsOperational;
         private System.Windows.Forms.Label cRestDateFoundLabel;
         private System.Windows.Forms.ComboBox cRestOrgComboBox;
         private System.Windows.Forms.Label cRestOrgLabel;
@@ -1345,12 +1267,6 @@
         private System.Windows.Forms.Label cEmployJobLabel;
         private System.Windows.Forms.TextBox cEmployeeNameTextBox;
         private System.Windows.Forms.Label cEmployeeNameLabel;
-        private System.Windows.Forms.DataGridView cEmployeesGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PerID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eRestID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JobTitleID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PerName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Seniority;
         private System.Windows.Forms.Label cEmployRestIDLabel;
         private System.Windows.Forms.ComboBox cEmploySeniorityComboBox;
         private System.Windows.Forms.Label cEmploySeniorityLabel;
@@ -1421,6 +1337,11 @@
         private System.Windows.Forms.Button cFoodEditButton;
         private System.Windows.Forms.Button cSupEditButton;
         private System.Windows.Forms.ListBox orgListBox;
+        private System.Windows.Forms.ListBox restListBox;
+        private System.Windows.Forms.Label restaurantListLabel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox empListBox;
     }
 }
 

@@ -80,6 +80,32 @@ namespace Restaurants_Database
             }
         }
 
+        public Organization GetOrganizationByID(int orgID)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("Restaurants.GetOrganizationByID", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    //Name of Primary Key is what we pass in, everything else
+                    //we get from the SQL
+                    command.Parameters.AddWithValue("OrganizationID", orgID);
+
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+
+                    if (!reader.Read())
+                        return null;
+
+                    return new Organization(orgID,
+                                            reader.GetString(reader.GetOrdinal("OrganizationName")),
+                                            reader.GetDateTimeOffset(reader.GetOrdinal("DateFounded")).ToString());
+                }
+            }
+        }
+
         public IReadOnlyList<Organization> RetrieveOrganizations()
         {
             using (var connection = new SqlConnection(connectionString))

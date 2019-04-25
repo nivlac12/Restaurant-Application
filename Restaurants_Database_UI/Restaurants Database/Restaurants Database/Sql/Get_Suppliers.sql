@@ -4,5 +4,5 @@ AS
 
 SELECT S.SupplierID
 FROM Supplier.Suppliers S
-WHERE S.SupplierName = @SupplierName;
+WHERE S.Name = @SupplierName;
 GO
