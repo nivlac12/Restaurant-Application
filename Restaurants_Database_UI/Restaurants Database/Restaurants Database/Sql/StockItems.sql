@@ -1,5 +1,4 @@
-CREATE SCHEMA Inventory;
-
+DROP TABLE IF EXISTS Inventory.StockItems
 CREATE TABLE Inventory.StockItems
 (
 	InventoryID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,

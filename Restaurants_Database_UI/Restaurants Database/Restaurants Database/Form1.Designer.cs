@@ -190,11 +190,11 @@
             this.cOrgPage.Controls.Add(this.label1);
             this.cOrgPage.Controls.Add(this.cOrgNameTextBox);
             this.cOrgPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cOrgPage.Location = new System.Drawing.Point(4, 26);
+            this.cOrgPage.Location = new System.Drawing.Point(4, 29);
             this.cOrgPage.Margin = new System.Windows.Forms.Padding(4);
             this.cOrgPage.Name = "cOrgPage";
             this.cOrgPage.Padding = new System.Windows.Forms.Padding(4);
-            this.cOrgPage.Size = new System.Drawing.Size(1446, 760);
+            this.cOrgPage.Size = new System.Drawing.Size(1446, 757);
             this.cOrgPage.TabIndex = 0;
             this.cOrgPage.Text = "Organization";
             this.cOrgPage.Click += new System.EventHandler(this.cOrgPage_Click);
@@ -215,7 +215,7 @@
             this.cOrgIdNumLabel.AutoSize = true;
             this.cOrgIdNumLabel.Location = new System.Drawing.Point(237, 60);
             this.cOrgIdNumLabel.Name = "cOrgIdNumLabel";
-            this.cOrgIdNumLabel.Size = new System.Drawing.Size(16, 17);
+            this.cOrgIdNumLabel.Size = new System.Drawing.Size(18, 20);
             this.cOrgIdNumLabel.TabIndex = 16;
             this.cOrgIdNumLabel.Text = "0";
             // 
@@ -224,7 +224,7 @@
             this.cOrgIdLabel.AutoSize = true;
             this.cOrgIdLabel.Location = new System.Drawing.Point(38, 60);
             this.cOrgIdLabel.Name = "cOrgIdLabel";
-            this.cOrgIdLabel.Size = new System.Drawing.Size(114, 17);
+            this.cOrgIdLabel.Size = new System.Drawing.Size(136, 20);
             this.cOrgIdLabel.TabIndex = 15;
             this.cOrgIdLabel.Text = "OrganizationID : ";
             // 
@@ -250,21 +250,21 @@
             this.OrgID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.OrgID.HeaderText = "OrganizationID";
             this.OrgID.Name = "OrgID";
-            this.OrgID.Width = 127;
+            this.OrgID.Width = 150;
             // 
             // OrgName
             // 
             this.OrgName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.OrgName.HeaderText = "Organization Name";
             this.OrgName.Name = "OrgName";
-            this.OrgName.Width = 141;
+            this.OrgName.Width = 166;
             // 
             // oDateFounded
             // 
             this.oDateFounded.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.oDateFounded.HeaderText = "DateFounded";
             this.oDateFounded.Name = "oDateFounded";
-            this.oDateFounded.Width = 119;
+            this.oDateFounded.Width = 138;
             // 
             // cOrgAddButton
             // 
@@ -283,7 +283,7 @@
             this.cDateFoundedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cDateFoundedTextBox.Name = "cDateFoundedTextBox";
             this.cDateFoundedTextBox.ReadOnly = true;
-            this.cDateFoundedTextBox.Size = new System.Drawing.Size(293, 23);
+            this.cDateFoundedTextBox.Size = new System.Drawing.Size(293, 27);
             this.cDateFoundedTextBox.TabIndex = 4;
             this.cDateFoundedTextBox.Text = "00/00/0000";
             // 
@@ -293,7 +293,7 @@
             this.cDateFoundedLabel.Location = new System.Drawing.Point(65, 187);
             this.cDateFoundedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cDateFoundedLabel.Name = "cDateFoundedLabel";
-            this.cDateFoundedLabel.Size = new System.Drawing.Size(87, 17);
+            this.cDateFoundedLabel.Size = new System.Drawing.Size(102, 20);
             this.cDateFoundedLabel.TabIndex = 3;
             this.cDateFoundedLabel.Text = "Date Added:";
             // 
@@ -303,7 +303,7 @@
             this.cOrgLabel.Location = new System.Drawing.Point(31, 115);
             this.cOrgLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cOrgLabel.Name = "cOrgLabel";
-            this.cOrgLabel.Size = new System.Drawing.Size(138, 17);
+            this.cOrgLabel.Size = new System.Drawing.Size(163, 20);
             this.cOrgLabel.TabIndex = 2;
             this.cOrgLabel.Text = "Organization Name :";
             // 
@@ -320,7 +320,7 @@
             this.cOrgNameTextBox.Location = new System.Drawing.Point(240, 115);
             this.cOrgNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cOrgNameTextBox.Name = "cOrgNameTextBox";
-            this.cOrgNameTextBox.Size = new System.Drawing.Size(293, 23);
+            this.cOrgNameTextBox.Size = new System.Drawing.Size(293, 27);
             this.cOrgNameTextBox.TabIndex = 1;
             this.cOrgNameTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -342,11 +342,11 @@
             this.cRestaurantPage.Controls.Add(this.cRestGrid);
             this.cRestaurantPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cRestaurantPage.ForeColor = System.Drawing.Color.Black;
-            this.cRestaurantPage.Location = new System.Drawing.Point(4, 26);
+            this.cRestaurantPage.Location = new System.Drawing.Point(4, 29);
             this.cRestaurantPage.Margin = new System.Windows.Forms.Padding(4);
             this.cRestaurantPage.Name = "cRestaurantPage";
             this.cRestaurantPage.Padding = new System.Windows.Forms.Padding(4);
-            this.cRestaurantPage.Size = new System.Drawing.Size(1446, 760);
+            this.cRestaurantPage.Size = new System.Drawing.Size(1446, 757);
             this.cRestaurantPage.TabIndex = 1;
             this.cRestaurantPage.Text = "Restaurant";
             // 
@@ -366,7 +366,7 @@
             this.cRestIdNumLabel.AutoSize = true;
             this.cRestIdNumLabel.Location = new System.Drawing.Point(318, 34);
             this.cRestIdNumLabel.Name = "cRestIdNumLabel";
-            this.cRestIdNumLabel.Size = new System.Drawing.Size(16, 17);
+            this.cRestIdNumLabel.Size = new System.Drawing.Size(18, 20);
             this.cRestIdNumLabel.TabIndex = 16;
             this.cRestIdNumLabel.Text = "0";
             // 
@@ -375,7 +375,7 @@
             this.cRestaurantIdLabel.AutoSize = true;
             this.cRestaurantIdLabel.Location = new System.Drawing.Point(189, 34);
             this.cRestaurantIdLabel.Name = "cRestaurantIdLabel";
-            this.cRestaurantIdLabel.Size = new System.Drawing.Size(103, 17);
+            this.cRestaurantIdLabel.Size = new System.Drawing.Size(123, 20);
             this.cRestaurantIdLabel.TabIndex = 15;
             this.cRestaurantIdLabel.Text = "RestaurantID : ";
             // 
@@ -399,8 +399,9 @@
             this.cRestOpComboBox.Location = new System.Drawing.Point(193, 360);
             this.cRestOpComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.cRestOpComboBox.Name = "cRestOpComboBox";
-            this.cRestOpComboBox.Size = new System.Drawing.Size(283, 25);
+            this.cRestOpComboBox.Size = new System.Drawing.Size(283, 28);
             this.cRestOpComboBox.TabIndex = 8;
+            this.cRestOpComboBox.SelectedIndexChanged += new System.EventHandler(this.cRestOpComboBox_SelectedIndexChanged);
             // 
             // cRestOpLabel
             // 
@@ -408,7 +409,7 @@
             this.cRestOpLabel.Location = new System.Drawing.Point(53, 368);
             this.cRestOpLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cRestOpLabel.Name = "cRestOpLabel";
-            this.cRestOpLabel.Size = new System.Drawing.Size(94, 17);
+            this.cRestOpLabel.Size = new System.Drawing.Size(110, 20);
             this.cRestOpLabel.TabIndex = 7;
             this.cRestOpLabel.Text = "Operational : ";
             // 
@@ -418,7 +419,7 @@
             this.cRestDateFoundedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cRestDateFoundedTextBox.Name = "cRestDateFoundedTextBox";
             this.cRestDateFoundedTextBox.ReadOnly = true;
-            this.cRestDateFoundedTextBox.Size = new System.Drawing.Size(284, 23);
+            this.cRestDateFoundedTextBox.Size = new System.Drawing.Size(284, 27);
             this.cRestDateFoundedTextBox.TabIndex = 6;
             this.cRestDateFoundedTextBox.Text = "00/00/0000";
             this.cRestDateFoundedTextBox.TextChanged += new System.EventHandler(this.cRestDateFoundedTextBox_TextChanged);
@@ -429,7 +430,7 @@
             this.cRestDateFoundLabel.Location = new System.Drawing.Point(34, 281);
             this.cRestDateFoundLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cRestDateFoundLabel.Name = "cRestDateFoundLabel";
-            this.cRestDateFoundLabel.Size = new System.Drawing.Size(87, 17);
+            this.cRestDateFoundLabel.Size = new System.Drawing.Size(102, 20);
             this.cRestDateFoundLabel.TabIndex = 5;
             this.cRestDateFoundLabel.Text = "Date Added:";
             this.cRestDateFoundLabel.Click += new System.EventHandler(this.cRestDateFoundLabel_Click);
@@ -440,8 +441,9 @@
             this.cRestOrgComboBox.Location = new System.Drawing.Point(192, 184);
             this.cRestOrgComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.cRestOrgComboBox.Name = "cRestOrgComboBox";
-            this.cRestOrgComboBox.Size = new System.Drawing.Size(283, 25);
+            this.cRestOrgComboBox.Size = new System.Drawing.Size(283, 28);
             this.cRestOrgComboBox.TabIndex = 4;
+            this.cRestOrgComboBox.SelectedIndexChanged += new System.EventHandler(this.cRestOrgComboBox_SelectedIndexChanged);
             // 
             // cRestOrgLabel
             // 
@@ -449,7 +451,7 @@
             this.cRestOrgLabel.Location = new System.Drawing.Point(44, 184);
             this.cRestOrgLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cRestOrgLabel.Name = "cRestOrgLabel";
-            this.cRestOrgLabel.Size = new System.Drawing.Size(101, 17);
+            this.cRestOrgLabel.Size = new System.Drawing.Size(119, 20);
             this.cRestOrgLabel.TabIndex = 3;
             this.cRestOrgLabel.Text = "Organization : ";
             // 
@@ -458,8 +460,9 @@
             this.cRestNameTextBox.Location = new System.Drawing.Point(191, 98);
             this.cRestNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cRestNameTextBox.Name = "cRestNameTextBox";
-            this.cRestNameTextBox.Size = new System.Drawing.Size(284, 23);
+            this.cRestNameTextBox.Size = new System.Drawing.Size(284, 27);
             this.cRestNameTextBox.TabIndex = 2;
+            this.cRestNameTextBox.TextChanged += new System.EventHandler(this.cRestNameTextBox_TextChanged);
             // 
             // cRestNameLabel
             // 
@@ -469,7 +472,7 @@
             this.cRestNameLabel.Location = new System.Drawing.Point(8, 98);
             this.cRestNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cRestNameLabel.Name = "cRestNameLabel";
-            this.cRestNameLabel.Size = new System.Drawing.Size(131, 17);
+            this.cRestNameLabel.Size = new System.Drawing.Size(155, 20);
             this.cRestNameLabel.TabIndex = 1;
             this.cRestNameLabel.Text = "Restaurant Name : ";
             this.cRestNameLabel.Click += new System.EventHandler(this.cRestNameLabel_Click);
@@ -498,35 +501,40 @@
             this.RestID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.RestID.HeaderText = "RestaurantID";
             this.RestID.Name = "RestID";
-            this.RestID.Width = 116;
+            this.RestID.ReadOnly = true;
+            this.RestID.Width = 137;
             // 
             // rOrgID
             // 
             this.rOrgID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.rOrgID.HeaderText = "OrganizationID";
             this.rOrgID.Name = "rOrgID";
-            this.rOrgID.Width = 127;
+            this.rOrgID.ReadOnly = true;
+            this.rOrgID.Width = 150;
             // 
             // RestName
             // 
             this.RestName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.RestName.HeaderText = "Restaurant Name";
             this.RestName.Name = "RestName";
-            this.RestName.Width = 132;
+            this.RestName.ReadOnly = true;
+            this.RestName.Width = 154;
             // 
             // rDateFounded
             // 
             this.rDateFounded.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.rDateFounded.HeaderText = "DateFounded";
             this.rDateFounded.Name = "rDateFounded";
-            this.rDateFounded.Width = 119;
+            this.rDateFounded.ReadOnly = true;
+            this.rDateFounded.Width = 138;
             // 
             // IsOperational
             // 
             this.IsOperational.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.IsOperational.HeaderText = "Operational";
             this.IsOperational.Name = "IsOperational";
-            this.IsOperational.Width = 107;
+            this.IsOperational.ReadOnly = true;
+            this.IsOperational.Width = 124;
             // 
             // cEmployeePage
             // 
@@ -545,11 +553,11 @@
             this.cEmployeePage.Controls.Add(this.cEmployeeNameLabel);
             this.cEmployeePage.Controls.Add(this.cEmployeesGrid);
             this.cEmployeePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cEmployeePage.Location = new System.Drawing.Point(4, 26);
+            this.cEmployeePage.Location = new System.Drawing.Point(4, 29);
             this.cEmployeePage.Margin = new System.Windows.Forms.Padding(4);
             this.cEmployeePage.Name = "cEmployeePage";
             this.cEmployeePage.Padding = new System.Windows.Forms.Padding(4);
-            this.cEmployeePage.Size = new System.Drawing.Size(1446, 760);
+            this.cEmployeePage.Size = new System.Drawing.Size(1446, 757);
             this.cEmployeePage.TabIndex = 2;
             this.cEmployeePage.Text = "Employees";
             // 
@@ -569,7 +577,7 @@
             this.cPersonIdNumLabel.AutoSize = true;
             this.cPersonIdNumLabel.Location = new System.Drawing.Point(253, 43);
             this.cPersonIdNumLabel.Name = "cPersonIdNumLabel";
-            this.cPersonIdNumLabel.Size = new System.Drawing.Size(16, 17);
+            this.cPersonIdNumLabel.Size = new System.Drawing.Size(18, 20);
             this.cPersonIdNumLabel.TabIndex = 16;
             this.cPersonIdNumLabel.Text = "0";
             // 
@@ -578,7 +586,7 @@
             this.cPersonIdLabel.AutoSize = true;
             this.cPersonIdLabel.Location = new System.Drawing.Point(153, 43);
             this.cPersonIdLabel.Name = "cPersonIdLabel";
-            this.cPersonIdLabel.Size = new System.Drawing.Size(78, 17);
+            this.cPersonIdLabel.Size = new System.Drawing.Size(94, 20);
             this.cPersonIdLabel.TabIndex = 15;
             this.cPersonIdLabel.Text = "PersonID : ";
             // 
@@ -599,7 +607,7 @@
             this.cEmployRestComboBox.Location = new System.Drawing.Point(157, 121);
             this.cEmployRestComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.cEmployRestComboBox.Name = "cEmployRestComboBox";
-            this.cEmployRestComboBox.Size = new System.Drawing.Size(275, 25);
+            this.cEmployRestComboBox.Size = new System.Drawing.Size(275, 28);
             this.cEmployRestComboBox.TabIndex = 8;
             // 
             // cEmployRestIDLabel
@@ -608,7 +616,7 @@
             this.cEmployRestIDLabel.Location = new System.Drawing.Point(13, 121);
             this.cEmployRestIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cEmployRestIDLabel.Name = "cEmployRestIDLabel";
-            this.cEmployRestIDLabel.Size = new System.Drawing.Size(94, 17);
+            this.cEmployRestIDLabel.Size = new System.Drawing.Size(111, 20);
             this.cEmployRestIDLabel.TabIndex = 7;
             this.cEmployRestIDLabel.Text = "Restaurant  : ";
             // 
@@ -618,7 +626,7 @@
             this.cEmploySeniorityComboBox.Location = new System.Drawing.Point(157, 369);
             this.cEmploySeniorityComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.cEmploySeniorityComboBox.Name = "cEmploySeniorityComboBox";
-            this.cEmploySeniorityComboBox.Size = new System.Drawing.Size(275, 25);
+            this.cEmploySeniorityComboBox.Size = new System.Drawing.Size(275, 28);
             this.cEmploySeniorityComboBox.TabIndex = 6;
             // 
             // cEmploySeniorityLabel
@@ -627,7 +635,7 @@
             this.cEmploySeniorityLabel.Location = new System.Drawing.Point(35, 369);
             this.cEmploySeniorityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cEmploySeniorityLabel.Name = "cEmploySeniorityLabel";
-            this.cEmploySeniorityLabel.Size = new System.Drawing.Size(75, 17);
+            this.cEmploySeniorityLabel.Size = new System.Drawing.Size(89, 20);
             this.cEmploySeniorityLabel.TabIndex = 5;
             this.cEmploySeniorityLabel.Text = "Seniority : ";
             // 
@@ -637,7 +645,7 @@
             this.cEmployJobTitleComboBox.Location = new System.Drawing.Point(157, 285);
             this.cEmployJobTitleComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.cEmployJobTitleComboBox.Name = "cEmployJobTitleComboBox";
-            this.cEmployJobTitleComboBox.Size = new System.Drawing.Size(275, 25);
+            this.cEmployJobTitleComboBox.Size = new System.Drawing.Size(275, 28);
             this.cEmployJobTitleComboBox.TabIndex = 4;
             // 
             // cEmployJobLabel
@@ -646,7 +654,7 @@
             this.cEmployJobLabel.Location = new System.Drawing.Point(73, 285);
             this.cEmployJobLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cEmployJobLabel.Name = "cEmployJobLabel";
-            this.cEmployJobLabel.Size = new System.Drawing.Size(43, 17);
+            this.cEmployJobLabel.Size = new System.Drawing.Size(51, 20);
             this.cEmployJobLabel.TabIndex = 3;
             this.cEmployJobLabel.Text = "Job : ";
             // 
@@ -655,7 +663,7 @@
             this.cEmployeeNameTextBox.Location = new System.Drawing.Point(157, 203);
             this.cEmployeeNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cEmployeeNameTextBox.Name = "cEmployeeNameTextBox";
-            this.cEmployeeNameTextBox.Size = new System.Drawing.Size(275, 23);
+            this.cEmployeeNameTextBox.Size = new System.Drawing.Size(275, 27);
             this.cEmployeeNameTextBox.TabIndex = 2;
             // 
             // cEmployeeNameLabel
@@ -664,7 +672,7 @@
             this.cEmployeeNameLabel.Location = new System.Drawing.Point(56, 206);
             this.cEmployeeNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cEmployeeNameLabel.Name = "cEmployeeNameLabel";
-            this.cEmployeeNameLabel.Size = new System.Drawing.Size(57, 17);
+            this.cEmployeeNameLabel.Size = new System.Drawing.Size(68, 20);
             this.cEmployeeNameLabel.TabIndex = 1;
             this.cEmployeeNameLabel.Text = "Name : ";
             // 
@@ -691,35 +699,35 @@
             this.PerID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.PerID.HeaderText = "PersonID";
             this.PerID.Name = "PerID";
-            this.PerID.Width = 91;
+            this.PerID.Width = 108;
             // 
             // eRestID
             // 
             this.eRestID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.eRestID.HeaderText = "RestaurantID";
             this.eRestID.Name = "eRestID";
-            this.eRestID.Width = 116;
+            this.eRestID.Width = 137;
             // 
             // JobTitleID
             // 
             this.JobTitleID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.JobTitleID.HeaderText = "JobTitleID";
             this.JobTitleID.Name = "JobTitleID";
-            this.JobTitleID.Width = 96;
+            this.JobTitleID.Width = 114;
             // 
             // PerName
             // 
             this.PerName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.PerName.HeaderText = "Name";
             this.PerName.Name = "PerName";
-            this.PerName.Width = 70;
+            this.PerName.Width = 82;
             // 
             // Seniority
             // 
             this.Seniority.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Seniority.HeaderText = "Seniority";
             this.Seniority.Name = "Seniority";
-            this.Seniority.Width = 88;
+            this.Seniority.Width = 103;
             // 
             // cJobsPage
             // 
@@ -733,11 +741,11 @@
             this.cJobsPage.Controls.Add(this.cJobNameTextBox);
             this.cJobsPage.Controls.Add(this.cJobNameLabel);
             this.cJobsPage.Controls.Add(this.cJobsGrid);
-            this.cJobsPage.Location = new System.Drawing.Point(4, 26);
+            this.cJobsPage.Location = new System.Drawing.Point(4, 29);
             this.cJobsPage.Margin = new System.Windows.Forms.Padding(4);
             this.cJobsPage.Name = "cJobsPage";
             this.cJobsPage.Padding = new System.Windows.Forms.Padding(4);
-            this.cJobsPage.Size = new System.Drawing.Size(1446, 760);
+            this.cJobsPage.Size = new System.Drawing.Size(1446, 757);
             this.cJobsPage.TabIndex = 3;
             this.cJobsPage.Text = "Jobs";
             // 
@@ -757,7 +765,7 @@
             this.cJobIdNumLabel.AutoSize = true;
             this.cJobIdNumLabel.Location = new System.Drawing.Point(218, 33);
             this.cJobIdNumLabel.Name = "cJobIdNumLabel";
-            this.cJobIdNumLabel.Size = new System.Drawing.Size(16, 17);
+            this.cJobIdNumLabel.Size = new System.Drawing.Size(18, 20);
             this.cJobIdNumLabel.TabIndex = 16;
             this.cJobIdNumLabel.Text = "0";
             // 
@@ -766,7 +774,7 @@
             this.cJobIdLabel.AutoSize = true;
             this.cJobIdLabel.Location = new System.Drawing.Point(144, 33);
             this.cJobIdLabel.Name = "cJobIdLabel";
-            this.cJobIdLabel.Size = new System.Drawing.Size(56, 17);
+            this.cJobIdLabel.Size = new System.Drawing.Size(68, 20);
             this.cJobIdLabel.TabIndex = 15;
             this.cJobIdLabel.Text = "JobID : ";
             // 
@@ -785,7 +793,7 @@
             // 
             this.cJobSalaryNumUpDownBox.Location = new System.Drawing.Point(148, 184);
             this.cJobSalaryNumUpDownBox.Name = "cJobSalaryNumUpDownBox";
-            this.cJobSalaryNumUpDownBox.Size = new System.Drawing.Size(242, 23);
+            this.cJobSalaryNumUpDownBox.Size = new System.Drawing.Size(242, 27);
             this.cJobSalaryNumUpDownBox.TabIndex = 5;
             // 
             // cJobSalaryLabel
@@ -793,7 +801,7 @@
             this.cJobSalaryLabel.AutoSize = true;
             this.cJobSalaryLabel.Location = new System.Drawing.Point(52, 184);
             this.cJobSalaryLabel.Name = "cJobSalaryLabel";
-            this.cJobSalaryLabel.Size = new System.Drawing.Size(60, 17);
+            this.cJobSalaryLabel.Size = new System.Drawing.Size(71, 20);
             this.cJobSalaryLabel.TabIndex = 4;
             this.cJobSalaryLabel.Text = "Salary : ";
             // 
@@ -801,7 +809,7 @@
             // 
             this.cJobNameTextBox.Location = new System.Drawing.Point(148, 97);
             this.cJobNameTextBox.Name = "cJobNameTextBox";
-            this.cJobNameTextBox.Size = new System.Drawing.Size(242, 23);
+            this.cJobNameTextBox.Size = new System.Drawing.Size(242, 27);
             this.cJobNameTextBox.TabIndex = 3;
             // 
             // cJobNameLabel
@@ -809,7 +817,7 @@
             this.cJobNameLabel.AutoSize = true;
             this.cJobNameLabel.Location = new System.Drawing.Point(55, 97);
             this.cJobNameLabel.Name = "cJobNameLabel";
-            this.cJobNameLabel.Size = new System.Drawing.Size(57, 17);
+            this.cJobNameLabel.Size = new System.Drawing.Size(68, 20);
             this.cJobNameLabel.TabIndex = 2;
             this.cJobNameLabel.Text = "Name : ";
             // 
@@ -835,21 +843,21 @@
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn3.HeaderText = "JobTitleID";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 96;
+            this.dataGridViewTextBoxColumn3.Width = 114;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn4.HeaderText = "Name";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 70;
+            this.dataGridViewTextBoxColumn4.Width = 82;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn5.HeaderText = "Salary";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 73;
+            this.dataGridViewTextBoxColumn5.Width = 85;
             // 
             // cInventoryPage
             // 
@@ -865,11 +873,11 @@
             this.cInventoryPage.Controls.Add(this.cInventoryFoodComboBox);
             this.cInventoryPage.Controls.Add(this.cInventoryFoodIdLabel);
             this.cInventoryPage.Controls.Add(this.cStockItemsGrid);
-            this.cInventoryPage.Location = new System.Drawing.Point(4, 26);
+            this.cInventoryPage.Location = new System.Drawing.Point(4, 29);
             this.cInventoryPage.Margin = new System.Windows.Forms.Padding(4);
             this.cInventoryPage.Name = "cInventoryPage";
             this.cInventoryPage.Padding = new System.Windows.Forms.Padding(4);
-            this.cInventoryPage.Size = new System.Drawing.Size(1446, 760);
+            this.cInventoryPage.Size = new System.Drawing.Size(1446, 757);
             this.cInventoryPage.TabIndex = 4;
             this.cInventoryPage.Text = "Inventory";
             // 
@@ -889,7 +897,7 @@
             this.cInventoryIdNumLabel.AutoSize = true;
             this.cInventoryIdNumLabel.Location = new System.Drawing.Point(274, 38);
             this.cInventoryIdNumLabel.Name = "cInventoryIdNumLabel";
-            this.cInventoryIdNumLabel.Size = new System.Drawing.Size(16, 17);
+            this.cInventoryIdNumLabel.Size = new System.Drawing.Size(18, 20);
             this.cInventoryIdNumLabel.TabIndex = 14;
             this.cInventoryIdNumLabel.Text = "0";
             // 
@@ -898,7 +906,7 @@
             this.cInvyIDLabel.AutoSize = true;
             this.cInvyIDLabel.Location = new System.Drawing.Point(160, 38);
             this.cInvyIDLabel.Name = "cInvyIDLabel";
-            this.cInvyIDLabel.Size = new System.Drawing.Size(91, 17);
+            this.cInvyIDLabel.Size = new System.Drawing.Size(108, 20);
             this.cInvyIDLabel.TabIndex = 13;
             this.cInvyIDLabel.Text = "InventoryID : ";
             // 
@@ -917,7 +925,7 @@
             // 
             this.cInventoryQuantityNumUpDownBox.Location = new System.Drawing.Point(164, 280);
             this.cInventoryQuantityNumUpDownBox.Name = "cInventoryQuantityNumUpDownBox";
-            this.cInventoryQuantityNumUpDownBox.Size = new System.Drawing.Size(275, 23);
+            this.cInventoryQuantityNumUpDownBox.Size = new System.Drawing.Size(275, 27);
             this.cInventoryQuantityNumUpDownBox.TabIndex = 7;
             // 
             // cInventoryQuantityLabel
@@ -925,7 +933,7 @@
             this.cInventoryQuantityLabel.AutoSize = true;
             this.cInventoryQuantityLabel.Location = new System.Drawing.Point(42, 283);
             this.cInventoryQuantityLabel.Name = "cInventoryQuantityLabel";
-            this.cInventoryQuantityLabel.Size = new System.Drawing.Size(69, 17);
+            this.cInventoryQuantityLabel.Size = new System.Drawing.Size(81, 20);
             this.cInventoryQuantityLabel.TabIndex = 6;
             this.cInventoryQuantityLabel.Text = "Quantity :";
             // 
@@ -934,7 +942,7 @@
             this.cInventoryRestComboBox.FormattingEnabled = true;
             this.cInventoryRestComboBox.Location = new System.Drawing.Point(164, 196);
             this.cInventoryRestComboBox.Name = "cInventoryRestComboBox";
-            this.cInventoryRestComboBox.Size = new System.Drawing.Size(275, 25);
+            this.cInventoryRestComboBox.Size = new System.Drawing.Size(275, 28);
             this.cInventoryRestComboBox.TabIndex = 5;
             // 
             // cInventoryRestLabel
@@ -942,7 +950,7 @@
             this.cInventoryRestLabel.AutoSize = true;
             this.cInventoryRestLabel.Location = new System.Drawing.Point(22, 196);
             this.cInventoryRestLabel.Name = "cInventoryRestLabel";
-            this.cInventoryRestLabel.Size = new System.Drawing.Size(86, 17);
+            this.cInventoryRestLabel.Size = new System.Drawing.Size(101, 20);
             this.cInventoryRestLabel.TabIndex = 4;
             this.cInventoryRestLabel.Text = "Restaurant :";
             // 
@@ -951,7 +959,7 @@
             this.cInventoryFoodComboBox.FormattingEnabled = true;
             this.cInventoryFoodComboBox.Location = new System.Drawing.Point(164, 107);
             this.cInventoryFoodComboBox.Name = "cInventoryFoodComboBox";
-            this.cInventoryFoodComboBox.Size = new System.Drawing.Size(275, 25);
+            this.cInventoryFoodComboBox.Size = new System.Drawing.Size(275, 28);
             this.cInventoryFoodComboBox.TabIndex = 3;
             // 
             // cInventoryFoodIdLabel
@@ -959,7 +967,7 @@
             this.cInventoryFoodIdLabel.AutoSize = true;
             this.cInventoryFoodIdLabel.Location = new System.Drawing.Point(67, 107);
             this.cInventoryFoodIdLabel.Name = "cInventoryFoodIdLabel";
-            this.cInventoryFoodIdLabel.Size = new System.Drawing.Size(48, 17);
+            this.cInventoryFoodIdLabel.Size = new System.Drawing.Size(56, 20);
             this.cInventoryFoodIdLabel.TabIndex = 2;
             this.cInventoryFoodIdLabel.Text = "Food :";
             // 
@@ -985,28 +993,27 @@
             this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn11.HeaderText = "InventoryID";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 104;
+            this.dataGridViewTextBoxColumn11.Width = 122;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn9.HeaderText = "FoodID";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 78;
+            this.dataGridViewTextBoxColumn9.Width = 92;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn10.HeaderText = "RestaurantID";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 116;
+            this.dataGridViewTextBoxColumn10.Width = 137;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn12.HeaderText = "Quantity";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 86;
             // 
             // cFoodPage
             // 
@@ -1024,11 +1031,11 @@
             this.cFoodPage.Controls.Add(this.cFoodSupLabel);
             this.cFoodPage.Controls.Add(this.cFoodNameLabel);
             this.cFoodPage.Controls.Add(this.cFoodGrid);
-            this.cFoodPage.Location = new System.Drawing.Point(4, 26);
+            this.cFoodPage.Location = new System.Drawing.Point(4, 29);
             this.cFoodPage.Margin = new System.Windows.Forms.Padding(4);
             this.cFoodPage.Name = "cFoodPage";
             this.cFoodPage.Padding = new System.Windows.Forms.Padding(4);
-            this.cFoodPage.Size = new System.Drawing.Size(1446, 760);
+            this.cFoodPage.Size = new System.Drawing.Size(1446, 757);
             this.cFoodPage.TabIndex = 5;
             this.cFoodPage.Text = "Food";
             // 
@@ -1048,7 +1055,7 @@
             this.cFoodIdNumLabel.AutoSize = true;
             this.cFoodIdNumLabel.Location = new System.Drawing.Point(258, 34);
             this.cFoodIdNumLabel.Name = "cFoodIdNumLabel";
-            this.cFoodIdNumLabel.Size = new System.Drawing.Size(16, 17);
+            this.cFoodIdNumLabel.Size = new System.Drawing.Size(18, 20);
             this.cFoodIdNumLabel.TabIndex = 15;
             this.cFoodIdNumLabel.Text = "0";
             // 
@@ -1057,7 +1064,7 @@
             this.cFoodIdLabel.AutoSize = true;
             this.cFoodIdLabel.Location = new System.Drawing.Point(174, 34);
             this.cFoodIdLabel.Name = "cFoodIdLabel";
-            this.cFoodIdLabel.Size = new System.Drawing.Size(65, 17);
+            this.cFoodIdLabel.Size = new System.Drawing.Size(78, 20);
             this.cFoodIdLabel.TabIndex = 14;
             this.cFoodIdLabel.Text = "FoodID : ";
             // 
@@ -1076,14 +1083,14 @@
             // 
             this.cFoodRetailNumUpDownBox.Location = new System.Drawing.Point(178, 299);
             this.cFoodRetailNumUpDownBox.Name = "cFoodRetailNumUpDownBox";
-            this.cFoodRetailNumUpDownBox.Size = new System.Drawing.Size(263, 23);
+            this.cFoodRetailNumUpDownBox.Size = new System.Drawing.Size(263, 27);
             this.cFoodRetailNumUpDownBox.TabIndex = 9;
             // 
             // cFoodSupPriceNumUpDownBox
             // 
             this.cFoodSupPriceNumUpDownBox.Location = new System.Drawing.Point(178, 228);
             this.cFoodSupPriceNumUpDownBox.Name = "cFoodSupPriceNumUpDownBox";
-            this.cFoodSupPriceNumUpDownBox.Size = new System.Drawing.Size(263, 23);
+            this.cFoodSupPriceNumUpDownBox.Size = new System.Drawing.Size(263, 27);
             this.cFoodSupPriceNumUpDownBox.TabIndex = 8;
             // 
             // cFoodSuplierComboBox
@@ -1091,14 +1098,14 @@
             this.cFoodSuplierComboBox.FormattingEnabled = true;
             this.cFoodSuplierComboBox.Location = new System.Drawing.Point(178, 153);
             this.cFoodSuplierComboBox.Name = "cFoodSuplierComboBox";
-            this.cFoodSuplierComboBox.Size = new System.Drawing.Size(263, 25);
+            this.cFoodSuplierComboBox.Size = new System.Drawing.Size(263, 28);
             this.cFoodSuplierComboBox.TabIndex = 7;
             // 
             // cFoodNameTextBox
             // 
             this.cFoodNameTextBox.Location = new System.Drawing.Point(178, 86);
             this.cFoodNameTextBox.Name = "cFoodNameTextBox";
-            this.cFoodNameTextBox.Size = new System.Drawing.Size(263, 23);
+            this.cFoodNameTextBox.Size = new System.Drawing.Size(263, 27);
             this.cFoodNameTextBox.TabIndex = 6;
             // 
             // cFoodRetailPriceLabel
@@ -1106,7 +1113,7 @@
             this.cFoodRetailPriceLabel.AutoSize = true;
             this.cFoodRetailPriceLabel.Location = new System.Drawing.Point(50, 306);
             this.cFoodRetailPriceLabel.Name = "cFoodRetailPriceLabel";
-            this.cFoodRetailPriceLabel.Size = new System.Drawing.Size(92, 17);
+            this.cFoodRetailPriceLabel.Size = new System.Drawing.Size(111, 20);
             this.cFoodRetailPriceLabel.TabIndex = 5;
             this.cFoodRetailPriceLabel.Text = "Retail Price : ";
             // 
@@ -1115,7 +1122,7 @@
             this.cFoodSupPriceLabel.AutoSize = true;
             this.cFoodSupPriceLabel.Location = new System.Drawing.Point(32, 228);
             this.cFoodSupPriceLabel.Name = "cFoodSupPriceLabel";
-            this.cFoodSupPriceLabel.Size = new System.Drawing.Size(108, 17);
+            this.cFoodSupPriceLabel.Size = new System.Drawing.Size(129, 20);
             this.cFoodSupPriceLabel.TabIndex = 4;
             this.cFoodSupPriceLabel.Text = "Supplier Price : ";
             // 
@@ -1124,7 +1131,7 @@
             this.cFoodSupLabel.AutoSize = true;
             this.cFoodSupLabel.Location = new System.Drawing.Point(76, 159);
             this.cFoodSupLabel.Name = "cFoodSupLabel";
-            this.cFoodSupLabel.Size = new System.Drawing.Size(72, 17);
+            this.cFoodSupLabel.Size = new System.Drawing.Size(85, 20);
             this.cFoodSupLabel.TabIndex = 3;
             this.cFoodSupLabel.Text = "Supplier : ";
             // 
@@ -1133,7 +1140,7 @@
             this.cFoodNameLabel.AutoSize = true;
             this.cFoodNameLabel.Location = new System.Drawing.Point(51, 86);
             this.cFoodNameLabel.Name = "cFoodNameLabel";
-            this.cFoodNameLabel.Size = new System.Drawing.Size(93, 17);
+            this.cFoodNameLabel.Size = new System.Drawing.Size(110, 20);
             this.cFoodNameLabel.TabIndex = 2;
             this.cFoodNameLabel.Text = "Food Name : ";
             // 
@@ -1160,35 +1167,35 @@
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn1.HeaderText = "FoodID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 78;
+            this.dataGridViewTextBoxColumn1.Width = 92;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn2.HeaderText = "SupplierID";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 98;
+            this.dataGridViewTextBoxColumn2.Width = 116;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn6.HeaderText = "Food Name";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 106;
+            this.dataGridViewTextBoxColumn6.Width = 124;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn7.HeaderText = "Supplier Price";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 121;
+            this.dataGridViewTextBoxColumn7.Width = 143;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn8.HeaderText = "Retail Price";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 105;
+            this.dataGridViewTextBoxColumn8.Width = 125;
             // 
             // cSupplierPage
             // 
@@ -1200,11 +1207,11 @@
             this.cSupplierPage.Controls.Add(this.cSupNameTextBox);
             this.cSupplierPage.Controls.Add(this.cSupNameLabel);
             this.cSupplierPage.Controls.Add(this.cSupplierGrid);
-            this.cSupplierPage.Location = new System.Drawing.Point(4, 26);
+            this.cSupplierPage.Location = new System.Drawing.Point(4, 29);
             this.cSupplierPage.Margin = new System.Windows.Forms.Padding(4);
             this.cSupplierPage.Name = "cSupplierPage";
             this.cSupplierPage.Padding = new System.Windows.Forms.Padding(4);
-            this.cSupplierPage.Size = new System.Drawing.Size(1446, 760);
+            this.cSupplierPage.Size = new System.Drawing.Size(1446, 757);
             this.cSupplierPage.TabIndex = 6;
             this.cSupplierPage.Text = "Suppliers";
             // 
@@ -1224,7 +1231,7 @@
             this.cSupplierIdNumLabel.AutoSize = true;
             this.cSupplierIdNumLabel.Location = new System.Drawing.Point(282, 37);
             this.cSupplierIdNumLabel.Name = "cSupplierIdNumLabel";
-            this.cSupplierIdNumLabel.Size = new System.Drawing.Size(16, 17);
+            this.cSupplierIdNumLabel.Size = new System.Drawing.Size(18, 20);
             this.cSupplierIdNumLabel.TabIndex = 16;
             this.cSupplierIdNumLabel.Text = "0";
             // 
@@ -1233,7 +1240,7 @@
             this.cSupplierIDLabel.AutoSize = true;
             this.cSupplierIDLabel.Location = new System.Drawing.Point(174, 37);
             this.cSupplierIDLabel.Name = "cSupplierIDLabel";
-            this.cSupplierIDLabel.Size = new System.Drawing.Size(85, 17);
+            this.cSupplierIDLabel.Size = new System.Drawing.Size(102, 20);
             this.cSupplierIDLabel.TabIndex = 15;
             this.cSupplierIDLabel.Text = "SupplierID : ";
             // 
@@ -1252,7 +1259,7 @@
             // 
             this.cSupNameTextBox.Location = new System.Drawing.Point(178, 98);
             this.cSupNameTextBox.Name = "cSupNameTextBox";
-            this.cSupNameTextBox.Size = new System.Drawing.Size(246, 23);
+            this.cSupNameTextBox.Size = new System.Drawing.Size(246, 27);
             this.cSupNameTextBox.TabIndex = 2;
             // 
             // cSupNameLabel
@@ -1260,7 +1267,7 @@
             this.cSupNameLabel.AutoSize = true;
             this.cSupNameLabel.Location = new System.Drawing.Point(21, 98);
             this.cSupNameLabel.Name = "cSupNameLabel";
-            this.cSupNameLabel.Size = new System.Drawing.Size(113, 17);
+            this.cSupNameLabel.Size = new System.Drawing.Size(134, 20);
             this.cSupNameLabel.TabIndex = 1;
             this.cSupNameLabel.Text = "Supplier Name : ";
             // 
@@ -1284,18 +1291,18 @@
             this.SupID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.SupID.HeaderText = "SupplierID";
             this.SupID.Name = "SupID";
-            this.SupID.Width = 98;
+            this.SupID.Width = 116;
             // 
             // SupName
             // 
             this.SupName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.SupName.HeaderText = "Supplier Name";
             this.SupName.Name = "SupName";
-            this.SupName.Width = 126;
+            this.SupName.Width = 148;
             // 
             // cDataBaseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1282, 826);

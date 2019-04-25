@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS Employees.Employee
 CREATE TABLE Employees.Employee
 (
 	PersonID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,

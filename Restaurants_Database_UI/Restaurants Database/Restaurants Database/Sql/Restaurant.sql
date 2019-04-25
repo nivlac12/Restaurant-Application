@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS Restaurants.Restaurant
 CREATE TABLE Restaurants.Restaurant
 (
 	RestaurantID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,

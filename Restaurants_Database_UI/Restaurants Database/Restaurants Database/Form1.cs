@@ -39,6 +39,9 @@ namespace Restaurants_Database
             Organization org = o.GetOrganization(13);
             MessageBox.Show(org.OrganizationName);
             MessageBox.Show(l.ToString());
+
+            cRestOrgComboBox.Items.Add(cOrgNameTextBox.Text);
+
         }
 
         private void cRestNameLabel_Click(object sender, EventArgs e)
@@ -108,7 +111,7 @@ namespace Restaurants_Database
 
         private void cRestAddButton_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void cRestEditButton_Click(object sender, EventArgs e)
@@ -127,6 +130,21 @@ namespace Restaurants_Database
         }
 
         private void cOrgPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cRestOrgComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cRestOpComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cRestNameTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
