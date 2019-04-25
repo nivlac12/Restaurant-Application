@@ -149,7 +149,13 @@ namespace Restaurants_Database
 
         private void cEmployeeAddButton_Click(object sender, EventArgs e)
         {
+            Restaurant r = _rest.GetRestaurant(cEmployRestComboBox.Items[cEmployRestComboBox.SelectedIndex].ToString());
+            Jobs j = _jobs.GetJobs(cEmployJobTitleComboBox.Items[cEmployJobTitleComboBox.SelectedIndex].ToString());
+            Employee employee = _emp.CreateEmployee(r.RestaurantID, j.JobTitleID, cEmployeeNameTextBox.Text, "Senior");
 
+
+            //Restaurant r = _rest.CreateRestaurant(o.OrganizationID, cRestNameTextBox.Text, cDateFoundedTextBox.Text, isOp);
+            restListBox.Items.Add(r.RestaurantName);
         }
 
         private void cEmployeesEditButton_Click(object sender, EventArgs e)
