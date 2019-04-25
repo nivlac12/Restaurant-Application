@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE Employee.RetrieveJobs
+﻿CREATE OR ALTER PROCEDURE Employees.RetrieveJobs
 AS
 
 SELECT J.JobTitleID, J.JobName, J.Salary

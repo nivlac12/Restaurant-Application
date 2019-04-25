@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE Suppliers.RetrieveSuppliers
+﻿CREATE OR ALTER PROCEDURE Supplier.RetrieveSuppliers
 AS
 
 SELECT S.SupplierID, S.[Name]

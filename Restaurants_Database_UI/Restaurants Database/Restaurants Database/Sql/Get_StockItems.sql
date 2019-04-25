@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE Inventory.GetStockItems
+﻿CREATE OR ALTER PROCEDURE Inventory.GetStockItem
    @InventoryID INT
 AS
 

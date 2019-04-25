@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE Employee.GetEmployees
+﻿CREATE OR ALTER PROCEDURE Employees.GetEmployee
    @PersonID INT
 AS
 

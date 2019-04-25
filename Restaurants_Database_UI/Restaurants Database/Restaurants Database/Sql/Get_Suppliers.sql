@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE Supplier.GetSuppliers
+﻿CREATE OR ALTER PROCEDURE Supplier.GetSupplier
    @SupplierID INT
 AS
 

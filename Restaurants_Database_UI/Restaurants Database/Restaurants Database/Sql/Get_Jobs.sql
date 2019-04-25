@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE Restaurants.GetOrganization
+﻿CREATE OR ALTER PROCEDURE Employees.GetJob
    @JobTitleID INT
 AS
 

@@ -5,7 +5,7 @@ CREATE OR ALTER PROCEDURE Inventory.CreateStockItem
    @InventoryID INT OUTPUT
 AS
 
-INSERT Inventory.StockItems(FoodID, RestaurantID, Quanitity)
+INSERT Inventory.StockItems(FoodID, RestaurantID, Quantity)
 VALUES(@FoodID, @RestaurantID, @Quantity);
 
 SET @InventoryID = SCOPE_IDENTITY();
