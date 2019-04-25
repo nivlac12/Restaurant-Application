@@ -52,7 +52,7 @@ namespace Restaurants_Database
             }
         }
 
-        public StockItems GetStockItems(int inventoryID)
+        public StockItems GetStockItems(int foodID, int restID)
         {
             using (var connection = new SqlConnection(connectionString))
             {
@@ -62,8 +62,8 @@ namespace Restaurants_Database
 
                     //Name of Primary Key is what we pass in, everything else
                     //we get from the SQL
-                    command.Parameters.AddWithValue("inventoryID", inventoryID);
-
+                    command.Parameters.AddWithValue("FoodID", foodID);
+                    command.Parameters.AddWithValue("Restaurant", restID);
                     connection.Open();
 
                     var reader = command.ExecuteReader();
@@ -71,7 +71,7 @@ namespace Restaurants_Database
                     if (!reader.Read())
                         return null;
 
-                    return new StockItems(inventoryID,
+                    return new StockItems(reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("InventoryID"))),
                         reader.GetInt32(reader.GetOrdinal("FoodID")),
                         reader.GetInt32(reader.GetOrdinal("ResturantID")),
                         reader.GetInt32(reader.GetOrdinal("QuantityID")));

@@ -52,7 +52,7 @@ namespace Restaurants_Database
             }
         }
 
-        public Suppliers GetSuppliersn(int suppID)
+        public Suppliers GetSuppliersn(string suppName)
         {
             using (var connection = new SqlConnection(connectionString))
             {
@@ -62,7 +62,7 @@ namespace Restaurants_Database
 
                     //Name of Primary Key is what we pass in, everything else
                     //we get from the SQL
-                    command.Parameters.AddWithValue("SuppliersID", suppID);
+                    command.Parameters.AddWithValue("SuppliersName", suppName);
 
                     connection.Open();
 
@@ -71,7 +71,7 @@ namespace Restaurants_Database
                     if (!reader.Read())
                         return null;
 
-                    return new Suppliers(suppID,
+                    return new Suppliers(reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("SupplierID"))),
                        reader.GetString(reader.GetOrdinal("SuppliersName")));
                 }
             }

@@ -1,8 +1,8 @@
 ﻿CREATE OR ALTER PROCEDURE Inventory.GetStockItem
-   @InventoryID INT
+   @InventoryName NVARCHAR(128)
 AS
 
-SELECT SI.FoodID, SI.RestaurantID, SI.Quantity
+SELECT SI.InventoryID, SI.FoodID, SI.RestaurantID, SI.Quantity
 FROM Inventory.StockItems SI
-WHERE SI.InventoryID = @InventoryID;
+WHERE SI.InventoryName = @InventoryName;
 GO

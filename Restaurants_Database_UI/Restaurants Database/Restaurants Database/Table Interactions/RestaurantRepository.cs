@@ -54,7 +54,7 @@ namespace Restaurants_Database
             }
         }
 
-        public Restaurant GetRestaurant(int restID)
+        public Restaurant GetRestaurant(string restName)
         {
             using (var connection = new SqlConnection(connectionString))
             {
@@ -64,7 +64,7 @@ namespace Restaurants_Database
 
                     //Name of Primary Key is what we pass in, everything else
                     //we get from the SQL
-                    command.Parameters.AddWithValue("RestaurantID", restID);
+                    command.Parameters.AddWithValue("RestaurantName", restName);
 
                     connection.Open();
 
@@ -73,7 +73,7 @@ namespace Restaurants_Database
                     if (!reader.Read())
                         return null;
 
-                    return new Restaurant(restID,
+                    return new Restaurant(reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("RestaurantID"))),
                        reader.GetInt32(reader.GetOrdinal("OrganizationID")),
                        reader.GetString(reader.GetOrdinal("RestaurantName")),
                        reader.GetString(reader.GetOrdinal("DateFounded")),

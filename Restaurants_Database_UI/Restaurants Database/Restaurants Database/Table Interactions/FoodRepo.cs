@@ -54,7 +54,7 @@ namespace Restaurants_Database
             }
         }
 
-        public Food GetFood(int foodID)
+        public Food GetFood(string foodName)
         {
             using (var connection = new SqlConnection(connectionString))
             {
@@ -64,7 +64,7 @@ namespace Restaurants_Database
 
                     //Name of Primary Key is what we pass in, everything else
                     //we get from the SQL
-                    command.Parameters.AddWithValue("FoodID", foodID);
+                    command.Parameters.AddWithValue("FoodName", foodName);
 
                     connection.Open();
 
@@ -73,7 +73,7 @@ namespace Restaurants_Database
                     if (!reader.Read())
                         return null;
 
-                    return new Food(foodID,
+                    return new Food(reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("FoodID"))),
                        reader.GetInt32(reader.GetOrdinal("SupplierID")),
                        reader.GetString(reader.GetOrdinal("FoodName")),
                        reader.GetDecimal(reader.GetOrdinal("SupplierPrice")),

@@ -1,8 +1,8 @@
 ﻿CREATE OR ALTER PROCEDURE Employees.GetJob
-   @JobTitleID INT
+   @JobName NVARCHAR(128)
 AS
 
-SELECT  J.JobName, J.Salary
+SELECT  J.JobTitleID, J.Salary
 FROM Employee.Jobs J
-WHERE J.JobTitleID = @JobTitleID;
+WHERE J.JobTitleName = @JobTitleName;
 GO

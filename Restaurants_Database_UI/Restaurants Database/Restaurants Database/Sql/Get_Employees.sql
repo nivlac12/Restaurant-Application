@@ -1,8 +1,8 @@
 ﻿CREATE OR ALTER PROCEDURE Employees.GetEmployee
-   @PersonID INT
+   @PersonName NVARCHAR(128)
 AS
 
-SELECT E.RestaurantID, E.JobTitleID, E.[Name], E.Seniority
+SELECT E.PersonID, E.RestaurantID, E.JobTitleID, E.Seniority
 FROM Employees.Employee E
-WHERE E.PersonID = @PersonID;
+WHERE E.PersonName = @PersonName;
 GO

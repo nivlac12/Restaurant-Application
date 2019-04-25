@@ -1,8 +1,8 @@
 ﻿CREATE OR ALTER PROCEDURE Food.GetFood
-   @FoodID INT
+   @FoodName NVARCHAR(128)
 AS
 
-SELECT F.FoodID, F.SupplierID, F.[FoodName], F.SupplierPrice, F.RetailPrice
+SELECT F.FoodID, F.SupplierID, F.SupplierPrice, F.RetailPrice
 FROM Food.Food F
-WHERE F.FoodID = @FoodID;
+WHERE F.FoodName = @FoodName;
 GO

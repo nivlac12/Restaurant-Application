@@ -54,7 +54,7 @@ namespace Restaurants_Database
             }
         }
 
-        public Employee GetEmployee(int empID)
+        public Employee GetEmployee(string empName)
         {
             using (var connection = new SqlConnection(connectionString))
             {
@@ -64,7 +64,7 @@ namespace Restaurants_Database
 
                     //Name of Primary Key is what we pass in, everything else
                     //we get from the SQL
-                    command.Parameters.AddWithValue("PersonID", empID);
+                    command.Parameters.AddWithValue("EmployeeName", empName);
 
                     connection.Open();
 
@@ -73,7 +73,7 @@ namespace Restaurants_Database
                     if (!reader.Read())
                         return null;
 
-                    return new Employee(empID,
+                    return new Employee(reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("PersonID"))),
                        reader.GetInt32(reader.GetOrdinal("RestaurantID")),
                        reader.GetInt32(reader.GetOrdinal("JobTitleID")),
                        reader.GetString(reader.GetOrdinal("EmployeeName")),

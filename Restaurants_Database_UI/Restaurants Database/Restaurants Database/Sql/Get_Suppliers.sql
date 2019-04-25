@@ -1,8 +1,8 @@
 ﻿CREATE OR ALTER PROCEDURE Supplier.GetSupplier
-   @SupplierID INT
+   @SupplierName NVARCHAR(128)
 AS
 
-SELECT S.[Name]
+SELECT S.SupplierID
 FROM Supplier.Suppliers S
-WHERE S.SupplierID = @SupplierID;
+WHERE S.SupplierName = @SupplierName;
 GO
