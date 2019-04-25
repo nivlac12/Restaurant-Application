@@ -9,7 +9,7 @@ namespace Restaurants_Database
     class Employee
     {
         public int PersonID { get; }
-        public int ResturantID { get; }
+        public int RestaurantID { get; }
         public int JobTitleID { get; }
         public string EmployeeName { get; }
         public string Seniority { get; }
@@ -17,7 +17,7 @@ namespace Restaurants_Database
         public Employee(int personID, int restID, int jTID, string empName, string senior)
         {
             PersonID = personID;
-            ResturantID = restID;
+            RestaurantID = restID;
             JobTitleID = jTID;
             EmployeeName = empName;
             Seniority = senior;
