@@ -83,6 +83,34 @@ namespace Restaurants_Database
             }
         }
 
+        public Restaurant GetRestaurantByID(int restID)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("Restaurants.GetRestaurantByID", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    //Name of Primary Key is what we pass in, everything else
+                    //we get from the SQL
+                    command.Parameters.AddWithValue("RestaurantName", restID);
+
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+
+                    if (!reader.Read())
+                        return null;
+
+                    return new Restaurant(restID,
+                       reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("OrganizationID"))),
+                       reader.GetString(reader.GetOrdinal("RestaurantID")),
+                       reader.GetDateTimeOffset(reader.GetOrdinal("DateFounded")).ToString(),
+                       reader.GetBoolean(reader.GetOrdinal("IsOperational")));
+                }
+            }
+        }
+
         public IReadOnlyList<Restaurant> RetrieveRestaurants()
         {
             using (var connection = new SqlConnection(connectionString))

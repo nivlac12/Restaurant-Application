@@ -2,5 +2,5 @@
 AS
 
 SELECT J.JobTitleID, J.JobName, J.Salary
-FROM Employee.Jobs J
+FROM Employees.Jobs J
 GO

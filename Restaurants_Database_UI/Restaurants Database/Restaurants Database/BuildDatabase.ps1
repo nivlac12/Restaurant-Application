@@ -37,5 +37,7 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Retrie
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Retrieve_StockItems.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Retrieve_Suppliers.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Get_Org_By_ID.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Get_Restaurant_By_ID.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Get_Job_By_ID.sql"
 
 Write-Host "Done"

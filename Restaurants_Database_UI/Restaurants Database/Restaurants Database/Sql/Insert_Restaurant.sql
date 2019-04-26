@@ -8,7 +8,8 @@ AS
 
 SET @DateFounded = SYSDATETIMEOFFSET();
 INSERT Restaurants.Restaurant(OrganizationID, RestaurantName, DateFounded, IsOperational)
-VALUES(@OrganizationID, @RestaurantName, @DateFounded, @IsOperational);
+VALUES(@OrganizationID, @RestaurantName, @DateFounded, @IsOperational)
 
+--SET @RestaurantID = IDENT_CURRENT('Restaurants.Restaurant');
 SET @RestaurantID = SCOPE_IDENTITY();
 GO

@@ -12,9 +12,9 @@ namespace Restaurants_Database
         public int RestaurantID { get; }
         public int JobTitleID { get; }
         public string EmployeeName { get; }
-        public string Seniority { get; }
+        public int Seniority { get; }
 
-        public Employee(int personID, int restID, int jTID, string empName, string senior)
+        public Employee(int personID, int restID, int jTID, string empName, int senior)
         {
             PersonID = personID;
             RestaurantID = restID;

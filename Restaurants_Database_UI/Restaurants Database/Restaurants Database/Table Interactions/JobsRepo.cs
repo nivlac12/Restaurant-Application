@@ -8,7 +8,7 @@ namespace Restaurants_Database
 {
     class JobsRepo
     {
-        const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=nivlac12;Integrated Security=SSPI;";
+        const string connectionString = @"Server=mssql.cs.ksu.edu;Database=nivlac12;Integrated Security=SSPI;";
         public void initJobs()
         {
             Jobs[] jobs = { };
@@ -25,7 +25,7 @@ namespace Restaurants_Database
                 using (var connection = new SqlConnection(connectionString))
                 {
                     //Set the string parameter to call the appropriate sql function
-                    using (var command = new SqlCommand("Restaurants.Insert_Organization", connection))
+                    using (var command = new SqlCommand("Employees.CreateJob", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
@@ -55,7 +55,7 @@ namespace Restaurants_Database
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                using (var command = new SqlCommand("Restaurants.GetOrganization", connection))
+                using (var command = new SqlCommand("Employees.GetJob", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
@@ -81,7 +81,7 @@ namespace Restaurants_Database
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                using (var command = new SqlCommand("Restaurants.RetrieveJobs", connection))
+                using (var command = new SqlCommand("Employees.RetrieveJobs", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 

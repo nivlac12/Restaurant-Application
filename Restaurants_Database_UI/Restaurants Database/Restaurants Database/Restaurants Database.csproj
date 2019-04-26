@@ -103,9 +103,11 @@
     <Content Include="Sql\Get_Employees.sql" />
     <Content Include="Sql\Get_Food.sql" />
     <Content Include="Sql\Get_Jobs.sql" />
+    <Content Include="Sql\Get_Job_By_ID.sql" />
     <Content Include="Sql\Get_Organization.sql" />
     <Content Include="Sql\Get_Org_By_ID.sql" />
     <Content Include="Sql\Get_Restaurant.sql" />
+    <Content Include="Sql\Get_Restaurant_By_ID.sql" />
     <Content Include="Sql\Get_StockItems.sql" />
     <Content Include="Sql\Get_Suppliers.sql" />
     <Content Include="Sql\Insert_Employee.sql" />

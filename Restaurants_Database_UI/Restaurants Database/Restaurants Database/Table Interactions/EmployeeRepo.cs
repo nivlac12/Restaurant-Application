@@ -18,7 +18,7 @@ namespace Restaurants_Database
             }
         }
 
-        public Employee CreateEmployee(int RestaurantID, int JobTitleID, string EmployeeName, string Seniority)
+        public Employee CreateEmployee(int RestaurantID, int JobTitleID, string EmployeeName, int Seniority)
         {
             using (var transaction = new TransactionScope())
             {
@@ -77,7 +77,7 @@ namespace Restaurants_Database
                        reader.GetInt32(reader.GetOrdinal("RestaurantID")),
                        reader.GetInt32(reader.GetOrdinal("JobTitleID")),
                        reader.GetString(reader.GetOrdinal("EmployeeName")),
-                       reader.GetString(reader.GetOrdinal("Seniority")));
+                       reader.GetInt32(reader.GetOrdinal("Seniority")));
                 }
             }
         }
@@ -103,7 +103,7 @@ namespace Restaurants_Database
                         reader.GetInt32(reader.GetOrdinal("RestaurantID")),
                         reader.GetInt32(reader.GetOrdinal("JobTitleID")),
                         reader.GetString(reader.GetOrdinal("EmployeeName")),
-                        reader.GetString(reader.GetOrdinal("Seniority"))));
+                        reader.GetInt32(reader.GetOrdinal("Seniority"))));
                     }
 
                     return emp;
