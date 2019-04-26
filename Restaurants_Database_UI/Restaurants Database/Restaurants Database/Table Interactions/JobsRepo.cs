@@ -9,14 +9,6 @@ namespace Restaurants_Database
     class JobsRepo
     {
         const string connectionString = @"Server=mssql.cs.ksu.edu;Database=nivlac12;Integrated Security=SSPI;";
-        public void initJobs()
-        {
-            Jobs[] jobs = { };
-            foreach (Jobs j in jobs)
-            {
-                CreateJobs(j.JobName,j.Salary);
-            }
-        }
 
         public Jobs CreateJobs(string JobName, decimal Salary)
         {
@@ -71,6 +63,32 @@ namespace Restaurants_Database
                         return null;
 
                     return new Jobs(reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("JobTitleID"))),
+                       jobName,
+                       reader.GetDecimal(reader.GetOrdinal("Salary")));
+                }
+            }
+        }
+
+        public Jobs GetJobByID(int jobID)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("Employees.GetJobByID", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    //Name of Primary Key is what we pass in, everything else
+                    //we get from the SQL
+                    command.Parameters.AddWithValue("JobID", jobID);
+
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+
+                    if (!reader.Read())
+                        return null;
+
+                    return new Jobs(jobID,
                        reader.GetString(reader.GetOrdinal("JobName")),
                        reader.GetDecimal(reader.GetOrdinal("Salary")));
                 }

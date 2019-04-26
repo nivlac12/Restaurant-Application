@@ -3,20 +3,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Transactions;
+using System.IO;
 
 namespace Restaurants_Database
 {
     class EmployeeRepo
     {
         const string connectionString = @"Server=mssql.cs.ksu.edu;Database=nivlac12;Integrated Security=SSPI;";
-        public void initEmp()
-        {
-            Employee[] emp = { };
-            foreach (Employee e in emp)
-            {
-                CreateEmployee(e.RestaurantID, e.JobTitleID, e.EmployeeName, e.Seniority);
-            }
-        }
+
 
         public Employee CreateEmployee(int RestaurantID, int JobTitleID, string EmployeeName, int Seniority)
         {
@@ -31,10 +25,10 @@ namespace Restaurants_Database
 
                         //Hardcode this attribute because it is not an output parameter, rather
                         //we have to pass it into the function ourselves
-                        command.Parameters.AddWithValue("OrganizationID", RestaurantID);
-                        command.Parameters.AddWithValue("RestaurantNamee", JobTitleID);
-                        command.Parameters.AddWithValue("IsOperational", EmployeeName);
-                        command.Parameters.AddWithValue("IsOperational", Seniority);
+                        command.Parameters.AddWithValue("RestaurantID", RestaurantID);
+                        command.Parameters.AddWithValue("JobTitleID", JobTitleID);
+                        command.Parameters.AddWithValue("Name", EmployeeName);
+                        command.Parameters.AddWithValue("Seniority", Seniority);
 
                         //The next two parameters are output parameters, so instead of hardcoding
                         //these we initialize them and we'll get the values from the function
@@ -64,7 +58,7 @@ namespace Restaurants_Database
 
                     //Name of Primary Key is what we pass in, everything else
                     //we get from the SQL
-                    command.Parameters.AddWithValue("EmployeeName", empName);
+                    command.Parameters.AddWithValue("PersonName", empName);
 
                     connection.Open();
 
@@ -76,7 +70,7 @@ namespace Restaurants_Database
                     return new Employee(reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("PersonID"))),
                        reader.GetInt32(reader.GetOrdinal("RestaurantID")),
                        reader.GetInt32(reader.GetOrdinal("JobTitleID")),
-                       reader.GetString(reader.GetOrdinal("EmployeeName")),
+                       empName,
                        reader.GetInt32(reader.GetOrdinal("Seniority")));
                 }
             }
@@ -102,7 +96,7 @@ namespace Restaurants_Database
                         reader.GetInt32(reader.GetOrdinal("PersonID")),
                         reader.GetInt32(reader.GetOrdinal("RestaurantID")),
                         reader.GetInt32(reader.GetOrdinal("JobTitleID")),
-                        reader.GetString(reader.GetOrdinal("EmployeeName")),
+                        reader.GetString(reader.GetOrdinal("Name")),
                         reader.GetInt32(reader.GetOrdinal("Seniority"))));
                     }
 

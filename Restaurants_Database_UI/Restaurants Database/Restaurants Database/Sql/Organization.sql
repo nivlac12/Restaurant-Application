@@ -2,6 +2,6 @@ DROP TABLE IF EXISTS Restaurants.Organization
 CREATE TABLE Restaurants.Organization
 (
 	OrganizationID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	OrganizationName NVARCHAR(128) NOT NULL,
+	OrganizationName NVARCHAR(128) NOT NULL UNIQUE,
 	DateFounded DATETIMEOFFSET NOT NULL DEFAULT (SYSDATETIMEOFFSET())
 )

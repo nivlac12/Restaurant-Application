@@ -17,6 +17,7 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Food.s
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\StockItems.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Insert_Suppliers.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Insert_Organization.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Insert_Employee.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Insert_Food.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Insert_Jobs.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Insert_Restaurant.sql"

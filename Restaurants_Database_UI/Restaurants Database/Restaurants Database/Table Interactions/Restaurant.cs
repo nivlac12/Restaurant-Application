@@ -16,7 +16,7 @@ namespace Restaurants_Database
 
         public Restaurant(int restID, int orgID, string restName, string date, bool isop)
         {
-            RestaurantID = RestaurantID;
+            RestaurantID = restID;
             OrganizationID = orgID;
             RestaurantName = restName;
             DateFounded = date;

@@ -9,14 +9,7 @@ namespace Restaurants_Database
     class OrganizationRepo
     {
         const string connectionString = @"Server=mssql.cs.ksu.edu;Database=nivlac12;Integrated Security=SSPI;";
-        public void initOrgs()
-        {
-            string[] orgs = { "Berkshire Hathaway", "McDonald's Corp", "Restaurant Brands International" };
-            foreach(string org in orgs)
-            {
-                CreateOrganization(org);
-            }
-        }
+
 
         public Organization CreateOrganization(string OrganizationName)
         {

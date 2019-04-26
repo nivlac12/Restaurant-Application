@@ -29,17 +29,22 @@ namespace Restaurants_Database
             _stock = new StockItemsRepo();
             _emp = new EmployeeRepo();
             _suppliers = new SuppliersRepo();
+            Init_Tables init = new Init_Tables();
 
             InitializeComponent();
 
             cRestOrgComboBox.Items.Clear();
 
-
+            init.initOrgs(_org);
+            init.initRests(_rest);
+            init.initJobs(_jobs);
 
             IReadOnlyList<Organization> orgs = _org.RetrieveOrganizations();
             IReadOnlyList<Restaurant> rests = _rest.RetrieveRestaurants();
-            IReadOnlyList<Employee> emps = _emp.RetrieveEmployee();
             IReadOnlyList<Jobs> jobs = _jobs.RetrieveJobs();
+            init.initEmp(_emp, rests, jobs);
+            IReadOnlyList<Employee> emps = _emp.RetrieveEmployee();
+
 
             foreach (var org in orgs)
             {
@@ -53,8 +58,8 @@ namespace Restaurants_Database
             }
             foreach (var emp in emps)
             {
-                cEmployRestComboBox.Items.Add(emp.EmployeeName);
-                restListBox.Items.Add(emp.EmployeeName);
+                empListBox.Items.Add(emp.EmployeeName);
+                //restListBox.Items.Add(emp.EmployeeName);
             }
             foreach (var job in jobs)
             {
@@ -165,8 +170,7 @@ namespace Restaurants_Database
             cPersonIdNumLabel.Text = employee.PersonID.ToString();
             cEmployRestComboBox.Text = cEmployRestComboBox.Items[cEmployRestComboBox.SelectedIndex].ToString(); ;
             cEmployJobTitleComboBox.Text = cEmployJobTitleComboBox.Items[cEmployJobTitleComboBox.SelectedIndex].ToString();
-
-            restListBox.Items.Add(r.RestaurantName);
+            empListBox.Items.Add(employee.EmployeeName);
         }
 
         private void cEmployeesEditButton_Click(object sender, EventArgs e)
@@ -178,7 +182,7 @@ namespace Restaurants_Database
         {
             Organization o = _org.GetOrganization(cRestOrgComboBox.Items[cRestOrgComboBox.SelectedIndex].ToString());
             bool isOp = string.Equals(cRestOpComboBox.Items[cRestOpComboBox.SelectedIndex].ToString(), "Yes") ? true : false;
-            Restaurant r = _rest.CreateRestaurant(o.OrganizationID, cRestNameTextBox.Text, cDateFoundedTextBox.Text, isOp);
+            Restaurant r = _rest.CreateRestaurant(o.OrganizationID, cRestNameTextBox.Text, isOp);
             restListBox.Items.Add(r.RestaurantName);
             cRestIdNumLabel.Text = r.RestaurantID.ToString();
         }
@@ -303,6 +307,24 @@ namespace Restaurants_Database
         private void cRestaurantIdLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void empListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Employee emp = _emp.GetEmployee(empListBox.Items[empListBox.SelectedIndex].ToString());
+            cPersonIdNumLabel.Text = emp.PersonID.ToString();
+            cEmployeeNameTextBox.Text = emp.EmployeeName;
+            cEmployRestComboBox.Text = _rest.GetRestaurantByID(emp.RestaurantID).RestaurantName;
+            seniorityUpDown.Value = emp.Seniority;
+            cEmployJobTitleComboBox.Text = _jobs.GetJobByID(emp.JobTitleID).JobName;
+        }
+
+        private void jobsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Jobs j = _jobs.GetJobs(jobsListBox.Items[jobsListBox.SelectedIndex].ToString());
+            cJobIdNumLabel.Text = j.JobTitleID.ToString();
+            cJobNameTextBox.Text = j.JobName;
+            cJobSalaryNumUpDownBox.Value = j.Salary;
         }
     }
 }

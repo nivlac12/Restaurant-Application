@@ -58,6 +58,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Table Interactions\Init_Tables.cs" />
     <Compile Include="Table Interactions\Jobs.cs" />
     <Compile Include="Table Interactions\JobsRepo.cs" />
     <Compile Include="Table Interactions\Organization.cs" />
@@ -97,6 +98,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Names\firstNames.txt" />
+    <Content Include="Names\lastNames.txt" />
     <Content Include="Sql\Create Schema.sql" />
     <Content Include="Sql\Employees.sql" />
     <Content Include="Sql\Food.sql" />

@@ -122,18 +122,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cTabsControl = new System.Windows.Forms.TabControl();
             this.cAnalysisPage = new System.Windows.Forms.TabPage();
-            this.cSelectRestExpendComboBox = new System.Windows.Forms.ComboBox();
-            this.cCalcRestExpendButton = new System.Windows.Forms.Button();
-            this.cRestExpendResultsTextBox = new System.Windows.Forms.TextBox();
-            this.cRestExpendResultLabel = new System.Windows.Forms.Label();
-            this.cCalcOrgExpendButton = new System.Windows.Forms.Button();
-            this.cCalcSupplierSalesButton = new System.Windows.Forms.Button();
-            this.cOrgExpendResultLabel = new System.Windows.Forms.Label();
-            this.cSupplierSalesLabel = new System.Windows.Forms.Label();
-            this.cOrgExpendResultsTexbox = new System.Windows.Forms.TextBox();
-            this.cSupplierSalesResultsTextBox = new System.Windows.Forms.TextBox();
-            this.cSelectOrgExpendComboBox = new System.Windows.Forms.ComboBox();
             this.cSelectSupplierSalesComboBox = new System.Windows.Forms.ComboBox();
+            this.cSelectOrgExpendComboBox = new System.Windows.Forms.ComboBox();
+            this.cSupplierSalesResultsTextBox = new System.Windows.Forms.TextBox();
+            this.cOrgExpendResultsTexbox = new System.Windows.Forms.TextBox();
+            this.cSupplierSalesLabel = new System.Windows.Forms.Label();
+            this.cOrgExpendResultLabel = new System.Windows.Forms.Label();
+            this.cCalcSupplierSalesButton = new System.Windows.Forms.Button();
+            this.cCalcOrgExpendButton = new System.Windows.Forms.Button();
+            this.cRestExpendResultLabel = new System.Windows.Forms.Label();
+            this.cRestExpendResultsTextBox = new System.Windows.Forms.TextBox();
+            this.cCalcRestExpendButton = new System.Windows.Forms.Button();
+            this.cSelectRestExpendComboBox = new System.Windows.Forms.ComboBox();
             this.cSupplierPage.SuspendLayout();
             this.cFoodPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cFoodRetailNumUpDownBox)).BeginInit();
@@ -570,6 +570,7 @@
             this.jobsListBox.Name = "jobsListBox";
             this.jobsListBox.Size = new System.Drawing.Size(315, 412);
             this.jobsListBox.TabIndex = 18;
+            this.jobsListBox.SelectedIndexChanged += new System.EventHandler(this.jobsListBox_SelectedIndexChanged);
             // 
             // cJobsEditButton
             // 
@@ -708,6 +709,7 @@
             this.empListBox.Name = "empListBox";
             this.empListBox.Size = new System.Drawing.Size(315, 412);
             this.empListBox.TabIndex = 19;
+            this.empListBox.SelectedIndexChanged += new System.EventHandler(this.empListBox_SelectedIndexChanged);
             // 
             // cEmployeesEditButton
             // 
@@ -1167,52 +1169,55 @@
             this.cAnalysisPage.TabIndex = 7;
             this.cAnalysisPage.Text = "Analysis";
             // 
-            // cSelectRestExpendComboBox
+            // cSelectSupplierSalesComboBox
             // 
-            this.cSelectRestExpendComboBox.FormattingEnabled = true;
-            this.cSelectRestExpendComboBox.Location = new System.Drawing.Point(112, 193);
-            this.cSelectRestExpendComboBox.Name = "cSelectRestExpendComboBox";
-            this.cSelectRestExpendComboBox.Size = new System.Drawing.Size(233, 25);
-            this.cSelectRestExpendComboBox.TabIndex = 0;
+            this.cSelectSupplierSalesComboBox.FormattingEnabled = true;
+            this.cSelectSupplierSalesComboBox.Location = new System.Drawing.Point(112, 410);
+            this.cSelectSupplierSalesComboBox.Name = "cSelectSupplierSalesComboBox";
+            this.cSelectSupplierSalesComboBox.Size = new System.Drawing.Size(233, 25);
+            this.cSelectSupplierSalesComboBox.TabIndex = 22;
             // 
-            // cCalcRestExpendButton
+            // cSelectOrgExpendComboBox
             // 
-            this.cCalcRestExpendButton.Location = new System.Drawing.Point(431, 182);
-            this.cCalcRestExpendButton.Margin = new System.Windows.Forms.Padding(4);
-            this.cCalcRestExpendButton.Name = "cCalcRestExpendButton";
-            this.cCalcRestExpendButton.Size = new System.Drawing.Size(212, 45);
-            this.cCalcRestExpendButton.TabIndex = 12;
-            this.cCalcRestExpendButton.Text = "Calculate Restaurant Expenditures";
-            this.cCalcRestExpendButton.UseVisualStyleBackColor = true;
-            this.cCalcRestExpendButton.Click += new System.EventHandler(this.cCalcRestExpendButton_Click);
+            this.cSelectOrgExpendComboBox.FormattingEnabled = true;
+            this.cSelectOrgExpendComboBox.Location = new System.Drawing.Point(112, 301);
+            this.cSelectOrgExpendComboBox.Name = "cSelectOrgExpendComboBox";
+            this.cSelectOrgExpendComboBox.Size = new System.Drawing.Size(233, 25);
+            this.cSelectOrgExpendComboBox.TabIndex = 21;
             // 
-            // cRestExpendResultsTextBox
+            // cSupplierSalesResultsTextBox
             // 
-            this.cRestExpendResultsTextBox.Location = new System.Drawing.Point(910, 193);
-            this.cRestExpendResultsTextBox.Name = "cRestExpendResultsTextBox";
-            this.cRestExpendResultsTextBox.ReadOnly = true;
-            this.cRestExpendResultsTextBox.Size = new System.Drawing.Size(233, 23);
-            this.cRestExpendResultsTextBox.TabIndex = 13;
+            this.cSupplierSalesResultsTextBox.Location = new System.Drawing.Point(910, 410);
+            this.cSupplierSalesResultsTextBox.Name = "cSupplierSalesResultsTextBox";
+            this.cSupplierSalesResultsTextBox.ReadOnly = true;
+            this.cSupplierSalesResultsTextBox.Size = new System.Drawing.Size(233, 23);
+            this.cSupplierSalesResultsTextBox.TabIndex = 20;
             // 
-            // cRestExpendResultLabel
+            // cOrgExpendResultsTexbox
             // 
-            this.cRestExpendResultLabel.AutoSize = true;
-            this.cRestExpendResultLabel.Location = new System.Drawing.Point(732, 196);
-            this.cRestExpendResultLabel.Name = "cRestExpendResultLabel";
-            this.cRestExpendResultLabel.Size = new System.Drawing.Size(172, 17);
-            this.cRestExpendResultLabel.TabIndex = 14;
-            this.cRestExpendResultLabel.Text = "Restaurant Expenditures :";
+            this.cOrgExpendResultsTexbox.Location = new System.Drawing.Point(910, 301);
+            this.cOrgExpendResultsTexbox.Name = "cOrgExpendResultsTexbox";
+            this.cOrgExpendResultsTexbox.ReadOnly = true;
+            this.cOrgExpendResultsTexbox.Size = new System.Drawing.Size(233, 23);
+            this.cOrgExpendResultsTexbox.TabIndex = 19;
             // 
-            // cCalcOrgExpendButton
+            // cSupplierSalesLabel
             // 
-            this.cCalcOrgExpendButton.Location = new System.Drawing.Point(431, 290);
-            this.cCalcOrgExpendButton.Margin = new System.Windows.Forms.Padding(4);
-            this.cCalcOrgExpendButton.Name = "cCalcOrgExpendButton";
-            this.cCalcOrgExpendButton.Size = new System.Drawing.Size(212, 45);
-            this.cCalcOrgExpendButton.TabIndex = 15;
-            this.cCalcOrgExpendButton.Text = "Calculate Organization Expenditures";
-            this.cCalcOrgExpendButton.UseVisualStyleBackColor = true;
-            this.cCalcOrgExpendButton.Click += new System.EventHandler(this.cCalcOrgExpendButton_Click);
+            this.cSupplierSalesLabel.AutoSize = true;
+            this.cSupplierSalesLabel.Location = new System.Drawing.Point(797, 410);
+            this.cSupplierSalesLabel.Name = "cSupplierSalesLabel";
+            this.cSupplierSalesLabel.Size = new System.Drawing.Size(107, 17);
+            this.cSupplierSalesLabel.TabIndex = 18;
+            this.cSupplierSalesLabel.Text = "Supplier Sales :";
+            // 
+            // cOrgExpendResultLabel
+            // 
+            this.cOrgExpendResultLabel.AutoSize = true;
+            this.cOrgExpendResultLabel.Location = new System.Drawing.Point(721, 304);
+            this.cOrgExpendResultLabel.Name = "cOrgExpendResultLabel";
+            this.cOrgExpendResultLabel.Size = new System.Drawing.Size(183, 17);
+            this.cOrgExpendResultLabel.TabIndex = 17;
+            this.cOrgExpendResultLabel.Text = "Organization Expenditures :";
             // 
             // cCalcSupplierSalesButton
             // 
@@ -1225,55 +1230,52 @@
             this.cCalcSupplierSalesButton.UseVisualStyleBackColor = true;
             this.cCalcSupplierSalesButton.Click += new System.EventHandler(this.cCalcSupplierSalesButton_Click);
             // 
-            // cOrgExpendResultLabel
+            // cCalcOrgExpendButton
             // 
-            this.cOrgExpendResultLabel.AutoSize = true;
-            this.cOrgExpendResultLabel.Location = new System.Drawing.Point(721, 304);
-            this.cOrgExpendResultLabel.Name = "cOrgExpendResultLabel";
-            this.cOrgExpendResultLabel.Size = new System.Drawing.Size(183, 17);
-            this.cOrgExpendResultLabel.TabIndex = 17;
-            this.cOrgExpendResultLabel.Text = "Organization Expenditures :";
+            this.cCalcOrgExpendButton.Location = new System.Drawing.Point(431, 290);
+            this.cCalcOrgExpendButton.Margin = new System.Windows.Forms.Padding(4);
+            this.cCalcOrgExpendButton.Name = "cCalcOrgExpendButton";
+            this.cCalcOrgExpendButton.Size = new System.Drawing.Size(212, 45);
+            this.cCalcOrgExpendButton.TabIndex = 15;
+            this.cCalcOrgExpendButton.Text = "Calculate Organization Expenditures";
+            this.cCalcOrgExpendButton.UseVisualStyleBackColor = true;
+            this.cCalcOrgExpendButton.Click += new System.EventHandler(this.cCalcOrgExpendButton_Click);
             // 
-            // cSupplierSalesLabel
+            // cRestExpendResultLabel
             // 
-            this.cSupplierSalesLabel.AutoSize = true;
-            this.cSupplierSalesLabel.Location = new System.Drawing.Point(797, 410);
-            this.cSupplierSalesLabel.Name = "cSupplierSalesLabel";
-            this.cSupplierSalesLabel.Size = new System.Drawing.Size(107, 17);
-            this.cSupplierSalesLabel.TabIndex = 18;
-            this.cSupplierSalesLabel.Text = "Supplier Sales :";
+            this.cRestExpendResultLabel.AutoSize = true;
+            this.cRestExpendResultLabel.Location = new System.Drawing.Point(732, 196);
+            this.cRestExpendResultLabel.Name = "cRestExpendResultLabel";
+            this.cRestExpendResultLabel.Size = new System.Drawing.Size(172, 17);
+            this.cRestExpendResultLabel.TabIndex = 14;
+            this.cRestExpendResultLabel.Text = "Restaurant Expenditures :";
             // 
-            // cOrgExpendResultsTexbox
+            // cRestExpendResultsTextBox
             // 
-            this.cOrgExpendResultsTexbox.Location = new System.Drawing.Point(910, 301);
-            this.cOrgExpendResultsTexbox.Name = "cOrgExpendResultsTexbox";
-            this.cOrgExpendResultsTexbox.ReadOnly = true;
-            this.cOrgExpendResultsTexbox.Size = new System.Drawing.Size(233, 23);
-            this.cOrgExpendResultsTexbox.TabIndex = 19;
+            this.cRestExpendResultsTextBox.Location = new System.Drawing.Point(910, 193);
+            this.cRestExpendResultsTextBox.Name = "cRestExpendResultsTextBox";
+            this.cRestExpendResultsTextBox.ReadOnly = true;
+            this.cRestExpendResultsTextBox.Size = new System.Drawing.Size(233, 23);
+            this.cRestExpendResultsTextBox.TabIndex = 13;
             // 
-            // cSupplierSalesResultsTextBox
+            // cCalcRestExpendButton
             // 
-            this.cSupplierSalesResultsTextBox.Location = new System.Drawing.Point(910, 410);
-            this.cSupplierSalesResultsTextBox.Name = "cSupplierSalesResultsTextBox";
-            this.cSupplierSalesResultsTextBox.ReadOnly = true;
-            this.cSupplierSalesResultsTextBox.Size = new System.Drawing.Size(233, 23);
-            this.cSupplierSalesResultsTextBox.TabIndex = 20;
+            this.cCalcRestExpendButton.Location = new System.Drawing.Point(431, 182);
+            this.cCalcRestExpendButton.Margin = new System.Windows.Forms.Padding(4);
+            this.cCalcRestExpendButton.Name = "cCalcRestExpendButton";
+            this.cCalcRestExpendButton.Size = new System.Drawing.Size(212, 45);
+            this.cCalcRestExpendButton.TabIndex = 12;
+            this.cCalcRestExpendButton.Text = "Calculate Restaurant Expenditures";
+            this.cCalcRestExpendButton.UseVisualStyleBackColor = true;
+            this.cCalcRestExpendButton.Click += new System.EventHandler(this.cCalcRestExpendButton_Click);
             // 
-            // cSelectOrgExpendComboBox
+            // cSelectRestExpendComboBox
             // 
-            this.cSelectOrgExpendComboBox.FormattingEnabled = true;
-            this.cSelectOrgExpendComboBox.Location = new System.Drawing.Point(112, 301);
-            this.cSelectOrgExpendComboBox.Name = "cSelectOrgExpendComboBox";
-            this.cSelectOrgExpendComboBox.Size = new System.Drawing.Size(233, 25);
-            this.cSelectOrgExpendComboBox.TabIndex = 21;
-            // 
-            // cSelectSupplierSalesComboBox
-            // 
-            this.cSelectSupplierSalesComboBox.FormattingEnabled = true;
-            this.cSelectSupplierSalesComboBox.Location = new System.Drawing.Point(112, 410);
-            this.cSelectSupplierSalesComboBox.Name = "cSelectSupplierSalesComboBox";
-            this.cSelectSupplierSalesComboBox.Size = new System.Drawing.Size(233, 25);
-            this.cSelectSupplierSalesComboBox.TabIndex = 22;
+            this.cSelectRestExpendComboBox.FormattingEnabled = true;
+            this.cSelectRestExpendComboBox.Location = new System.Drawing.Point(112, 193);
+            this.cSelectRestExpendComboBox.Name = "cSelectRestExpendComboBox";
+            this.cSelectRestExpendComboBox.Size = new System.Drawing.Size(233, 25);
+            this.cSelectRestExpendComboBox.TabIndex = 0;
             // 
             // cDataBaseForm
             // 

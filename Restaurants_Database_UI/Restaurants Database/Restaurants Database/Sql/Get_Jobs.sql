@@ -3,6 +3,6 @@
 AS
 
 SELECT  J.JobTitleID, J.Salary
-FROM Employee.Jobs J
+FROM Employees.Jobs J
 WHERE J.JobName = @JobName;
 GO

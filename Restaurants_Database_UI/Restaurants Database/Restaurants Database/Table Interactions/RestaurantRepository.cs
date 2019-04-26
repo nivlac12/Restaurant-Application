@@ -9,16 +9,8 @@ namespace Restaurants_Database
     class RestaurantRepository
     {
         const string connectionString = @"Server=mssql.cs.ksu.edu;Database=nivlac12;Integrated Security=SSPI;";
-        public void initRests()
-        {
-            Restaurant[] rest = { };
-            foreach (Restaurant re in rest)
-            {
-                CreateRestaurant(re.OrganizationID,re.RestaurantName,re.DateFounded,re.IsOperational);
-            }
-        }
 
-        public Restaurant CreateRestaurant(int OrganizationID, string RestaurantName, string DateFounded, bool IsOperational)
+        public Restaurant CreateRestaurant(int OrganizationID, string RestaurantName, bool IsOperational)
         {
             using (var transaction = new TransactionScope())
             {
@@ -47,9 +39,10 @@ namespace Restaurants_Database
                         command.ExecuteNonQuery();
 
                         transaction.Complete();
+                        int val = (int)idParam.Value;
                         string dateValue = dateParam.Value.ToString();
                         //This line will return a unique object of the appropriate type, keeping in mind the parameters we stored
-                        return new Restaurant((int)idParam.Value, OrganizationID, RestaurantName, dateValue, IsOperational);
+                        return new Restaurant(val, OrganizationID, RestaurantName, dateValue, IsOperational);
                     }
                 }
             }
@@ -93,7 +86,7 @@ namespace Restaurants_Database
 
                     //Name of Primary Key is what we pass in, everything else
                     //we get from the SQL
-                    command.Parameters.AddWithValue("RestaurantName", restID);
+                    command.Parameters.AddWithValue("RestaurantID", restID);
 
                     connection.Open();
 
@@ -104,7 +97,7 @@ namespace Restaurants_Database
 
                     return new Restaurant(restID,
                        reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("OrganizationID"))),
-                       reader.GetString(reader.GetOrdinal("RestaurantID")),
+                       reader.GetString(reader.GetOrdinal("RestaurantName")),
                        reader.GetDateTimeOffset(reader.GetOrdinal("DateFounded")).ToString(),
                        reader.GetBoolean(reader.GetOrdinal("IsOperational")));
                 }
