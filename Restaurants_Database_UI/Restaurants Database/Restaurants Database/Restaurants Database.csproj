@@ -129,6 +129,13 @@
     <Content Include="Sql\Retrieve_Suppliers.sql" />
     <Content Include="Sql\StockItems.sql" />
     <Content Include="Sql\Suppliers.sql" />
+    <Content Include="Sql\Update_Employees.sql" />
+    <Content Include="Sql\Update_Food.sql" />
+    <Content Include="Sql\Update_Jobs.sql" />
+    <Content Include="Sql\Update_Organization.sql" />
+    <Content Include="Sql\Update_Restaurant.sql" />
+    <Content Include="Sql\Update_StockItems.sql" />
+    <Content Include="Sql\Update_Suppliers.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
