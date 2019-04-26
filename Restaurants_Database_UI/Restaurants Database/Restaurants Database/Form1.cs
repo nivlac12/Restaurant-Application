@@ -269,5 +269,40 @@ namespace Restaurants_Database
         {
 
         }
+
+        private void cCalcSupplierSalesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cCalcOrgExpendButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cCalcRestExpendButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cRestOpLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cDateFoundedLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cOrgIdLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cRestaurantIdLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

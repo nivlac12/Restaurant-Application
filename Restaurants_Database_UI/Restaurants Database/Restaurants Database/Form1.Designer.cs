@@ -66,6 +66,7 @@
             this.cInventoryFoodComboBox = new System.Windows.Forms.ComboBox();
             this.cInventoryFoodIdLabel = new System.Windows.Forms.Label();
             this.cJobsPage = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.jobsListBox = new System.Windows.Forms.ListBox();
             this.cJobsEditButton = new System.Windows.Forms.Button();
@@ -77,6 +78,8 @@
             this.cJobNameTextBox = new System.Windows.Forms.TextBox();
             this.cJobNameLabel = new System.Windows.Forms.Label();
             this.cEmployeePage = new System.Windows.Forms.TabPage();
+            this.seniorityUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.empListBox = new System.Windows.Forms.ListBox();
             this.cEmployeesEditButton = new System.Windows.Forms.Button();
@@ -118,9 +121,19 @@
             this.cOrgLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cTabsControl = new System.Windows.Forms.TabControl();
-            this.label8 = new System.Windows.Forms.Label();
-            this.seniorityUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
+            this.cAnalysisPage = new System.Windows.Forms.TabPage();
+            this.cSelectRestExpendComboBox = new System.Windows.Forms.ComboBox();
+            this.cCalcRestExpendButton = new System.Windows.Forms.Button();
+            this.cRestExpendResultsTextBox = new System.Windows.Forms.TextBox();
+            this.cRestExpendResultLabel = new System.Windows.Forms.Label();
+            this.cCalcOrgExpendButton = new System.Windows.Forms.Button();
+            this.cCalcSupplierSalesButton = new System.Windows.Forms.Button();
+            this.cOrgExpendResultLabel = new System.Windows.Forms.Label();
+            this.cSupplierSalesLabel = new System.Windows.Forms.Label();
+            this.cOrgExpendResultsTexbox = new System.Windows.Forms.TextBox();
+            this.cSupplierSalesResultsTextBox = new System.Windows.Forms.TextBox();
+            this.cSelectOrgExpendComboBox = new System.Windows.Forms.ComboBox();
+            this.cSelectSupplierSalesComboBox = new System.Windows.Forms.ComboBox();
             this.cSupplierPage.SuspendLayout();
             this.cFoodPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cFoodRetailNumUpDownBox)).BeginInit();
@@ -130,10 +143,11 @@
             this.cJobsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cJobSalaryNumUpDownBox)).BeginInit();
             this.cEmployeePage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.seniorityUpDown)).BeginInit();
             this.cRestaurantPage.SuspendLayout();
             this.cOrgPage.SuspendLayout();
             this.cTabsControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.seniorityUpDown)).BeginInit();
+            this.cAnalysisPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // cSupplierPage
@@ -344,7 +358,7 @@
             // cFoodRetailPriceLabel
             // 
             this.cFoodRetailPriceLabel.AutoSize = true;
-            this.cFoodRetailPriceLabel.Location = new System.Drawing.Point(50, 306);
+            this.cFoodRetailPriceLabel.Location = new System.Drawing.Point(48, 305);
             this.cFoodRetailPriceLabel.Name = "cFoodRetailPriceLabel";
             this.cFoodRetailPriceLabel.Size = new System.Drawing.Size(92, 17);
             this.cFoodRetailPriceLabel.TabIndex = 5;
@@ -362,7 +376,7 @@
             // cFoodSupLabel
             // 
             this.cFoodSupLabel.AutoSize = true;
-            this.cFoodSupLabel.Location = new System.Drawing.Point(76, 159);
+            this.cFoodSupLabel.Location = new System.Drawing.Point(68, 156);
             this.cFoodSupLabel.Name = "cFoodSupLabel";
             this.cFoodSupLabel.Size = new System.Drawing.Size(72, 17);
             this.cFoodSupLabel.TabIndex = 3;
@@ -468,7 +482,7 @@
             // cInventoryQuantityLabel
             // 
             this.cInventoryQuantityLabel.AutoSize = true;
-            this.cInventoryQuantityLabel.Location = new System.Drawing.Point(42, 283);
+            this.cInventoryQuantityLabel.Location = new System.Drawing.Point(46, 282);
             this.cInventoryQuantityLabel.Name = "cInventoryQuantityLabel";
             this.cInventoryQuantityLabel.Size = new System.Drawing.Size(69, 17);
             this.cInventoryQuantityLabel.TabIndex = 6;
@@ -485,7 +499,7 @@
             // cInventoryRestLabel
             // 
             this.cInventoryRestLabel.AutoSize = true;
-            this.cInventoryRestLabel.Location = new System.Drawing.Point(22, 196);
+            this.cInventoryRestLabel.Location = new System.Drawing.Point(29, 196);
             this.cInventoryRestLabel.Name = "cInventoryRestLabel";
             this.cInventoryRestLabel.Size = new System.Drawing.Size(86, 17);
             this.cInventoryRestLabel.TabIndex = 4;
@@ -529,6 +543,15 @@
             this.cJobsPage.Size = new System.Drawing.Size(1446, 760);
             this.cJobsPage.TabIndex = 3;
             this.cJobsPage.Text = "Jobs";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(396, 184);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(116, 17);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "dollars per hour: ";
             // 
             // label4
             // 
@@ -648,6 +671,26 @@
             this.cEmployeePage.TabIndex = 2;
             this.cEmployeePage.Text = "Employees";
             // 
+            // seniorityUpDown
+            // 
+            this.seniorityUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.seniorityUpDown.Location = new System.Drawing.Point(157, 366);
+            this.seniorityUpDown.Name = "seniorityUpDown";
+            this.seniorityUpDown.Size = new System.Drawing.Size(275, 23);
+            this.seniorityUpDown.TabIndex = 25;
+            this.seniorityUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(440, 366);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 17);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "(years)";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -749,7 +792,7 @@
             // cEmployJobLabel
             // 
             this.cEmployJobLabel.AutoSize = true;
-            this.cEmployJobLabel.Location = new System.Drawing.Point(73, 285);
+            this.cEmployJobLabel.Location = new System.Drawing.Point(64, 285);
             this.cEmployJobLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cEmployJobLabel.Name = "cEmployJobLabel";
             this.cEmployJobLabel.Size = new System.Drawing.Size(43, 17);
@@ -845,11 +888,12 @@
             // cRestaurantIdLabel
             // 
             this.cRestaurantIdLabel.AutoSize = true;
-            this.cRestaurantIdLabel.Location = new System.Drawing.Point(18, 34);
+            this.cRestaurantIdLabel.Location = new System.Drawing.Point(36, 34);
             this.cRestaurantIdLabel.Name = "cRestaurantIdLabel";
             this.cRestaurantIdLabel.Size = new System.Drawing.Size(103, 17);
             this.cRestaurantIdLabel.TabIndex = 15;
             this.cRestaurantIdLabel.Text = "RestaurantID : ";
+            this.cRestaurantIdLabel.Click += new System.EventHandler(this.cRestaurantIdLabel_Click);
             // 
             // cRestAddButton
             // 
@@ -878,12 +922,13 @@
             // cRestOpLabel
             // 
             this.cRestOpLabel.AutoSize = true;
-            this.cRestOpLabel.Location = new System.Drawing.Point(53, 368);
+            this.cRestOpLabel.Location = new System.Drawing.Point(45, 363);
             this.cRestOpLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cRestOpLabel.Name = "cRestOpLabel";
             this.cRestOpLabel.Size = new System.Drawing.Size(94, 17);
             this.cRestOpLabel.TabIndex = 7;
             this.cRestOpLabel.Text = "Operational : ";
+            this.cRestOpLabel.Click += new System.EventHandler(this.cRestOpLabel_Click);
             // 
             // cRestDateFoundedTextBox
             // 
@@ -908,7 +953,7 @@
             // cRestDateFoundLabel
             // 
             this.cRestDateFoundLabel.AutoSize = true;
-            this.cRestDateFoundLabel.Location = new System.Drawing.Point(34, 281);
+            this.cRestDateFoundLabel.Location = new System.Drawing.Point(52, 277);
             this.cRestDateFoundLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cRestDateFoundLabel.Name = "cRestDateFoundLabel";
             this.cRestDateFoundLabel.Size = new System.Drawing.Size(87, 17);
@@ -1015,11 +1060,12 @@
             // cOrgIdLabel
             // 
             this.cOrgIdLabel.AutoSize = true;
-            this.cOrgIdLabel.Location = new System.Drawing.Point(38, 60);
+            this.cOrgIdLabel.Location = new System.Drawing.Point(55, 60);
             this.cOrgIdLabel.Name = "cOrgIdLabel";
             this.cOrgIdLabel.Size = new System.Drawing.Size(114, 17);
             this.cOrgIdLabel.TabIndex = 15;
             this.cOrgIdLabel.Text = "OrganizationID : ";
+            this.cOrgIdLabel.Click += new System.EventHandler(this.cOrgIdLabel_Click);
             // 
             // cOrgAddButton
             // 
@@ -1055,12 +1101,13 @@
             // cDateFoundedLabel
             // 
             this.cDateFoundedLabel.AutoSize = true;
-            this.cDateFoundedLabel.Location = new System.Drawing.Point(65, 187);
+            this.cDateFoundedLabel.Location = new System.Drawing.Point(82, 187);
             this.cDateFoundedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cDateFoundedLabel.Name = "cDateFoundedLabel";
             this.cDateFoundedLabel.Size = new System.Drawing.Size(87, 17);
             this.cDateFoundedLabel.TabIndex = 3;
             this.cDateFoundedLabel.Text = "Date Added:";
+            this.cDateFoundedLabel.Click += new System.EventHandler(this.cDateFoundedLabel_Click);
             // 
             // cOrgLabel
             // 
@@ -1089,6 +1136,7 @@
             this.cTabsControl.Controls.Add(this.cInventoryPage);
             this.cTabsControl.Controls.Add(this.cFoodPage);
             this.cTabsControl.Controls.Add(this.cSupplierPage);
+            this.cTabsControl.Controls.Add(this.cAnalysisPage);
             this.cTabsControl.Location = new System.Drawing.Point(-2, 46);
             this.cTabsControl.Margin = new System.Windows.Forms.Padding(4);
             this.cTabsControl.Multiline = true;
@@ -1097,34 +1145,135 @@
             this.cTabsControl.Size = new System.Drawing.Size(1454, 790);
             this.cTabsControl.TabIndex = 0;
             // 
-            // label8
+            // cAnalysisPage
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(440, 366);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 17);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "(years)";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.cAnalysisPage.BackColor = System.Drawing.Color.LightGray;
+            this.cAnalysisPage.Controls.Add(this.cSelectSupplierSalesComboBox);
+            this.cAnalysisPage.Controls.Add(this.cSelectOrgExpendComboBox);
+            this.cAnalysisPage.Controls.Add(this.cSupplierSalesResultsTextBox);
+            this.cAnalysisPage.Controls.Add(this.cOrgExpendResultsTexbox);
+            this.cAnalysisPage.Controls.Add(this.cSupplierSalesLabel);
+            this.cAnalysisPage.Controls.Add(this.cOrgExpendResultLabel);
+            this.cAnalysisPage.Controls.Add(this.cCalcSupplierSalesButton);
+            this.cAnalysisPage.Controls.Add(this.cCalcOrgExpendButton);
+            this.cAnalysisPage.Controls.Add(this.cRestExpendResultLabel);
+            this.cAnalysisPage.Controls.Add(this.cRestExpendResultsTextBox);
+            this.cAnalysisPage.Controls.Add(this.cCalcRestExpendButton);
+            this.cAnalysisPage.Controls.Add(this.cSelectRestExpendComboBox);
+            this.cAnalysisPage.Location = new System.Drawing.Point(4, 26);
+            this.cAnalysisPage.Name = "cAnalysisPage";
+            this.cAnalysisPage.Padding = new System.Windows.Forms.Padding(3);
+            this.cAnalysisPage.Size = new System.Drawing.Size(1446, 760);
+            this.cAnalysisPage.TabIndex = 7;
+            this.cAnalysisPage.Text = "Analysis";
             // 
-            // seniorityUpDown
+            // cSelectRestExpendComboBox
             // 
-            this.seniorityUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.seniorityUpDown.Location = new System.Drawing.Point(157, 366);
-            this.seniorityUpDown.Name = "seniorityUpDown";
-            this.seniorityUpDown.Size = new System.Drawing.Size(275, 23);
-            this.seniorityUpDown.TabIndex = 25;
-            this.seniorityUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.cSelectRestExpendComboBox.FormattingEnabled = true;
+            this.cSelectRestExpendComboBox.Location = new System.Drawing.Point(112, 193);
+            this.cSelectRestExpendComboBox.Name = "cSelectRestExpendComboBox";
+            this.cSelectRestExpendComboBox.Size = new System.Drawing.Size(233, 25);
+            this.cSelectRestExpendComboBox.TabIndex = 0;
             // 
-            // label9
+            // cCalcRestExpendButton
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(396, 184);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(116, 17);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "dollars per hour: ";
+            this.cCalcRestExpendButton.Location = new System.Drawing.Point(431, 182);
+            this.cCalcRestExpendButton.Margin = new System.Windows.Forms.Padding(4);
+            this.cCalcRestExpendButton.Name = "cCalcRestExpendButton";
+            this.cCalcRestExpendButton.Size = new System.Drawing.Size(212, 45);
+            this.cCalcRestExpendButton.TabIndex = 12;
+            this.cCalcRestExpendButton.Text = "Calculate Restaurant Expenditures";
+            this.cCalcRestExpendButton.UseVisualStyleBackColor = true;
+            this.cCalcRestExpendButton.Click += new System.EventHandler(this.cCalcRestExpendButton_Click);
+            // 
+            // cRestExpendResultsTextBox
+            // 
+            this.cRestExpendResultsTextBox.Location = new System.Drawing.Point(910, 193);
+            this.cRestExpendResultsTextBox.Name = "cRestExpendResultsTextBox";
+            this.cRestExpendResultsTextBox.ReadOnly = true;
+            this.cRestExpendResultsTextBox.Size = new System.Drawing.Size(233, 23);
+            this.cRestExpendResultsTextBox.TabIndex = 13;
+            // 
+            // cRestExpendResultLabel
+            // 
+            this.cRestExpendResultLabel.AutoSize = true;
+            this.cRestExpendResultLabel.Location = new System.Drawing.Point(732, 196);
+            this.cRestExpendResultLabel.Name = "cRestExpendResultLabel";
+            this.cRestExpendResultLabel.Size = new System.Drawing.Size(172, 17);
+            this.cRestExpendResultLabel.TabIndex = 14;
+            this.cRestExpendResultLabel.Text = "Restaurant Expenditures :";
+            // 
+            // cCalcOrgExpendButton
+            // 
+            this.cCalcOrgExpendButton.Location = new System.Drawing.Point(431, 290);
+            this.cCalcOrgExpendButton.Margin = new System.Windows.Forms.Padding(4);
+            this.cCalcOrgExpendButton.Name = "cCalcOrgExpendButton";
+            this.cCalcOrgExpendButton.Size = new System.Drawing.Size(212, 45);
+            this.cCalcOrgExpendButton.TabIndex = 15;
+            this.cCalcOrgExpendButton.Text = "Calculate Organization Expenditures";
+            this.cCalcOrgExpendButton.UseVisualStyleBackColor = true;
+            this.cCalcOrgExpendButton.Click += new System.EventHandler(this.cCalcOrgExpendButton_Click);
+            // 
+            // cCalcSupplierSalesButton
+            // 
+            this.cCalcSupplierSalesButton.Location = new System.Drawing.Point(431, 396);
+            this.cCalcSupplierSalesButton.Margin = new System.Windows.Forms.Padding(4);
+            this.cCalcSupplierSalesButton.Name = "cCalcSupplierSalesButton";
+            this.cCalcSupplierSalesButton.Size = new System.Drawing.Size(212, 45);
+            this.cCalcSupplierSalesButton.TabIndex = 16;
+            this.cCalcSupplierSalesButton.Text = "Calculate Supplier Sales";
+            this.cCalcSupplierSalesButton.UseVisualStyleBackColor = true;
+            this.cCalcSupplierSalesButton.Click += new System.EventHandler(this.cCalcSupplierSalesButton_Click);
+            // 
+            // cOrgExpendResultLabel
+            // 
+            this.cOrgExpendResultLabel.AutoSize = true;
+            this.cOrgExpendResultLabel.Location = new System.Drawing.Point(721, 304);
+            this.cOrgExpendResultLabel.Name = "cOrgExpendResultLabel";
+            this.cOrgExpendResultLabel.Size = new System.Drawing.Size(183, 17);
+            this.cOrgExpendResultLabel.TabIndex = 17;
+            this.cOrgExpendResultLabel.Text = "Organization Expenditures :";
+            // 
+            // cSupplierSalesLabel
+            // 
+            this.cSupplierSalesLabel.AutoSize = true;
+            this.cSupplierSalesLabel.Location = new System.Drawing.Point(797, 410);
+            this.cSupplierSalesLabel.Name = "cSupplierSalesLabel";
+            this.cSupplierSalesLabel.Size = new System.Drawing.Size(107, 17);
+            this.cSupplierSalesLabel.TabIndex = 18;
+            this.cSupplierSalesLabel.Text = "Supplier Sales :";
+            // 
+            // cOrgExpendResultsTexbox
+            // 
+            this.cOrgExpendResultsTexbox.Location = new System.Drawing.Point(910, 301);
+            this.cOrgExpendResultsTexbox.Name = "cOrgExpendResultsTexbox";
+            this.cOrgExpendResultsTexbox.ReadOnly = true;
+            this.cOrgExpendResultsTexbox.Size = new System.Drawing.Size(233, 23);
+            this.cOrgExpendResultsTexbox.TabIndex = 19;
+            // 
+            // cSupplierSalesResultsTextBox
+            // 
+            this.cSupplierSalesResultsTextBox.Location = new System.Drawing.Point(910, 410);
+            this.cSupplierSalesResultsTextBox.Name = "cSupplierSalesResultsTextBox";
+            this.cSupplierSalesResultsTextBox.ReadOnly = true;
+            this.cSupplierSalesResultsTextBox.Size = new System.Drawing.Size(233, 23);
+            this.cSupplierSalesResultsTextBox.TabIndex = 20;
+            // 
+            // cSelectOrgExpendComboBox
+            // 
+            this.cSelectOrgExpendComboBox.FormattingEnabled = true;
+            this.cSelectOrgExpendComboBox.Location = new System.Drawing.Point(112, 301);
+            this.cSelectOrgExpendComboBox.Name = "cSelectOrgExpendComboBox";
+            this.cSelectOrgExpendComboBox.Size = new System.Drawing.Size(233, 25);
+            this.cSelectOrgExpendComboBox.TabIndex = 21;
+            // 
+            // cSelectSupplierSalesComboBox
+            // 
+            this.cSelectSupplierSalesComboBox.FormattingEnabled = true;
+            this.cSelectSupplierSalesComboBox.Location = new System.Drawing.Point(112, 410);
+            this.cSelectSupplierSalesComboBox.Name = "cSelectSupplierSalesComboBox";
+            this.cSelectSupplierSalesComboBox.Size = new System.Drawing.Size(233, 25);
+            this.cSelectSupplierSalesComboBox.TabIndex = 22;
             // 
             // cDataBaseForm
             // 
@@ -1152,12 +1301,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.cJobSalaryNumUpDownBox)).EndInit();
             this.cEmployeePage.ResumeLayout(false);
             this.cEmployeePage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.seniorityUpDown)).EndInit();
             this.cRestaurantPage.ResumeLayout(false);
             this.cRestaurantPage.PerformLayout();
             this.cOrgPage.ResumeLayout(false);
             this.cOrgPage.PerformLayout();
             this.cTabsControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.seniorityUpDown)).EndInit();
+            this.cAnalysisPage.ResumeLayout(false);
+            this.cAnalysisPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1257,6 +1408,19 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown seniorityUpDown;
+        private System.Windows.Forms.TabPage cAnalysisPage;
+        private System.Windows.Forms.ComboBox cSelectSupplierSalesComboBox;
+        private System.Windows.Forms.ComboBox cSelectOrgExpendComboBox;
+        private System.Windows.Forms.TextBox cSupplierSalesResultsTextBox;
+        private System.Windows.Forms.TextBox cOrgExpendResultsTexbox;
+        private System.Windows.Forms.Label cSupplierSalesLabel;
+        private System.Windows.Forms.Label cOrgExpendResultLabel;
+        private System.Windows.Forms.Button cCalcSupplierSalesButton;
+        private System.Windows.Forms.Button cCalcOrgExpendButton;
+        private System.Windows.Forms.Label cRestExpendResultLabel;
+        private System.Windows.Forms.TextBox cRestExpendResultsTextBox;
+        private System.Windows.Forms.Button cCalcRestExpendButton;
+        private System.Windows.Forms.ComboBox cSelectRestExpendComboBox;
     }
 }
 
