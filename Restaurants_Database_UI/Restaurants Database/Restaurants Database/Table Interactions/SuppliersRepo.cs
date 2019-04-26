@@ -8,34 +8,26 @@ namespace Restaurants_Database
 {
     class SuppliersRepo
     {
-        const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=nivlac12;Integrated Security=SSPI;";
-        public void initSupps()
-        {
-            string[] supps = { "", "", "" };
-            foreach (string supp in supps)
-            {
-                CreateSuppliers(supp);
-            }
-        }
+        const string connectionString = @"Server=mssql.cs.ksu.edu;Database=nivlac12;Integrated Security=SSPI;";
 
-        public Suppliers CreateSuppliers(string SuppliersName)
+        public Supplier CreateSupplier(string SuppliersName)
         {
             using (var transaction = new TransactionScope())
             {
                 using (var connection = new SqlConnection(connectionString))
                 {
                     //Set the string parameter to call the appropriate sql function
-                    using (var command = new SqlCommand("Suppliers.Insert_Suppliers", connection))
+                    using (var command = new SqlCommand("Supplier.CreateSupplier", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
                         //Hardcode this attribute because it is not an output parameter, rather
                         //we have to pass it into the function ourselves
-                        command.Parameters.AddWithValue("SuppliersName", SuppliersName);
+                        command.Parameters.AddWithValue("Name", SuppliersName);
 
                         //The next two parameters are output parameters, so instead of hardcoding
                         //these we initialize them and we'll get the values from the function
-                        var idParam = command.Parameters.Add("SuppliersID", SqlDbType.Int);                   
+                        var idParam = command.Parameters.Add("SupplierID", SqlDbType.Int);                   
                         idParam.Direction = ParameterDirection.Output;
                         
 
@@ -46,23 +38,23 @@ namespace Restaurants_Database
                         transaction.Complete();
 
                         //This line will return a unique object of the appropriate type, keeping in mind the parameters we stored
-                        return new Suppliers((int)idParam.Value, SuppliersName);
+                        return new Supplier((int)idParam.Value, SuppliersName);
                     }
                 }
             }
         }
 
-        public Suppliers GetSuppliersn(string suppName)
+        public Supplier GetSupplier(string suppName)
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                using (var command = new SqlCommand("Restaurants.GetSuppliers", connection))
+                using (var command = new SqlCommand("Supplier.GetSupplier", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
                     //Name of Primary Key is what we pass in, everything else
                     //we get from the SQL
-                    command.Parameters.AddWithValue("SuppliersName", suppName);
+                    command.Parameters.AddWithValue("SupplierName", suppName);
 
                     connection.Open();
 
@@ -71,17 +63,42 @@ namespace Restaurants_Database
                     if (!reader.Read())
                         return null;
 
-                    return new Suppliers(reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("SupplierID"))),
-                       reader.GetString(reader.GetOrdinal("SuppliersName")));
+                    return new Supplier(reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("SupplierID"))),
+                       suppName);
                 }
             }
         }
 
-        public IReadOnlyList<Suppliers> RetrieveSuppliers()
+        public Supplier GetSupplierByID(int suppID)
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                using (var command = new SqlCommand("Restaurants.RetrieveSuppliers", connection))
+                using (var command = new SqlCommand("Supplier.GetSupplierByID", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    //Name of Primary Key is what we pass in, everything else
+                    //we get from the SQL
+                    command.Parameters.AddWithValue("SupplierID", suppID);
+
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+
+                    if (!reader.Read())
+                        return null;
+
+                    return new Supplier(suppID,
+                       reader.GetString(reader.GetOrdinal("Name")));
+                }
+            }
+        }
+
+        public IReadOnlyList<Supplier> RetrieveSuppliers()
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("Supplier.RetrieveSuppliers", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
@@ -89,13 +106,13 @@ namespace Restaurants_Database
 
                     var reader = command.ExecuteReader();
 
-                    var supps = new List<Suppliers>();
+                    var supps = new List<Supplier>();
 
                     while (reader.Read())
                     {
-                        supps.Add(new Suppliers(
-                           reader.GetInt32(reader.GetOrdinal("SuppliersID")),
-                           reader.GetString(reader.GetOrdinal("SuppliersName"))));
+                        supps.Add(new Supplier(
+                           reader.GetInt32(reader.GetOrdinal("SupplierID")),
+                           reader.GetString(reader.GetOrdinal("Name"))));
                     }
 
                     return supps;

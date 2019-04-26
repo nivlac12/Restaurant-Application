@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Restaurants_Database
 {
-    class Suppliers
+    class Supplier
     {
         public int SuppliersID { get; }
         public string SuppliersName { get; }
 
-        public Suppliers(int suppID,string suppName)
+        public Supplier(int suppID,string suppName)
         {
             SuppliersID =suppID;
             SuppliersName = suppName;

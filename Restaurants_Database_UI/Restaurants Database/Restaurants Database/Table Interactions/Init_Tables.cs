@@ -21,7 +21,7 @@ namespace Restaurants_Database
         public void initRests(RestaurantRepository rr)
         {
             Tuple<int, string, bool>[] rests =
-                {
+            {
                 new Tuple<int, string, bool> (1, "West Manhattan Mcdonald's", true),
                 new Tuple<int, string, bool> (1, "East Manhattan Mcdonald's", true),
                 new Tuple<int, string, bool> (2, "Lansing Dairy Queen", true),
@@ -39,7 +39,8 @@ namespace Restaurants_Database
 
         public void initJobs(JobsRepo jr)
         {
-            Tuple<string, decimal>[] jobs = {
+            Tuple<string, decimal>[] jobs = 
+            {
                 new Tuple<string, decimal>("Manager", Convert.ToDecimal(15.00)),
                 new Tuple<string, decimal>("Waiter", Convert.ToDecimal(12.00)),
                 new Tuple<string, decimal>("DishWasher", Convert.ToDecimal(9.50)),
@@ -94,9 +95,9 @@ namespace Restaurants_Database
                 }
             }
 
-            string [] names = new string[20];
+            string [] names = new string[100];
             Random rand = new Random();
-            for (int i = 0; i<20; i++)
+            for (int i = 0; i<100; i++)
             {
                 names[i] = firstNames[rand.Next(firstLength)] + " " + lastNames[rand.Next(lastLength)];
             }
@@ -108,6 +109,45 @@ namespace Restaurants_Database
                 r = rests[rand.Next(rests.Count)];
                 j = jobs[rand.Next(jobs.Count)];
                 er.CreateEmployee(r.RestaurantID, j.JobTitleID, name, rand.Next(20));
+            }
+        }
+
+        public void initSupps(SuppliersRepo sr)
+        {
+            string[] supps = { "Kansas Beef", "General Chicanery", "Vegetables Incorporated", "Pacific Seafood", "All Things Fried International"};
+            foreach (string supp in supps)
+            {
+                sr.CreateSupplier(supp);
+            }
+        }
+
+        public void initFoods(FoodRepo fr)
+        {
+            Tuple<int, string, decimal, decimal>[] foods =
+            {
+                new Tuple<int, string, decimal, decimal>(1, "Quarter Pound Angus Burger Patties", Convert.ToDecimal(.5), Convert.ToDecimal(.75)),
+                new Tuple<int, string, decimal, decimal>(1, "Sixth Pound Angus Burger Patties", Convert.ToDecimal(.4), Convert.ToDecimal(.7)),
+                new Tuple<int, string, decimal, decimal>(1, "8oz. Ribeye Steak", Convert.ToDecimal(4), Convert.ToDecimal(6)),
+                new Tuple<int, string, decimal, decimal>(1, "12oz. New York Strip", Convert.ToDecimal(5), Convert.ToDecimal(7)),
+                new Tuple<int, string, decimal, decimal>(1, "6oz. Filet Mignon", Convert.ToDecimal(7), Convert.ToDecimal(10)),
+                new Tuple<int, string, decimal, decimal>(2, "Seasoned Chicken Strips", Convert.ToDecimal(.1), Convert.ToDecimal(.14)),
+                new Tuple<int, string, decimal, decimal>(2, "Grilled Chicken Breast", Convert.ToDecimal(.7), Convert.ToDecimal(.9)),
+                new Tuple<int, string, decimal, decimal>(2, "Crispy Chicken Patty", Convert.ToDecimal(.4), Convert.ToDecimal(.7)),
+                new Tuple<int, string, decimal, decimal>(3, "1oz. Romaine Lettuce", Convert.ToDecimal(.05), Convert.ToDecimal(.06)),
+                new Tuple<int, string, decimal, decimal>(3, "Tomato", Convert.ToDecimal(.25), Convert.ToDecimal(.35)),
+                new Tuple<int, string, decimal, decimal>(3, "Yellow Onion", Convert.ToDecimal(.3), Convert.ToDecimal(.4)),
+                new Tuple<int, string, decimal, decimal>(4, "8oz. Lobster", Convert.ToDecimal(12), Convert.ToDecimal(16)),
+                new Tuple<int, string, decimal, decimal>(4, "Fresh Caught Salmon Fillet", Convert.ToDecimal(7), Convert.ToDecimal(9)),
+                new Tuple<int, string, decimal, decimal>(4, "Alaskan King crab", Convert.ToDecimal(10), Convert.ToDecimal(13)),
+                new Tuple<int, string, decimal, decimal>(5, "6 Onion Rings", Convert.ToDecimal(.5), Convert.ToDecimal(.7)),
+                new Tuple<int, string, decimal, decimal>(5, "Beer Battered Manchester Cod", Convert.ToDecimal(1), Convert.ToDecimal(1.25)),
+                new Tuple<int, string, decimal, decimal>(5, "6 Mozzarrella Sticks", Convert.ToDecimal(1), Convert.ToDecimal(1.25)),
+                new Tuple<int, string, decimal, decimal>(5, "Serving of French Fries", Convert.ToDecimal(.3), Convert.ToDecimal(.4))
+            };
+
+            foreach(Tuple<int, string, decimal, decimal> food in foods)
+            {
+                fr.CreateFood(food.Item1, food.Item2, food.Item3, food.Item4);
             }
         }
     }

@@ -8,7 +8,7 @@ namespace Restaurants_Database
 {
     class FoodRepo
     {
-        const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=nivlac12;Integrated Security=SSPI;";
+        const string connectionString = @"Server=mssql.cs.ksu.edu;Database=nivlac12;Integrated Security=SSPI;";
         public void initFoods()
         {
             Food[] food = { };
@@ -25,7 +25,7 @@ namespace Restaurants_Database
                 using (var connection = new SqlConnection(connectionString))
                 {
                     //Set the string parameter to call the appropriate sql function
-                    using (var command = new SqlCommand("Restaurants.Insert_Food", connection))
+                    using (var command = new SqlCommand("Food.CreateFood", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
@@ -58,7 +58,7 @@ namespace Restaurants_Database
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                using (var command = new SqlCommand("Restaurants.GetFood", connection))
+                using (var command = new SqlCommand("Food.GetFood", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
@@ -75,6 +75,34 @@ namespace Restaurants_Database
 
                     return new Food(reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("FoodID"))),
                        reader.GetInt32(reader.GetOrdinal("SupplierID")),
+                       foodName,
+                       reader.GetDecimal(reader.GetOrdinal("SupplierPrice")),
+                       reader.GetDecimal(reader.GetOrdinal("RetailPrice")));
+                }
+            }
+        }
+
+        public Food GetFoodByID(int foodID)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("Food.GetFoodByID", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    //Name of Primary Key is what we pass in, everything else
+                    //we get from the SQL
+                    command.Parameters.AddWithValue("FoodID", foodID);
+
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+
+                    if (!reader.Read())
+                        return null;
+
+                    return new Food(foodID,
+                       reader.GetInt32(reader.GetOrdinal("SupplierID")),
                        reader.GetString(reader.GetOrdinal("FoodName")),
                        reader.GetDecimal(reader.GetOrdinal("SupplierPrice")),
                        reader.GetDecimal(reader.GetOrdinal("RetailPrice")));
@@ -86,7 +114,7 @@ namespace Restaurants_Database
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                using (var command = new SqlCommand("Restaurants.RetrieveFood", connection))
+                using (var command = new SqlCommand("Food.RetrieveFood", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 

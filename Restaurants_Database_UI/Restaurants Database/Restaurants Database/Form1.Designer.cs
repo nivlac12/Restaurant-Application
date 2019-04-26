@@ -46,7 +46,7 @@
             this.cFoodAddButton = new System.Windows.Forms.Button();
             this.cFoodRetailNumUpDownBox = new System.Windows.Forms.NumericUpDown();
             this.cFoodSupPriceNumUpDownBox = new System.Windows.Forms.NumericUpDown();
-            this.cFoodSuplierComboBox = new System.Windows.Forms.ComboBox();
+            this.cFoodSupplierComboBox = new System.Windows.Forms.ComboBox();
             this.cFoodNameTextBox = new System.Windows.Forms.TextBox();
             this.cFoodRetailPriceLabel = new System.Windows.Forms.Label();
             this.cFoodSupPriceLabel = new System.Windows.Forms.Label();
@@ -134,6 +134,8 @@
             this.cRestExpendResultsTextBox = new System.Windows.Forms.TextBox();
             this.cCalcRestExpendButton = new System.Windows.Forms.Button();
             this.cSelectRestExpendComboBox = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.cSupplierPage.SuspendLayout();
             this.cFoodPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cFoodRetailNumUpDownBox)).BeginInit();
@@ -186,6 +188,7 @@
             this.suppListBox.Name = "suppListBox";
             this.suppListBox.Size = new System.Drawing.Size(315, 412);
             this.suppListBox.TabIndex = 18;
+            this.suppListBox.SelectedIndexChanged += new System.EventHandler(this.suppListBox_SelectedIndexChanged);
             // 
             // cSupEditButton
             // 
@@ -201,7 +204,7 @@
             // cSupplierIdNumLabel
             // 
             this.cSupplierIdNumLabel.AutoSize = true;
-            this.cSupplierIdNumLabel.Location = new System.Drawing.Point(282, 37);
+            this.cSupplierIdNumLabel.Location = new System.Drawing.Point(175, 37);
             this.cSupplierIdNumLabel.Name = "cSupplierIdNumLabel";
             this.cSupplierIdNumLabel.Size = new System.Drawing.Size(16, 17);
             this.cSupplierIdNumLabel.TabIndex = 16;
@@ -210,7 +213,7 @@
             // cSupplierIDLabel
             // 
             this.cSupplierIDLabel.AutoSize = true;
-            this.cSupplierIDLabel.Location = new System.Drawing.Point(174, 37);
+            this.cSupplierIDLabel.Location = new System.Drawing.Point(49, 37);
             this.cSupplierIDLabel.Name = "cSupplierIDLabel";
             this.cSupplierIDLabel.Size = new System.Drawing.Size(85, 17);
             this.cSupplierIDLabel.TabIndex = 15;
@@ -246,6 +249,8 @@
             // cFoodPage
             // 
             this.cFoodPage.BackColor = System.Drawing.Color.LightGray;
+            this.cFoodPage.Controls.Add(this.label11);
+            this.cFoodPage.Controls.Add(this.label10);
             this.cFoodPage.Controls.Add(this.label6);
             this.cFoodPage.Controls.Add(this.foodListBox);
             this.cFoodPage.Controls.Add(this.cFoodEditButton);
@@ -254,7 +259,7 @@
             this.cFoodPage.Controls.Add(this.cFoodAddButton);
             this.cFoodPage.Controls.Add(this.cFoodRetailNumUpDownBox);
             this.cFoodPage.Controls.Add(this.cFoodSupPriceNumUpDownBox);
-            this.cFoodPage.Controls.Add(this.cFoodSuplierComboBox);
+            this.cFoodPage.Controls.Add(this.cFoodSupplierComboBox);
             this.cFoodPage.Controls.Add(this.cFoodNameTextBox);
             this.cFoodPage.Controls.Add(this.cFoodRetailPriceLabel);
             this.cFoodPage.Controls.Add(this.cFoodSupPriceLabel);
@@ -285,6 +290,7 @@
             this.foodListBox.Name = "foodListBox";
             this.foodListBox.Size = new System.Drawing.Size(315, 412);
             this.foodListBox.TabIndex = 17;
+            this.foodListBox.SelectedIndexChanged += new System.EventHandler(this.foodListBox_SelectedIndexChanged);
             // 
             // cFoodEditButton
             // 
@@ -340,13 +346,13 @@
             this.cFoodSupPriceNumUpDownBox.Size = new System.Drawing.Size(263, 23);
             this.cFoodSupPriceNumUpDownBox.TabIndex = 8;
             // 
-            // cFoodSuplierComboBox
+            // cFoodSupplierComboBox
             // 
-            this.cFoodSuplierComboBox.FormattingEnabled = true;
-            this.cFoodSuplierComboBox.Location = new System.Drawing.Point(178, 153);
-            this.cFoodSuplierComboBox.Name = "cFoodSuplierComboBox";
-            this.cFoodSuplierComboBox.Size = new System.Drawing.Size(263, 25);
-            this.cFoodSuplierComboBox.TabIndex = 7;
+            this.cFoodSupplierComboBox.FormattingEnabled = true;
+            this.cFoodSupplierComboBox.Location = new System.Drawing.Point(178, 153);
+            this.cFoodSupplierComboBox.Name = "cFoodSupplierComboBox";
+            this.cFoodSupplierComboBox.Size = new System.Drawing.Size(263, 25);
+            this.cFoodSupplierComboBox.TabIndex = 7;
             // 
             // cFoodNameTextBox
             // 
@@ -419,9 +425,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(794, 62);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 17);
+            this.label5.Size = new System.Drawing.Size(187, 17);
             this.label5.TabIndex = 17;
-            this.label5.Text = "Inventory in Database:";
+            this.label5.Text = "Inventory items in Database:";
             // 
             // invListBox
             // 
@@ -431,6 +437,7 @@
             this.invListBox.Name = "invListBox";
             this.invListBox.Size = new System.Drawing.Size(315, 412);
             this.invListBox.TabIndex = 16;
+            this.invListBox.SelectedIndexChanged += new System.EventHandler(this.invListBox_SelectedIndexChanged);
             // 
             // cInvyEditButton
             // 
@@ -455,11 +462,11 @@
             // cInvyIDLabel
             // 
             this.cInvyIDLabel.AutoSize = true;
-            this.cInvyIDLabel.Location = new System.Drawing.Point(24, 38);
+            this.cInvyIDLabel.Location = new System.Drawing.Point(64, 38);
             this.cInvyIDLabel.Name = "cInvyIDLabel";
-            this.cInvyIDLabel.Size = new System.Drawing.Size(91, 17);
+            this.cInvyIDLabel.Size = new System.Drawing.Size(51, 17);
             this.cInvyIDLabel.TabIndex = 13;
-            this.cInvyIDLabel.Text = "InventoryID : ";
+            this.cInvyIDLabel.Text = "ItemID:";
             // 
             // cInventoryAddButton
             // 
@@ -1277,6 +1284,24 @@
             this.cSelectRestExpendComboBox.Size = new System.Drawing.Size(233, 25);
             this.cSelectRestExpendComboBox.TabIndex = 0;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(447, 301);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 17);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "dollars";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(447, 230);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 17);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "dollars";
+            // 
             // cDataBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1335,7 +1360,7 @@
         private System.Windows.Forms.Button cFoodAddButton;
         private System.Windows.Forms.NumericUpDown cFoodRetailNumUpDownBox;
         private System.Windows.Forms.NumericUpDown cFoodSupPriceNumUpDownBox;
-        private System.Windows.Forms.ComboBox cFoodSuplierComboBox;
+        private System.Windows.Forms.ComboBox cFoodSupplierComboBox;
         private System.Windows.Forms.TextBox cFoodNameTextBox;
         private System.Windows.Forms.Label cFoodRetailPriceLabel;
         private System.Windows.Forms.Label cFoodSupPriceLabel;
@@ -1423,6 +1448,8 @@
         private System.Windows.Forms.TextBox cRestExpendResultsTextBox;
         private System.Windows.Forms.Button cCalcRestExpendButton;
         private System.Windows.Forms.ComboBox cSelectRestExpendComboBox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }
 

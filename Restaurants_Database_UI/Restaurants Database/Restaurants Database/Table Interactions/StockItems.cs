@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Restaurants_Database
 {
-    class StockItems
+    class StockItem
     {
         public int InventoryID { get; }
         public int FoodID { get; }
         public int RestaurantID { get; }
         public int Quantity { get; }
 
-        public StockItems(int invenID, int foodID, int restID, int quantity)
+        public StockItem(int invenID, int foodID, int restID, int quantity)
         {
             InventoryID = invenID;
             FoodID = foodID;
