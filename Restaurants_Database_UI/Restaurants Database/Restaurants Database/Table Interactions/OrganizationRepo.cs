@@ -36,6 +36,8 @@ namespace Restaurants_Database
                         //Executes the SQL itself, giving the output parameters we declared a value
                         connection.Open();
                         command.ExecuteNonQuery();
+                        
+                        
 
                         transaction.Complete();
                         string dateValue = dateParam.Value.ToString();
@@ -95,6 +97,28 @@ namespace Restaurants_Database
                     return new Organization(orgID,
                                             reader.GetString(reader.GetOrdinal("OrganizationName")),
                                             reader.GetDateTimeOffset(reader.GetOrdinal("DateFounded")).ToString());
+                }
+            }
+        }
+
+        public void UpdateOrganization(int orgID, string orgName)
+        {
+            using (var transaction = new TransactionScope())
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    using (var command = new SqlCommand("Restaurants.UpdateOrganization", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("OrganizationID", orgID);
+                        command.Parameters.AddWithValue("OrganizationName", orgName);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+
+                        transaction.Complete();
+                    }
                 }
             }
         }

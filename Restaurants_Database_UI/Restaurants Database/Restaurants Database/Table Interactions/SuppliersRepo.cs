@@ -94,6 +94,26 @@ namespace Restaurants_Database
             }
         }
 
+        public void UpdateSupplier(int suppID, string name)
+        {
+            using (var transaction = new TransactionScope())
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    using (var command = new SqlCommand("Supplier.UpdateSupplier", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("SupplierID", suppID);
+                        command.Parameters.AddWithValue("Name", name);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        transaction.Complete();
+                    }
+                }
+            }
+        }
+
         public IReadOnlyList<Supplier> RetrieveSuppliers()
         {
             using (var connection = new SqlConnection(connectionString))

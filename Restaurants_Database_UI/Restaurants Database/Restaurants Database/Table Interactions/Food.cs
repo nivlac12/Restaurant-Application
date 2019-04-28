@@ -11,10 +11,10 @@ namespace Restaurants_Database
         public int FoodID { get; }
         public int SupplierID { get; }
         public string FoodName { get; }
-        public decimal SupplierPrice { get; }
-        public decimal RetailPrice { get; }
+        public double SupplierPrice { get; }
+        public double RetailPrice { get; }
 
-        public Food(int foodID, int suppID, string foodName, decimal suppPrice, decimal retailPrice)
+        public Food(int foodID, int suppID, string foodName, double suppPrice, double retailPrice)
         {
             FoodID= foodID;
             SupplierID = suppID;

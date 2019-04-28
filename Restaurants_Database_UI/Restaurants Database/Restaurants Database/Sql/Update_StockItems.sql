@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE Inventory.UpdateStockItems
+﻿CREATE OR ALTER PROCEDURE Inventory.UpdateStockItem
 	@InventoryID INT,
     @FoodID INT,
 	@RestaurantID INT,

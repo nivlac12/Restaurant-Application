@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE Supplier.UpdateSuppliers
+﻿CREATE OR ALTER PROCEDURE Supplier.UpdateSupplier
   @SupplierID INT,
   @Name NVARCHAR(64) 
 

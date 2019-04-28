@@ -76,6 +76,58 @@ namespace Restaurants_Database
             }
         }
 
+         public Employee GetEmployeeByID(int empID)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("Employees.GetEmployeeByID", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    //Name of Primary Key is what we pass in, everything else
+                    //we get from the SQL
+                    command.Parameters.AddWithValue("PersonID", empID);
+
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+
+                    if (!reader.Read())
+                        return null;
+
+                    return new Employee(empID,
+                       reader.GetInt32(reader.GetOrdinal("RestaurantID")),
+                       reader.GetInt32(reader.GetOrdinal("JobTitleID")),
+                       reader.GetString(reader.GetOrdinal("Name")),
+                       reader.GetInt32(reader.GetOrdinal("Seniority")));
+                }
+            }
+        }
+
+        public void UpdateEmployee(int empID, int restID, int jobID, string empName, int seniority)
+        {
+            using (var transaction = new TransactionScope())
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    using (var command = new SqlCommand("Employees.UpdateEmployee", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("PersonID", empID);
+                        command.Parameters.AddWithValue("RestaurantID", restID);
+                        command.Parameters.AddWithValue("JobTitleID", jobID);
+                        command.Parameters.AddWithValue("PersonName", empName);
+                        command.Parameters.AddWithValue("Seniority", seniority);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+
+                        transaction.Complete();
+                    }
+                }
+            }
+        }
+
         public IReadOnlyList<Employee> RetrieveEmployee()
         {
             using (var connection = new SqlConnection(connectionString))

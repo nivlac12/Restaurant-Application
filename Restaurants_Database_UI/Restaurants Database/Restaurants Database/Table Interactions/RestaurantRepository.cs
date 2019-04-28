@@ -104,6 +104,29 @@ namespace Restaurants_Database
             }
         }
 
+        public void UpdateRestaurant(int restID, int orgID, string restName, bool isOp)
+        {
+            using (var transaction = new TransactionScope())
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    using (var command = new SqlCommand("Restaurants.UpdateRestaurant", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("RestaurantID", restID);
+                        command.Parameters.AddWithValue("OrganizationID", orgID);
+                        command.Parameters.AddWithValue("RestaurantName", restName);
+                        command.Parameters.AddWithValue("IsOperational", isOp);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+
+                        transaction.Complete();
+                    }
+                }
+            }
+        }
+
         public IReadOnlyList<Restaurant> RetrieveRestaurants()
         {
             using (var connection = new SqlConnection(connectionString))

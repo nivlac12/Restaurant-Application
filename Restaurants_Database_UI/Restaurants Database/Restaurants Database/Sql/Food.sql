@@ -5,6 +5,6 @@ CREATE TABLE Food.Food
 	SupplierID INT NOT NULL FOREIGN KEY
 		REFERENCES Supplier.Suppliers(SupplierID),
 	[FoodName] NVARCHAR(64) NOT NULL,
-	SupplierPrice DECIMAL NOT NULL,
-	RetailPrice DECIMAL NOT NULL
+	SupplierPrice FLOAT NOT NULL,
+	RetailPrice FLOAT NOT NULL
 )

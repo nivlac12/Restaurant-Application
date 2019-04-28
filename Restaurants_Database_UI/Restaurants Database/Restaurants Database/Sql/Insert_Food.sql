@@ -1,8 +1,8 @@
 CREATE OR ALTER PROCEDURE Food.CreateFood
    @SupplierID INT,
    @FoodName NVARCHAR(64),
-   @SupplierPrice DECIMAL,
-   @RetailPrice DECIMAL,
+   @SupplierPrice FLOAT,
+   @RetailPrice FLOAT,
    @FoodID INT OUTPUT
 AS
 

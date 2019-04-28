@@ -10,3 +10,12 @@ FROM Inventory.StockItems SI
 WHERE R.RestaurantName = @RestaurantName
 	AND F.FoodName = @FoodName;
 GO
+
+CREATE OR ALTER PROCEDURE Inventory.GetStockItemByID
+   @itemID INT
+AS
+
+SELECT SI.FoodID, SI.RestaurantID, SI.Quantity
+FROM Inventory.StockItems SI
+WHERE SI.InventoryID = @itemID
+GO

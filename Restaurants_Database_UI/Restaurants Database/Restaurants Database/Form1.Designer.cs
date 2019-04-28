@@ -38,6 +38,8 @@
             this.cSupNameTextBox = new System.Windows.Forms.TextBox();
             this.cSupNameLabel = new System.Windows.Forms.Label();
             this.cFoodPage = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.foodListBox = new System.Windows.Forms.ListBox();
             this.cFoodEditButton = new System.Windows.Forms.Button();
@@ -134,8 +136,6 @@
             this.cRestExpendResultsTextBox = new System.Windows.Forms.TextBox();
             this.cCalcRestExpendButton = new System.Windows.Forms.Button();
             this.cSelectRestExpendComboBox = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.cSupplierPage.SuspendLayout();
             this.cFoodPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cFoodRetailNumUpDownBox)).BeginInit();
@@ -163,11 +163,11 @@
             this.cSupplierPage.Controls.Add(this.cSupplierAddButton);
             this.cSupplierPage.Controls.Add(this.cSupNameTextBox);
             this.cSupplierPage.Controls.Add(this.cSupNameLabel);
-            this.cSupplierPage.Location = new System.Drawing.Point(4, 26);
+            this.cSupplierPage.Location = new System.Drawing.Point(4, 29);
             this.cSupplierPage.Margin = new System.Windows.Forms.Padding(4);
             this.cSupplierPage.Name = "cSupplierPage";
             this.cSupplierPage.Padding = new System.Windows.Forms.Padding(4);
-            this.cSupplierPage.Size = new System.Drawing.Size(1446, 760);
+            this.cSupplierPage.Size = new System.Drawing.Size(1446, 757);
             this.cSupplierPage.TabIndex = 6;
             this.cSupplierPage.Text = "Suppliers";
             // 
@@ -176,17 +176,17 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(794, 62);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 17);
+            this.label7.Size = new System.Drawing.Size(179, 20);
             this.label7.TabIndex = 19;
             this.label7.Text = "Suppliers in Database:";
             // 
             // suppListBox
             // 
             this.suppListBox.FormattingEnabled = true;
-            this.suppListBox.ItemHeight = 17;
+            this.suppListBox.ItemHeight = 20;
             this.suppListBox.Location = new System.Drawing.Point(797, 82);
             this.suppListBox.Name = "suppListBox";
-            this.suppListBox.Size = new System.Drawing.Size(315, 412);
+            this.suppListBox.Size = new System.Drawing.Size(315, 404);
             this.suppListBox.TabIndex = 18;
             this.suppListBox.SelectedIndexChanged += new System.EventHandler(this.suppListBox_SelectedIndexChanged);
             // 
@@ -206,7 +206,7 @@
             this.cSupplierIdNumLabel.AutoSize = true;
             this.cSupplierIdNumLabel.Location = new System.Drawing.Point(175, 37);
             this.cSupplierIdNumLabel.Name = "cSupplierIdNumLabel";
-            this.cSupplierIdNumLabel.Size = new System.Drawing.Size(16, 17);
+            this.cSupplierIdNumLabel.Size = new System.Drawing.Size(18, 20);
             this.cSupplierIdNumLabel.TabIndex = 16;
             this.cSupplierIdNumLabel.Text = "0";
             // 
@@ -215,7 +215,7 @@
             this.cSupplierIDLabel.AutoSize = true;
             this.cSupplierIDLabel.Location = new System.Drawing.Point(49, 37);
             this.cSupplierIDLabel.Name = "cSupplierIDLabel";
-            this.cSupplierIDLabel.Size = new System.Drawing.Size(85, 17);
+            this.cSupplierIDLabel.Size = new System.Drawing.Size(102, 20);
             this.cSupplierIDLabel.TabIndex = 15;
             this.cSupplierIDLabel.Text = "SupplierID : ";
             // 
@@ -234,7 +234,7 @@
             // 
             this.cSupNameTextBox.Location = new System.Drawing.Point(178, 98);
             this.cSupNameTextBox.Name = "cSupNameTextBox";
-            this.cSupNameTextBox.Size = new System.Drawing.Size(246, 23);
+            this.cSupNameTextBox.Size = new System.Drawing.Size(246, 27);
             this.cSupNameTextBox.TabIndex = 2;
             // 
             // cSupNameLabel
@@ -242,7 +242,7 @@
             this.cSupNameLabel.AutoSize = true;
             this.cSupNameLabel.Location = new System.Drawing.Point(21, 98);
             this.cSupNameLabel.Name = "cSupNameLabel";
-            this.cSupNameLabel.Size = new System.Drawing.Size(113, 17);
+            this.cSupNameLabel.Size = new System.Drawing.Size(134, 20);
             this.cSupNameLabel.TabIndex = 1;
             this.cSupNameLabel.Text = "Supplier Name : ";
             // 
@@ -265,30 +265,48 @@
             this.cFoodPage.Controls.Add(this.cFoodSupPriceLabel);
             this.cFoodPage.Controls.Add(this.cFoodSupLabel);
             this.cFoodPage.Controls.Add(this.cFoodNameLabel);
-            this.cFoodPage.Location = new System.Drawing.Point(4, 26);
+            this.cFoodPage.Location = new System.Drawing.Point(4, 29);
             this.cFoodPage.Margin = new System.Windows.Forms.Padding(4);
             this.cFoodPage.Name = "cFoodPage";
             this.cFoodPage.Padding = new System.Windows.Forms.Padding(4);
-            this.cFoodPage.Size = new System.Drawing.Size(1446, 760);
+            this.cFoodPage.Size = new System.Drawing.Size(1446, 757);
             this.cFoodPage.TabIndex = 5;
             this.cFoodPage.Text = "Food";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(447, 230);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 20);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "dollars";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(447, 301);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(59, 20);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "dollars";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(794, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 17);
+            this.label6.Size = new System.Drawing.Size(146, 20);
             this.label6.TabIndex = 18;
             this.label6.Text = "Food in Database:";
             // 
             // foodListBox
             // 
             this.foodListBox.FormattingEnabled = true;
-            this.foodListBox.ItemHeight = 17;
-            this.foodListBox.Location = new System.Drawing.Point(797, 82);
+            this.foodListBox.ItemHeight = 20;
+            this.foodListBox.Location = new System.Drawing.Point(798, 85);
             this.foodListBox.Name = "foodListBox";
-            this.foodListBox.Size = new System.Drawing.Size(315, 412);
+            this.foodListBox.Size = new System.Drawing.Size(315, 404);
             this.foodListBox.TabIndex = 17;
             this.foodListBox.SelectedIndexChanged += new System.EventHandler(this.foodListBox_SelectedIndexChanged);
             // 
@@ -308,7 +326,7 @@
             this.cFoodIdNumLabel.AutoSize = true;
             this.cFoodIdNumLabel.Location = new System.Drawing.Point(175, 34);
             this.cFoodIdNumLabel.Name = "cFoodIdNumLabel";
-            this.cFoodIdNumLabel.Size = new System.Drawing.Size(16, 17);
+            this.cFoodIdNumLabel.Size = new System.Drawing.Size(18, 20);
             this.cFoodIdNumLabel.TabIndex = 15;
             this.cFoodIdNumLabel.Text = "0";
             // 
@@ -317,7 +335,7 @@
             this.cFoodIdLabel.AutoSize = true;
             this.cFoodIdLabel.Location = new System.Drawing.Point(75, 34);
             this.cFoodIdLabel.Name = "cFoodIdLabel";
-            this.cFoodIdLabel.Size = new System.Drawing.Size(65, 17);
+            this.cFoodIdLabel.Size = new System.Drawing.Size(78, 20);
             this.cFoodIdLabel.TabIndex = 14;
             this.cFoodIdLabel.Text = "FoodID : ";
             // 
@@ -334,31 +352,35 @@
             // 
             // cFoodRetailNumUpDownBox
             // 
+            this.cFoodRetailNumUpDownBox.DecimalPlaces = 2;
             this.cFoodRetailNumUpDownBox.Location = new System.Drawing.Point(178, 299);
             this.cFoodRetailNumUpDownBox.Name = "cFoodRetailNumUpDownBox";
-            this.cFoodRetailNumUpDownBox.Size = new System.Drawing.Size(263, 23);
+            this.cFoodRetailNumUpDownBox.Size = new System.Drawing.Size(263, 27);
             this.cFoodRetailNumUpDownBox.TabIndex = 9;
             // 
             // cFoodSupPriceNumUpDownBox
             // 
+            this.cFoodSupPriceNumUpDownBox.DecimalPlaces = 2;
             this.cFoodSupPriceNumUpDownBox.Location = new System.Drawing.Point(178, 228);
             this.cFoodSupPriceNumUpDownBox.Name = "cFoodSupPriceNumUpDownBox";
-            this.cFoodSupPriceNumUpDownBox.Size = new System.Drawing.Size(263, 23);
+            this.cFoodSupPriceNumUpDownBox.Size = new System.Drawing.Size(263, 27);
             this.cFoodSupPriceNumUpDownBox.TabIndex = 8;
+            this.cFoodSupPriceNumUpDownBox.ValueChanged += new System.EventHandler(this.cFoodSupPriceNumUpDownBox_ValueChanged);
             // 
             // cFoodSupplierComboBox
             // 
+            this.cFoodSupplierComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cFoodSupplierComboBox.FormattingEnabled = true;
             this.cFoodSupplierComboBox.Location = new System.Drawing.Point(178, 153);
             this.cFoodSupplierComboBox.Name = "cFoodSupplierComboBox";
-            this.cFoodSupplierComboBox.Size = new System.Drawing.Size(263, 25);
+            this.cFoodSupplierComboBox.Size = new System.Drawing.Size(263, 28);
             this.cFoodSupplierComboBox.TabIndex = 7;
             // 
             // cFoodNameTextBox
             // 
             this.cFoodNameTextBox.Location = new System.Drawing.Point(178, 86);
             this.cFoodNameTextBox.Name = "cFoodNameTextBox";
-            this.cFoodNameTextBox.Size = new System.Drawing.Size(263, 23);
+            this.cFoodNameTextBox.Size = new System.Drawing.Size(263, 27);
             this.cFoodNameTextBox.TabIndex = 6;
             // 
             // cFoodRetailPriceLabel
@@ -366,7 +388,7 @@
             this.cFoodRetailPriceLabel.AutoSize = true;
             this.cFoodRetailPriceLabel.Location = new System.Drawing.Point(48, 305);
             this.cFoodRetailPriceLabel.Name = "cFoodRetailPriceLabel";
-            this.cFoodRetailPriceLabel.Size = new System.Drawing.Size(92, 17);
+            this.cFoodRetailPriceLabel.Size = new System.Drawing.Size(111, 20);
             this.cFoodRetailPriceLabel.TabIndex = 5;
             this.cFoodRetailPriceLabel.Text = "Retail Price : ";
             // 
@@ -375,7 +397,7 @@
             this.cFoodSupPriceLabel.AutoSize = true;
             this.cFoodSupPriceLabel.Location = new System.Drawing.Point(32, 228);
             this.cFoodSupPriceLabel.Name = "cFoodSupPriceLabel";
-            this.cFoodSupPriceLabel.Size = new System.Drawing.Size(108, 17);
+            this.cFoodSupPriceLabel.Size = new System.Drawing.Size(129, 20);
             this.cFoodSupPriceLabel.TabIndex = 4;
             this.cFoodSupPriceLabel.Text = "Supplier Price : ";
             // 
@@ -384,7 +406,7 @@
             this.cFoodSupLabel.AutoSize = true;
             this.cFoodSupLabel.Location = new System.Drawing.Point(68, 156);
             this.cFoodSupLabel.Name = "cFoodSupLabel";
-            this.cFoodSupLabel.Size = new System.Drawing.Size(72, 17);
+            this.cFoodSupLabel.Size = new System.Drawing.Size(85, 20);
             this.cFoodSupLabel.TabIndex = 3;
             this.cFoodSupLabel.Text = "Supplier : ";
             // 
@@ -393,7 +415,7 @@
             this.cFoodNameLabel.AutoSize = true;
             this.cFoodNameLabel.Location = new System.Drawing.Point(51, 86);
             this.cFoodNameLabel.Name = "cFoodNameLabel";
-            this.cFoodNameLabel.Size = new System.Drawing.Size(93, 17);
+            this.cFoodNameLabel.Size = new System.Drawing.Size(110, 20);
             this.cFoodNameLabel.TabIndex = 2;
             this.cFoodNameLabel.Text = "Food Name : ";
             // 
@@ -412,11 +434,11 @@
             this.cInventoryPage.Controls.Add(this.cInventoryRestLabel);
             this.cInventoryPage.Controls.Add(this.cInventoryFoodComboBox);
             this.cInventoryPage.Controls.Add(this.cInventoryFoodIdLabel);
-            this.cInventoryPage.Location = new System.Drawing.Point(4, 26);
+            this.cInventoryPage.Location = new System.Drawing.Point(4, 29);
             this.cInventoryPage.Margin = new System.Windows.Forms.Padding(4);
             this.cInventoryPage.Name = "cInventoryPage";
             this.cInventoryPage.Padding = new System.Windows.Forms.Padding(4);
-            this.cInventoryPage.Size = new System.Drawing.Size(1446, 760);
+            this.cInventoryPage.Size = new System.Drawing.Size(1446, 757);
             this.cInventoryPage.TabIndex = 4;
             this.cInventoryPage.Text = "Inventory";
             // 
@@ -425,17 +447,17 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(794, 62);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(187, 17);
+            this.label5.Size = new System.Drawing.Size(222, 20);
             this.label5.TabIndex = 17;
             this.label5.Text = "Inventory items in Database:";
             // 
             // invListBox
             // 
             this.invListBox.FormattingEnabled = true;
-            this.invListBox.ItemHeight = 17;
+            this.invListBox.ItemHeight = 20;
             this.invListBox.Location = new System.Drawing.Point(797, 82);
             this.invListBox.Name = "invListBox";
-            this.invListBox.Size = new System.Drawing.Size(315, 412);
+            this.invListBox.Size = new System.Drawing.Size(315, 404);
             this.invListBox.TabIndex = 16;
             this.invListBox.SelectedIndexChanged += new System.EventHandler(this.invListBox_SelectedIndexChanged);
             // 
@@ -455,7 +477,7 @@
             this.cInventoryIdNumLabel.AutoSize = true;
             this.cInventoryIdNumLabel.Location = new System.Drawing.Point(161, 38);
             this.cInventoryIdNumLabel.Name = "cInventoryIdNumLabel";
-            this.cInventoryIdNumLabel.Size = new System.Drawing.Size(16, 17);
+            this.cInventoryIdNumLabel.Size = new System.Drawing.Size(18, 20);
             this.cInventoryIdNumLabel.TabIndex = 14;
             this.cInventoryIdNumLabel.Text = "0";
             // 
@@ -464,7 +486,7 @@
             this.cInvyIDLabel.AutoSize = true;
             this.cInvyIDLabel.Location = new System.Drawing.Point(64, 38);
             this.cInvyIDLabel.Name = "cInvyIDLabel";
-            this.cInvyIDLabel.Size = new System.Drawing.Size(51, 17);
+            this.cInvyIDLabel.Size = new System.Drawing.Size(63, 20);
             this.cInvyIDLabel.TabIndex = 13;
             this.cInvyIDLabel.Text = "ItemID:";
             // 
@@ -483,7 +505,7 @@
             // 
             this.cInventoryQuantityNumUpDownBox.Location = new System.Drawing.Point(164, 280);
             this.cInventoryQuantityNumUpDownBox.Name = "cInventoryQuantityNumUpDownBox";
-            this.cInventoryQuantityNumUpDownBox.Size = new System.Drawing.Size(275, 23);
+            this.cInventoryQuantityNumUpDownBox.Size = new System.Drawing.Size(275, 27);
             this.cInventoryQuantityNumUpDownBox.TabIndex = 7;
             // 
             // cInventoryQuantityLabel
@@ -491,16 +513,17 @@
             this.cInventoryQuantityLabel.AutoSize = true;
             this.cInventoryQuantityLabel.Location = new System.Drawing.Point(46, 282);
             this.cInventoryQuantityLabel.Name = "cInventoryQuantityLabel";
-            this.cInventoryQuantityLabel.Size = new System.Drawing.Size(69, 17);
+            this.cInventoryQuantityLabel.Size = new System.Drawing.Size(81, 20);
             this.cInventoryQuantityLabel.TabIndex = 6;
             this.cInventoryQuantityLabel.Text = "Quantity :";
             // 
             // cInventoryRestComboBox
             // 
+            this.cInventoryRestComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cInventoryRestComboBox.FormattingEnabled = true;
             this.cInventoryRestComboBox.Location = new System.Drawing.Point(164, 196);
             this.cInventoryRestComboBox.Name = "cInventoryRestComboBox";
-            this.cInventoryRestComboBox.Size = new System.Drawing.Size(275, 25);
+            this.cInventoryRestComboBox.Size = new System.Drawing.Size(275, 28);
             this.cInventoryRestComboBox.TabIndex = 5;
             // 
             // cInventoryRestLabel
@@ -508,16 +531,17 @@
             this.cInventoryRestLabel.AutoSize = true;
             this.cInventoryRestLabel.Location = new System.Drawing.Point(29, 196);
             this.cInventoryRestLabel.Name = "cInventoryRestLabel";
-            this.cInventoryRestLabel.Size = new System.Drawing.Size(86, 17);
+            this.cInventoryRestLabel.Size = new System.Drawing.Size(101, 20);
             this.cInventoryRestLabel.TabIndex = 4;
             this.cInventoryRestLabel.Text = "Restaurant :";
             // 
             // cInventoryFoodComboBox
             // 
+            this.cInventoryFoodComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cInventoryFoodComboBox.FormattingEnabled = true;
             this.cInventoryFoodComboBox.Location = new System.Drawing.Point(164, 107);
             this.cInventoryFoodComboBox.Name = "cInventoryFoodComboBox";
-            this.cInventoryFoodComboBox.Size = new System.Drawing.Size(275, 25);
+            this.cInventoryFoodComboBox.Size = new System.Drawing.Size(275, 28);
             this.cInventoryFoodComboBox.TabIndex = 3;
             // 
             // cInventoryFoodIdLabel
@@ -525,7 +549,7 @@
             this.cInventoryFoodIdLabel.AutoSize = true;
             this.cInventoryFoodIdLabel.Location = new System.Drawing.Point(67, 107);
             this.cInventoryFoodIdLabel.Name = "cInventoryFoodIdLabel";
-            this.cInventoryFoodIdLabel.Size = new System.Drawing.Size(48, 17);
+            this.cInventoryFoodIdLabel.Size = new System.Drawing.Size(56, 20);
             this.cInventoryFoodIdLabel.TabIndex = 2;
             this.cInventoryFoodIdLabel.Text = "Food :";
             // 
@@ -543,11 +567,11 @@
             this.cJobsPage.Controls.Add(this.cJobSalaryLabel);
             this.cJobsPage.Controls.Add(this.cJobNameTextBox);
             this.cJobsPage.Controls.Add(this.cJobNameLabel);
-            this.cJobsPage.Location = new System.Drawing.Point(4, 26);
+            this.cJobsPage.Location = new System.Drawing.Point(4, 29);
             this.cJobsPage.Margin = new System.Windows.Forms.Padding(4);
             this.cJobsPage.Name = "cJobsPage";
             this.cJobsPage.Padding = new System.Windows.Forms.Padding(4);
-            this.cJobsPage.Size = new System.Drawing.Size(1446, 760);
+            this.cJobsPage.Size = new System.Drawing.Size(1446, 757);
             this.cJobsPage.TabIndex = 3;
             this.cJobsPage.Text = "Jobs";
             // 
@@ -556,7 +580,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(396, 184);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(116, 17);
+            this.label9.Size = new System.Drawing.Size(136, 20);
             this.label9.TabIndex = 20;
             this.label9.Text = "dollars per hour: ";
             // 
@@ -565,17 +589,17 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(794, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 17);
+            this.label4.Size = new System.Drawing.Size(145, 20);
             this.label4.TabIndex = 19;
             this.label4.Text = "Jobs in Database:";
             // 
             // jobsListBox
             // 
             this.jobsListBox.FormattingEnabled = true;
-            this.jobsListBox.ItemHeight = 17;
+            this.jobsListBox.ItemHeight = 20;
             this.jobsListBox.Location = new System.Drawing.Point(797, 82);
             this.jobsListBox.Name = "jobsListBox";
-            this.jobsListBox.Size = new System.Drawing.Size(315, 412);
+            this.jobsListBox.Size = new System.Drawing.Size(315, 404);
             this.jobsListBox.TabIndex = 18;
             this.jobsListBox.SelectedIndexChanged += new System.EventHandler(this.jobsListBox_SelectedIndexChanged);
             // 
@@ -595,7 +619,7 @@
             this.cJobIdNumLabel.AutoSize = true;
             this.cJobIdNumLabel.Location = new System.Drawing.Point(145, 33);
             this.cJobIdNumLabel.Name = "cJobIdNumLabel";
-            this.cJobIdNumLabel.Size = new System.Drawing.Size(16, 17);
+            this.cJobIdNumLabel.Size = new System.Drawing.Size(18, 20);
             this.cJobIdNumLabel.TabIndex = 16;
             this.cJobIdNumLabel.Text = "0";
             // 
@@ -604,7 +628,7 @@
             this.cJobIdLabel.AutoSize = true;
             this.cJobIdLabel.Location = new System.Drawing.Point(56, 33);
             this.cJobIdLabel.Name = "cJobIdLabel";
-            this.cJobIdLabel.Size = new System.Drawing.Size(56, 17);
+            this.cJobIdLabel.Size = new System.Drawing.Size(68, 20);
             this.cJobIdLabel.TabIndex = 15;
             this.cJobIdLabel.Text = "JobID : ";
             // 
@@ -621,9 +645,10 @@
             // 
             // cJobSalaryNumUpDownBox
             // 
+            this.cJobSalaryNumUpDownBox.DecimalPlaces = 2;
             this.cJobSalaryNumUpDownBox.Location = new System.Drawing.Point(148, 184);
             this.cJobSalaryNumUpDownBox.Name = "cJobSalaryNumUpDownBox";
-            this.cJobSalaryNumUpDownBox.Size = new System.Drawing.Size(242, 23);
+            this.cJobSalaryNumUpDownBox.Size = new System.Drawing.Size(242, 27);
             this.cJobSalaryNumUpDownBox.TabIndex = 5;
             this.cJobSalaryNumUpDownBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -632,7 +657,7 @@
             this.cJobSalaryLabel.AutoSize = true;
             this.cJobSalaryLabel.Location = new System.Drawing.Point(24, 184);
             this.cJobSalaryLabel.Name = "cJobSalaryLabel";
-            this.cJobSalaryLabel.Size = new System.Drawing.Size(88, 17);
+            this.cJobSalaryLabel.Size = new System.Drawing.Size(105, 20);
             this.cJobSalaryLabel.TabIndex = 4;
             this.cJobSalaryLabel.Text = "Base Salary:";
             // 
@@ -640,7 +665,7 @@
             // 
             this.cJobNameTextBox.Location = new System.Drawing.Point(148, 97);
             this.cJobNameTextBox.Name = "cJobNameTextBox";
-            this.cJobNameTextBox.Size = new System.Drawing.Size(242, 23);
+            this.cJobNameTextBox.Size = new System.Drawing.Size(242, 27);
             this.cJobNameTextBox.TabIndex = 3;
             // 
             // cJobNameLabel
@@ -648,7 +673,7 @@
             this.cJobNameLabel.AutoSize = true;
             this.cJobNameLabel.Location = new System.Drawing.Point(55, 97);
             this.cJobNameLabel.Name = "cJobNameLabel";
-            this.cJobNameLabel.Size = new System.Drawing.Size(57, 17);
+            this.cJobNameLabel.Size = new System.Drawing.Size(68, 20);
             this.cJobNameLabel.TabIndex = 2;
             this.cJobNameLabel.Text = "Name : ";
             // 
@@ -671,11 +696,11 @@
             this.cEmployeePage.Controls.Add(this.cEmployeeNameTextBox);
             this.cEmployeePage.Controls.Add(this.cEmployeeNameLabel);
             this.cEmployeePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cEmployeePage.Location = new System.Drawing.Point(4, 26);
+            this.cEmployeePage.Location = new System.Drawing.Point(4, 29);
             this.cEmployeePage.Margin = new System.Windows.Forms.Padding(4);
             this.cEmployeePage.Name = "cEmployeePage";
             this.cEmployeePage.Padding = new System.Windows.Forms.Padding(4);
-            this.cEmployeePage.Size = new System.Drawing.Size(1446, 760);
+            this.cEmployeePage.Size = new System.Drawing.Size(1446, 757);
             this.cEmployeePage.TabIndex = 2;
             this.cEmployeePage.Text = "Employees";
             // 
@@ -684,7 +709,7 @@
             this.seniorityUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.seniorityUpDown.Location = new System.Drawing.Point(157, 366);
             this.seniorityUpDown.Name = "seniorityUpDown";
-            this.seniorityUpDown.Size = new System.Drawing.Size(275, 23);
+            this.seniorityUpDown.Size = new System.Drawing.Size(275, 27);
             this.seniorityUpDown.TabIndex = 25;
             this.seniorityUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -694,7 +719,7 @@
             this.label8.Location = new System.Drawing.Point(440, 366);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 17);
+            this.label8.Size = new System.Drawing.Size(62, 20);
             this.label8.TabIndex = 24;
             this.label8.Text = "(years)";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -704,17 +729,17 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(794, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 17);
+            this.label3.Size = new System.Drawing.Size(191, 20);
             this.label3.TabIndex = 23;
             this.label3.Text = "Employees in Database:";
             // 
             // empListBox
             // 
             this.empListBox.FormattingEnabled = true;
-            this.empListBox.ItemHeight = 17;
+            this.empListBox.ItemHeight = 20;
             this.empListBox.Location = new System.Drawing.Point(797, 82);
             this.empListBox.Name = "empListBox";
-            this.empListBox.Size = new System.Drawing.Size(315, 412);
+            this.empListBox.Size = new System.Drawing.Size(315, 404);
             this.empListBox.TabIndex = 19;
             this.empListBox.SelectedIndexChanged += new System.EventHandler(this.empListBox_SelectedIndexChanged);
             // 
@@ -734,7 +759,7 @@
             this.cPersonIdNumLabel.AutoSize = true;
             this.cPersonIdNumLabel.Location = new System.Drawing.Point(154, 43);
             this.cPersonIdNumLabel.Name = "cPersonIdNumLabel";
-            this.cPersonIdNumLabel.Size = new System.Drawing.Size(16, 17);
+            this.cPersonIdNumLabel.Size = new System.Drawing.Size(18, 20);
             this.cPersonIdNumLabel.TabIndex = 16;
             this.cPersonIdNumLabel.Text = "0";
             // 
@@ -743,7 +768,7 @@
             this.cPersonIdLabel.AutoSize = true;
             this.cPersonIdLabel.Location = new System.Drawing.Point(29, 43);
             this.cPersonIdLabel.Name = "cPersonIdLabel";
-            this.cPersonIdLabel.Size = new System.Drawing.Size(78, 17);
+            this.cPersonIdLabel.Size = new System.Drawing.Size(94, 20);
             this.cPersonIdLabel.TabIndex = 15;
             this.cPersonIdLabel.Text = "PersonID : ";
             // 
@@ -760,11 +785,12 @@
             // 
             // cEmployRestComboBox
             // 
+            this.cEmployRestComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cEmployRestComboBox.FormattingEnabled = true;
             this.cEmployRestComboBox.Location = new System.Drawing.Point(157, 121);
             this.cEmployRestComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.cEmployRestComboBox.Name = "cEmployRestComboBox";
-            this.cEmployRestComboBox.Size = new System.Drawing.Size(275, 25);
+            this.cEmployRestComboBox.Size = new System.Drawing.Size(275, 28);
             this.cEmployRestComboBox.TabIndex = 8;
             this.cEmployRestComboBox.SelectedIndexChanged += new System.EventHandler(this.cEmployRestComboBox_SelectedIndexChanged);
             // 
@@ -774,7 +800,7 @@
             this.cEmployRestIDLabel.Location = new System.Drawing.Point(13, 121);
             this.cEmployRestIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cEmployRestIDLabel.Name = "cEmployRestIDLabel";
-            this.cEmployRestIDLabel.Size = new System.Drawing.Size(94, 17);
+            this.cEmployRestIDLabel.Size = new System.Drawing.Size(111, 20);
             this.cEmployRestIDLabel.TabIndex = 7;
             this.cEmployRestIDLabel.Text = "Restaurant  : ";
             // 
@@ -784,18 +810,19 @@
             this.cEmploySeniorityLabel.Location = new System.Drawing.Point(40, 366);
             this.cEmploySeniorityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cEmploySeniorityLabel.Name = "cEmploySeniorityLabel";
-            this.cEmploySeniorityLabel.Size = new System.Drawing.Size(67, 17);
+            this.cEmploySeniorityLabel.Size = new System.Drawing.Size(79, 20);
             this.cEmploySeniorityLabel.TabIndex = 5;
             this.cEmploySeniorityLabel.Text = "Seniority:";
             this.cEmploySeniorityLabel.Click += new System.EventHandler(this.cEmploySeniorityLabel_Click);
             // 
             // cEmployJobTitleComboBox
             // 
+            this.cEmployJobTitleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cEmployJobTitleComboBox.FormattingEnabled = true;
             this.cEmployJobTitleComboBox.Location = new System.Drawing.Point(157, 285);
             this.cEmployJobTitleComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.cEmployJobTitleComboBox.Name = "cEmployJobTitleComboBox";
-            this.cEmployJobTitleComboBox.Size = new System.Drawing.Size(275, 25);
+            this.cEmployJobTitleComboBox.Size = new System.Drawing.Size(275, 28);
             this.cEmployJobTitleComboBox.TabIndex = 4;
             // 
             // cEmployJobLabel
@@ -804,7 +831,7 @@
             this.cEmployJobLabel.Location = new System.Drawing.Point(64, 285);
             this.cEmployJobLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cEmployJobLabel.Name = "cEmployJobLabel";
-            this.cEmployJobLabel.Size = new System.Drawing.Size(43, 17);
+            this.cEmployJobLabel.Size = new System.Drawing.Size(51, 20);
             this.cEmployJobLabel.TabIndex = 3;
             this.cEmployJobLabel.Text = "Job : ";
             // 
@@ -813,7 +840,7 @@
             this.cEmployeeNameTextBox.Location = new System.Drawing.Point(157, 203);
             this.cEmployeeNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cEmployeeNameTextBox.Name = "cEmployeeNameTextBox";
-            this.cEmployeeNameTextBox.Size = new System.Drawing.Size(275, 23);
+            this.cEmployeeNameTextBox.Size = new System.Drawing.Size(275, 27);
             this.cEmployeeNameTextBox.TabIndex = 2;
             // 
             // cEmployeeNameLabel
@@ -822,7 +849,7 @@
             this.cEmployeeNameLabel.Location = new System.Drawing.Point(56, 206);
             this.cEmployeeNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cEmployeeNameLabel.Name = "cEmployeeNameLabel";
-            this.cEmployeeNameLabel.Size = new System.Drawing.Size(57, 17);
+            this.cEmployeeNameLabel.Size = new System.Drawing.Size(68, 20);
             this.cEmployeeNameLabel.TabIndex = 1;
             this.cEmployeeNameLabel.Text = "Name : ";
             // 
@@ -845,11 +872,11 @@
             this.cRestaurantPage.Controls.Add(this.cRestNameLabel);
             this.cRestaurantPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cRestaurantPage.ForeColor = System.Drawing.Color.Black;
-            this.cRestaurantPage.Location = new System.Drawing.Point(4, 26);
+            this.cRestaurantPage.Location = new System.Drawing.Point(4, 29);
             this.cRestaurantPage.Margin = new System.Windows.Forms.Padding(4);
             this.cRestaurantPage.Name = "cRestaurantPage";
             this.cRestaurantPage.Padding = new System.Windows.Forms.Padding(4);
-            this.cRestaurantPage.Size = new System.Drawing.Size(1446, 760);
+            this.cRestaurantPage.Size = new System.Drawing.Size(1446, 757);
             this.cRestaurantPage.TabIndex = 1;
             this.cRestaurantPage.Text = "Restaurant";
             this.cRestaurantPage.Click += new System.EventHandler(this.cRestaurantPage_Click);
@@ -859,7 +886,7 @@
             this.restaurantListLabel.AutoSize = true;
             this.restaurantListLabel.Location = new System.Drawing.Point(794, 62);
             this.restaurantListLabel.Name = "restaurantListLabel";
-            this.restaurantListLabel.Size = new System.Drawing.Size(169, 17);
+            this.restaurantListLabel.Size = new System.Drawing.Size(200, 20);
             this.restaurantListLabel.TabIndex = 22;
             this.restaurantListLabel.Text = "Restaurants in Database:";
             this.restaurantListLabel.Click += new System.EventHandler(this.label2_Click);
@@ -867,10 +894,10 @@
             // restListBox
             // 
             this.restListBox.FormattingEnabled = true;
-            this.restListBox.ItemHeight = 17;
+            this.restListBox.ItemHeight = 20;
             this.restListBox.Location = new System.Drawing.Point(797, 82);
             this.restListBox.Name = "restListBox";
-            this.restListBox.Size = new System.Drawing.Size(315, 412);
+            this.restListBox.Size = new System.Drawing.Size(315, 404);
             this.restListBox.TabIndex = 19;
             this.restListBox.SelectedIndexChanged += new System.EventHandler(this.restListBox_SelectedIndexChanged);
             // 
@@ -890,7 +917,7 @@
             this.cRestIdNumLabel.AutoSize = true;
             this.cRestIdNumLabel.Location = new System.Drawing.Point(190, 34);
             this.cRestIdNumLabel.Name = "cRestIdNumLabel";
-            this.cRestIdNumLabel.Size = new System.Drawing.Size(16, 17);
+            this.cRestIdNumLabel.Size = new System.Drawing.Size(18, 20);
             this.cRestIdNumLabel.TabIndex = 16;
             this.cRestIdNumLabel.Text = "0";
             // 
@@ -899,7 +926,7 @@
             this.cRestaurantIdLabel.AutoSize = true;
             this.cRestaurantIdLabel.Location = new System.Drawing.Point(36, 34);
             this.cRestaurantIdLabel.Name = "cRestaurantIdLabel";
-            this.cRestaurantIdLabel.Size = new System.Drawing.Size(103, 17);
+            this.cRestaurantIdLabel.Size = new System.Drawing.Size(123, 20);
             this.cRestaurantIdLabel.TabIndex = 15;
             this.cRestaurantIdLabel.Text = "RestaurantID : ";
             this.cRestaurantIdLabel.Click += new System.EventHandler(this.cRestaurantIdLabel_Click);
@@ -917,6 +944,7 @@
             // 
             // cRestOpComboBox
             // 
+            this.cRestOpComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cRestOpComboBox.FormattingEnabled = true;
             this.cRestOpComboBox.Items.AddRange(new object[] {
             "Yes",
@@ -924,7 +952,7 @@
             this.cRestOpComboBox.Location = new System.Drawing.Point(193, 360);
             this.cRestOpComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.cRestOpComboBox.Name = "cRestOpComboBox";
-            this.cRestOpComboBox.Size = new System.Drawing.Size(283, 25);
+            this.cRestOpComboBox.Size = new System.Drawing.Size(283, 28);
             this.cRestOpComboBox.TabIndex = 8;
             this.cRestOpComboBox.SelectedIndexChanged += new System.EventHandler(this.cRestOpComboBox_SelectedIndexChanged);
             // 
@@ -934,7 +962,7 @@
             this.cRestOpLabel.Location = new System.Drawing.Point(45, 363);
             this.cRestOpLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cRestOpLabel.Name = "cRestOpLabel";
-            this.cRestOpLabel.Size = new System.Drawing.Size(94, 17);
+            this.cRestOpLabel.Size = new System.Drawing.Size(110, 20);
             this.cRestOpLabel.TabIndex = 7;
             this.cRestOpLabel.Text = "Operational : ";
             this.cRestOpLabel.Click += new System.EventHandler(this.cRestOpLabel_Click);
@@ -945,7 +973,7 @@
             this.cRestDateFoundedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cRestDateFoundedTextBox.Name = "cRestDateFoundedTextBox";
             this.cRestDateFoundedTextBox.ReadOnly = true;
-            this.cRestDateFoundedTextBox.Size = new System.Drawing.Size(284, 23);
+            this.cRestDateFoundedTextBox.Size = new System.Drawing.Size(284, 27);
             this.cRestDateFoundedTextBox.TabIndex = 6;
             this.cRestDateFoundedTextBox.Text = "00/00/0000";
             this.cRestDateFoundedTextBox.TextChanged += new System.EventHandler(this.cRestDateFoundedTextBox_TextChanged);
@@ -955,7 +983,7 @@
             this.cRestNameTextBox.Location = new System.Drawing.Point(191, 98);
             this.cRestNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cRestNameTextBox.Name = "cRestNameTextBox";
-            this.cRestNameTextBox.Size = new System.Drawing.Size(284, 23);
+            this.cRestNameTextBox.Size = new System.Drawing.Size(284, 27);
             this.cRestNameTextBox.TabIndex = 2;
             this.cRestNameTextBox.TextChanged += new System.EventHandler(this.cRestNameTextBox_TextChanged);
             // 
@@ -965,18 +993,19 @@
             this.cRestDateFoundLabel.Location = new System.Drawing.Point(52, 277);
             this.cRestDateFoundLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cRestDateFoundLabel.Name = "cRestDateFoundLabel";
-            this.cRestDateFoundLabel.Size = new System.Drawing.Size(87, 17);
+            this.cRestDateFoundLabel.Size = new System.Drawing.Size(102, 20);
             this.cRestDateFoundLabel.TabIndex = 5;
             this.cRestDateFoundLabel.Text = "Date Added:";
             this.cRestDateFoundLabel.Click += new System.EventHandler(this.cRestDateFoundLabel_Click);
             // 
             // cRestOrgComboBox
             // 
+            this.cRestOrgComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cRestOrgComboBox.FormattingEnabled = true;
             this.cRestOrgComboBox.Location = new System.Drawing.Point(192, 184);
             this.cRestOrgComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.cRestOrgComboBox.Name = "cRestOrgComboBox";
-            this.cRestOrgComboBox.Size = new System.Drawing.Size(283, 25);
+            this.cRestOrgComboBox.Size = new System.Drawing.Size(283, 28);
             this.cRestOrgComboBox.TabIndex = 4;
             this.cRestOrgComboBox.SelectedIndexChanged += new System.EventHandler(this.cRestOrgComboBox_SelectedIndexChanged);
             // 
@@ -986,7 +1015,7 @@
             this.cRestOrgLabel.Location = new System.Drawing.Point(44, 184);
             this.cRestOrgLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cRestOrgLabel.Name = "cRestOrgLabel";
-            this.cRestOrgLabel.Size = new System.Drawing.Size(101, 17);
+            this.cRestOrgLabel.Size = new System.Drawing.Size(119, 20);
             this.cRestOrgLabel.TabIndex = 3;
             this.cRestOrgLabel.Text = "Organization : ";
             // 
@@ -998,7 +1027,7 @@
             this.cRestNameLabel.Location = new System.Drawing.Point(8, 98);
             this.cRestNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cRestNameLabel.Name = "cRestNameLabel";
-            this.cRestNameLabel.Size = new System.Drawing.Size(131, 17);
+            this.cRestNameLabel.Size = new System.Drawing.Size(155, 20);
             this.cRestNameLabel.TabIndex = 1;
             this.cRestNameLabel.Text = "Restaurant Name : ";
             this.cRestNameLabel.Click += new System.EventHandler(this.cRestNameLabel_Click);
@@ -1018,11 +1047,11 @@
             this.cOrgPage.Controls.Add(this.cOrgLabel);
             this.cOrgPage.Controls.Add(this.label1);
             this.cOrgPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cOrgPage.Location = new System.Drawing.Point(4, 26);
+            this.cOrgPage.Location = new System.Drawing.Point(4, 29);
             this.cOrgPage.Margin = new System.Windows.Forms.Padding(4);
             this.cOrgPage.Name = "cOrgPage";
             this.cOrgPage.Padding = new System.Windows.Forms.Padding(4);
-            this.cOrgPage.Size = new System.Drawing.Size(1446, 760);
+            this.cOrgPage.Size = new System.Drawing.Size(1446, 757);
             this.cOrgPage.TabIndex = 0;
             this.cOrgPage.Text = "Organization";
             this.cOrgPage.Click += new System.EventHandler(this.cOrgPage_Click);
@@ -1032,17 +1061,17 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(794, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 17);
+            this.label2.Size = new System.Drawing.Size(213, 20);
             this.label2.TabIndex = 23;
             this.label2.Text = "Organizations in Database:";
             // 
             // orgListBox
             // 
             this.orgListBox.FormattingEnabled = true;
-            this.orgListBox.ItemHeight = 17;
+            this.orgListBox.ItemHeight = 20;
             this.orgListBox.Location = new System.Drawing.Point(797, 82);
             this.orgListBox.Name = "orgListBox";
-            this.orgListBox.Size = new System.Drawing.Size(315, 412);
+            this.orgListBox.Size = new System.Drawing.Size(315, 404);
             this.orgListBox.TabIndex = 18;
             this.orgListBox.SelectedIndexChanged += new System.EventHandler(this.orgListBox_SelectedIndexChanged);
             // 
@@ -1062,7 +1091,7 @@
             this.cOrgIdNumLabel.AutoSize = true;
             this.cOrgIdNumLabel.Location = new System.Drawing.Point(237, 60);
             this.cOrgIdNumLabel.Name = "cOrgIdNumLabel";
-            this.cOrgIdNumLabel.Size = new System.Drawing.Size(16, 17);
+            this.cOrgIdNumLabel.Size = new System.Drawing.Size(18, 20);
             this.cOrgIdNumLabel.TabIndex = 16;
             this.cOrgIdNumLabel.Text = "0";
             // 
@@ -1071,7 +1100,7 @@
             this.cOrgIdLabel.AutoSize = true;
             this.cOrgIdLabel.Location = new System.Drawing.Point(55, 60);
             this.cOrgIdLabel.Name = "cOrgIdLabel";
-            this.cOrgIdLabel.Size = new System.Drawing.Size(114, 17);
+            this.cOrgIdLabel.Size = new System.Drawing.Size(136, 20);
             this.cOrgIdLabel.TabIndex = 15;
             this.cOrgIdLabel.Text = "OrganizationID : ";
             this.cOrgIdLabel.Click += new System.EventHandler(this.cOrgIdLabel_Click);
@@ -1093,7 +1122,7 @@
             this.cDateFoundedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cDateFoundedTextBox.Name = "cDateFoundedTextBox";
             this.cDateFoundedTextBox.ReadOnly = true;
-            this.cDateFoundedTextBox.Size = new System.Drawing.Size(293, 23);
+            this.cDateFoundedTextBox.Size = new System.Drawing.Size(293, 27);
             this.cDateFoundedTextBox.TabIndex = 4;
             this.cDateFoundedTextBox.Text = "00/00/0000";
             this.cDateFoundedTextBox.TextChanged += new System.EventHandler(this.cDateFoundedTextBox_TextChanged);
@@ -1103,7 +1132,7 @@
             this.cOrgNameTextBox.Location = new System.Drawing.Point(240, 115);
             this.cOrgNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cOrgNameTextBox.Name = "cOrgNameTextBox";
-            this.cOrgNameTextBox.Size = new System.Drawing.Size(293, 23);
+            this.cOrgNameTextBox.Size = new System.Drawing.Size(293, 27);
             this.cOrgNameTextBox.TabIndex = 1;
             this.cOrgNameTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -1113,7 +1142,7 @@
             this.cDateFoundedLabel.Location = new System.Drawing.Point(82, 187);
             this.cDateFoundedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cDateFoundedLabel.Name = "cDateFoundedLabel";
-            this.cDateFoundedLabel.Size = new System.Drawing.Size(87, 17);
+            this.cDateFoundedLabel.Size = new System.Drawing.Size(102, 20);
             this.cDateFoundedLabel.TabIndex = 3;
             this.cDateFoundedLabel.Text = "Date Added:";
             this.cDateFoundedLabel.Click += new System.EventHandler(this.cDateFoundedLabel_Click);
@@ -1124,7 +1153,7 @@
             this.cOrgLabel.Location = new System.Drawing.Point(31, 115);
             this.cOrgLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cOrgLabel.Name = "cOrgLabel";
-            this.cOrgLabel.Size = new System.Drawing.Size(138, 17);
+            this.cOrgLabel.Size = new System.Drawing.Size(163, 20);
             this.cOrgLabel.TabIndex = 2;
             this.cOrgLabel.Text = "Organization Name :";
             // 
@@ -1169,10 +1198,10 @@
             this.cAnalysisPage.Controls.Add(this.cRestExpendResultsTextBox);
             this.cAnalysisPage.Controls.Add(this.cCalcRestExpendButton);
             this.cAnalysisPage.Controls.Add(this.cSelectRestExpendComboBox);
-            this.cAnalysisPage.Location = new System.Drawing.Point(4, 26);
+            this.cAnalysisPage.Location = new System.Drawing.Point(4, 29);
             this.cAnalysisPage.Name = "cAnalysisPage";
             this.cAnalysisPage.Padding = new System.Windows.Forms.Padding(3);
-            this.cAnalysisPage.Size = new System.Drawing.Size(1446, 760);
+            this.cAnalysisPage.Size = new System.Drawing.Size(1446, 757);
             this.cAnalysisPage.TabIndex = 7;
             this.cAnalysisPage.Text = "Analysis";
             // 
@@ -1181,7 +1210,7 @@
             this.cSelectSupplierSalesComboBox.FormattingEnabled = true;
             this.cSelectSupplierSalesComboBox.Location = new System.Drawing.Point(112, 410);
             this.cSelectSupplierSalesComboBox.Name = "cSelectSupplierSalesComboBox";
-            this.cSelectSupplierSalesComboBox.Size = new System.Drawing.Size(233, 25);
+            this.cSelectSupplierSalesComboBox.Size = new System.Drawing.Size(233, 28);
             this.cSelectSupplierSalesComboBox.TabIndex = 22;
             // 
             // cSelectOrgExpendComboBox
@@ -1189,7 +1218,7 @@
             this.cSelectOrgExpendComboBox.FormattingEnabled = true;
             this.cSelectOrgExpendComboBox.Location = new System.Drawing.Point(112, 301);
             this.cSelectOrgExpendComboBox.Name = "cSelectOrgExpendComboBox";
-            this.cSelectOrgExpendComboBox.Size = new System.Drawing.Size(233, 25);
+            this.cSelectOrgExpendComboBox.Size = new System.Drawing.Size(233, 28);
             this.cSelectOrgExpendComboBox.TabIndex = 21;
             // 
             // cSupplierSalesResultsTextBox
@@ -1197,7 +1226,7 @@
             this.cSupplierSalesResultsTextBox.Location = new System.Drawing.Point(910, 410);
             this.cSupplierSalesResultsTextBox.Name = "cSupplierSalesResultsTextBox";
             this.cSupplierSalesResultsTextBox.ReadOnly = true;
-            this.cSupplierSalesResultsTextBox.Size = new System.Drawing.Size(233, 23);
+            this.cSupplierSalesResultsTextBox.Size = new System.Drawing.Size(233, 27);
             this.cSupplierSalesResultsTextBox.TabIndex = 20;
             // 
             // cOrgExpendResultsTexbox
@@ -1205,7 +1234,7 @@
             this.cOrgExpendResultsTexbox.Location = new System.Drawing.Point(910, 301);
             this.cOrgExpendResultsTexbox.Name = "cOrgExpendResultsTexbox";
             this.cOrgExpendResultsTexbox.ReadOnly = true;
-            this.cOrgExpendResultsTexbox.Size = new System.Drawing.Size(233, 23);
+            this.cOrgExpendResultsTexbox.Size = new System.Drawing.Size(233, 27);
             this.cOrgExpendResultsTexbox.TabIndex = 19;
             // 
             // cSupplierSalesLabel
@@ -1213,7 +1242,7 @@
             this.cSupplierSalesLabel.AutoSize = true;
             this.cSupplierSalesLabel.Location = new System.Drawing.Point(797, 410);
             this.cSupplierSalesLabel.Name = "cSupplierSalesLabel";
-            this.cSupplierSalesLabel.Size = new System.Drawing.Size(107, 17);
+            this.cSupplierSalesLabel.Size = new System.Drawing.Size(127, 20);
             this.cSupplierSalesLabel.TabIndex = 18;
             this.cSupplierSalesLabel.Text = "Supplier Sales :";
             // 
@@ -1222,7 +1251,7 @@
             this.cOrgExpendResultLabel.AutoSize = true;
             this.cOrgExpendResultLabel.Location = new System.Drawing.Point(721, 304);
             this.cOrgExpendResultLabel.Name = "cOrgExpendResultLabel";
-            this.cOrgExpendResultLabel.Size = new System.Drawing.Size(183, 17);
+            this.cOrgExpendResultLabel.Size = new System.Drawing.Size(216, 20);
             this.cOrgExpendResultLabel.TabIndex = 17;
             this.cOrgExpendResultLabel.Text = "Organization Expenditures :";
             // 
@@ -1253,7 +1282,7 @@
             this.cRestExpendResultLabel.AutoSize = true;
             this.cRestExpendResultLabel.Location = new System.Drawing.Point(732, 196);
             this.cRestExpendResultLabel.Name = "cRestExpendResultLabel";
-            this.cRestExpendResultLabel.Size = new System.Drawing.Size(172, 17);
+            this.cRestExpendResultLabel.Size = new System.Drawing.Size(203, 20);
             this.cRestExpendResultLabel.TabIndex = 14;
             this.cRestExpendResultLabel.Text = "Restaurant Expenditures :";
             // 
@@ -1262,7 +1291,7 @@
             this.cRestExpendResultsTextBox.Location = new System.Drawing.Point(910, 193);
             this.cRestExpendResultsTextBox.Name = "cRestExpendResultsTextBox";
             this.cRestExpendResultsTextBox.ReadOnly = true;
-            this.cRestExpendResultsTextBox.Size = new System.Drawing.Size(233, 23);
+            this.cRestExpendResultsTextBox.Size = new System.Drawing.Size(233, 27);
             this.cRestExpendResultsTextBox.TabIndex = 13;
             // 
             // cCalcRestExpendButton
@@ -1281,30 +1310,12 @@
             this.cSelectRestExpendComboBox.FormattingEnabled = true;
             this.cSelectRestExpendComboBox.Location = new System.Drawing.Point(112, 193);
             this.cSelectRestExpendComboBox.Name = "cSelectRestExpendComboBox";
-            this.cSelectRestExpendComboBox.Size = new System.Drawing.Size(233, 25);
+            this.cSelectRestExpendComboBox.Size = new System.Drawing.Size(233, 28);
             this.cSelectRestExpendComboBox.TabIndex = 0;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(447, 301);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 17);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "dollars";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(447, 230);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 17);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "dollars";
             // 
             // cDataBaseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1282, 826);

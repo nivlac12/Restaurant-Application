@@ -1,6 +1,6 @@
 CREATE OR ALTER PROCEDURE Employees.CreateJob
    @JobName NVARCHAR(64),
-   @Salary DECIMAL,
+   @Salary FLOAT,
    @JobTitleID INT OUTPUT
 AS
 

@@ -10,7 +10,7 @@ namespace Restaurants_Database
     {
         const string connectionString = @"Server=mssql.cs.ksu.edu;Database=nivlac12;Integrated Security=SSPI;";
 
-        public Jobs CreateJobs(string JobName, decimal Salary)
+        public Jobs CreateJobs(string JobName, double Salary)
         {
             using (var transaction = new TransactionScope())
             {
@@ -37,7 +37,7 @@ namespace Restaurants_Database
                         transaction.Complete();
 
                         //This line will return a unique object of the appropriate type, keeping in mind the parameters we stored
-                        return new Jobs((int)idParam.Value, JobName, (decimal)Salary);
+                        return new Jobs((int)idParam.Value, JobName,  Salary);
                     }
                 }
             }
@@ -64,7 +64,7 @@ namespace Restaurants_Database
 
                     return new Jobs(reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("JobTitleID"))),
                        jobName,
-                       reader.GetDecimal(reader.GetOrdinal("Salary")));
+                       reader.GetDouble(reader.GetOrdinal("Salary")));
                 }
             }
         }
@@ -90,7 +90,29 @@ namespace Restaurants_Database
 
                     return new Jobs(jobID,
                        reader.GetString(reader.GetOrdinal("JobName")),
-                       reader.GetDecimal(reader.GetOrdinal("Salary")));
+                       reader.GetDouble(reader.GetOrdinal("Salary")));
+                }
+            }
+        }
+
+        public void UpdateJob(int jobID, string JobName, double salary)
+        {
+            using (var transaction = new TransactionScope())
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    using (var command = new SqlCommand("Employees.UpdateJob", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("JobTitleID", jobID);
+                        command.Parameters.AddWithValue("JobName", JobName);
+                        command.Parameters.AddWithValue("Salary", salary);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+
+                        transaction.Complete();
+                    }
                 }
             }
         }
@@ -114,7 +136,7 @@ namespace Restaurants_Database
                         jobs.Add(new Jobs(
                            reader.GetInt32(reader.GetOrdinal("JobTitleID")),
                            reader.GetString(reader.GetOrdinal("JobName")),
-                           reader.GetDecimal(reader.GetOrdinal("Salary"))));
+                           reader.GetDouble(reader.GetOrdinal("Salary"))));
                     }
 
                     return jobs;

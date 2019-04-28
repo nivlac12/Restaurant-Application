@@ -71,6 +71,54 @@ namespace Restaurants_Database
             }
         }
 
+        public StockItem GetStockItemByID(int itemID)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("Inventory.GetStockItemByID", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    //Name of Primary Key is what we pass in, everything else
+                    //we get from the SQL
+                    command.Parameters.AddWithValue("itemID", itemID);
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+
+                    if (!reader.Read())
+                        return null;
+
+                    return new StockItem(itemID,
+                        reader.GetInt32(reader.GetOrdinal("FoodID")),
+                        reader.GetInt32(reader.GetOrdinal("RestaurantID")),
+                        reader.GetInt32(reader.GetOrdinal("Quantity")));
+                }
+            }
+        }
+
+        public void UpdateStockItem(int id, int foodID, int restID, int quantity)
+        {
+            using (var transaction = new TransactionScope())
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    using (var command = new SqlCommand("Inventory.UpdateStockItem", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("InventoryID", id);
+                        command.Parameters.AddWithValue("FoodID", foodID);
+                        command.Parameters.AddWithValue("RestaurantID", restID);
+                        command.Parameters.AddWithValue("Quantity", quantity);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        transaction.Complete();
+                    }
+                }
+            }
+        }
+
         public IReadOnlyList<StockItem> RetrieveStockItems()
         {
             using (var connection = new SqlConnection(connectionString))

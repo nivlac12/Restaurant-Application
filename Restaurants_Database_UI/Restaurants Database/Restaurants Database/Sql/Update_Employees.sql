@@ -1,8 +1,9 @@
-﻿CREATE OR ALTER PROCEDURE Employees.UodateEmployees
+﻿CREATE OR ALTER PROCEDURE Employees.UpdateEmployee
    @PersonID INT,
    @RestaurantID INT,
    @JobTitleID INT,
-   @Seniority NVARCHAR(128)
+   @PersonName NVARCHAR(128),
+   @Seniority INT
 
 AS
 
@@ -10,6 +11,7 @@ UPDATE Employees.Employee
 SET 
 	RestaurantID = @RestaurantID,
 	JobTitleID =  @JobTitleID,
-	Seniority =@Seniority
+	[Name] = @PersonName,
+	Seniority = @Seniority
 
 WHERE PersonID = @PersonID;

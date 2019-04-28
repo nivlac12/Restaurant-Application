@@ -10,9 +10,9 @@ namespace Restaurants_Database
     {
         public int JobTitleID { get; }
         public string JobName { get; }
-        public decimal Salary { get; }
+        public double Salary { get; }
 
-        public Jobs(int jTID, string jobName, decimal sal)
+        public Jobs(int jTID, string jobName, double sal)
         {
             JobTitleID = jTID;
             JobName = jobName;

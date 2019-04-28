@@ -9,16 +9,8 @@ namespace Restaurants_Database
     class FoodRepo
     {
         const string connectionString = @"Server=mssql.cs.ksu.edu;Database=nivlac12;Integrated Security=SSPI;";
-        public void initFoods()
-        {
-            Food[] food = { };
-            foreach (Food fo in food)
-            {
-                CreateFood(fo.SupplierID, fo.FoodName, fo.SupplierPrice, fo.RetailPrice);
-            }
-        }
 
-        public Food CreateFood(int SupplierID, string FoodName, decimal SupplierPrice, decimal RetailPrice)
+        public Food CreateFood(int SupplierID, string FoodName, double SupplierPrice, double RetailPrice)
         {
             using (var transaction = new TransactionScope())
             {
@@ -48,7 +40,7 @@ namespace Restaurants_Database
                         transaction.Complete();
 
                         //This line will return a unique object of the appropriate type, keeping in mind the parameters we stored
-                        return new Food((int)idParam.Value, SupplierID, FoodName, (decimal)SupplierPrice, (decimal)RetailPrice);
+                        return new Food((int)idParam.Value, SupplierID, FoodName, SupplierPrice, RetailPrice);
                     }
                 }
             }
@@ -76,8 +68,8 @@ namespace Restaurants_Database
                     return new Food(reader.GetInt32(Convert.ToInt32(reader.GetOrdinal("FoodID"))),
                        reader.GetInt32(reader.GetOrdinal("SupplierID")),
                        foodName,
-                       reader.GetDecimal(reader.GetOrdinal("SupplierPrice")),
-                       reader.GetDecimal(reader.GetOrdinal("RetailPrice")));
+                       reader.GetDouble(reader.GetOrdinal("SupplierPrice")),
+                       reader.GetDouble(reader.GetOrdinal("RetailPrice")));
                 }
             }
         }
@@ -104,8 +96,31 @@ namespace Restaurants_Database
                     return new Food(foodID,
                        reader.GetInt32(reader.GetOrdinal("SupplierID")),
                        reader.GetString(reader.GetOrdinal("FoodName")),
-                       reader.GetDecimal(reader.GetOrdinal("SupplierPrice")),
-                       reader.GetDecimal(reader.GetOrdinal("RetailPrice")));
+                       reader.GetDouble(reader.GetOrdinal("SupplierPrice")),
+                       reader.GetDouble(reader.GetOrdinal("RetailPrice")));
+                }
+            }
+        }
+
+        public void UpdateFood(int foodID, int suppID, string foodName, double suppPrice, double retPrice)
+        {
+            using (var transaction = new TransactionScope())
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    using (var command = new SqlCommand("Food.UpdateFood", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("FoodID", foodID);
+                        command.Parameters.AddWithValue("SupplierID", suppID);
+                        command.Parameters.AddWithValue("FoodName", foodName);
+                        command.Parameters.AddWithValue("SupplierPrice", suppPrice);
+                        command.Parameters.AddWithValue("RetailPrice", retPrice);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        transaction.Complete();
+                    }
                 }
             }
         }
@@ -130,8 +145,8 @@ namespace Restaurants_Database
                        reader.GetInt32(reader.GetOrdinal("FoodID")),
                        reader.GetInt32(reader.GetOrdinal("SupplierID")),
                        reader.GetString(reader.GetOrdinal("FoodName")),
-                       reader.GetDecimal(reader.GetOrdinal("SupplierPrice")),
-                       reader.GetDecimal(reader.GetOrdinal("RetailPrice"))));
+                       reader.GetDouble(reader.GetOrdinal("SupplierPrice")),
+                       reader.GetDouble(reader.GetOrdinal("RetailPrice"))));
                     }
 
                     return food;

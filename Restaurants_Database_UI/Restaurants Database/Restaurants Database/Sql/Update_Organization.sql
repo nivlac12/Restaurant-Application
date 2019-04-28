@@ -1,11 +1,9 @@
-﻿CREATE OR ALTER PROCEDURE Restaurants.GetOrganization
+﻿CREATE OR ALTER PROCEDURE Restaurants.UpdateOrganization
 	@OrganizationID INT,
-	@OrganizationName NVARCHAR(128),
-	@DateFounded DATETIMEOFFSET 
+	@OrganizationName NVARCHAR(128)
 AS
 
 UPDATE Restaurants.Organization
 SET
-	OrganizationName = @OrganizationName,
-	DateFounded = @DateFounded
+	OrganizationName = @OrganizationName
 WHERE OrganizationID = @OrganizationID

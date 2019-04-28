@@ -1,10 +1,10 @@
-﻿CREATE OR ALTER PROCEDURE Employees.UpdateJobs
+﻿CREATE OR ALTER PROCEDURE Employees.UpdateJob
 	@JobTitleID INT,
     @JobName NVARCHAR(64),
-	@Salary DECIMAL
+	@Salary FLOAT
 AS
 
-UPDATE Employees.Employee
+UPDATE Employees.Jobs
 SET
 	JobName = @JobName,
 	Salary = @Salary
