@@ -47,5 +47,6 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Update
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Update_Food.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Update_StockItems.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Update_Suppliers.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Sql\Analysis.sql"
 
 Write-Host "Done"

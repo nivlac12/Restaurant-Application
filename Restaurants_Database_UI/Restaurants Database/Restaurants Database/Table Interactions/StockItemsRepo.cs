@@ -138,8 +138,8 @@ namespace Restaurants_Database
                         items.Add(new StockItem(
                            reader.GetInt32(reader.GetOrdinal("InventoryID")),
                            reader.GetInt32(reader.GetOrdinal("FoodID")),
-                           reader.GetInt32(reader.GetOrdinal("ResturantID")),
-                           reader.GetInt32(reader.GetOrdinal("QuantityID"))));
+                           reader.GetInt32(reader.GetOrdinal("RestaurantID")),
+                           reader.GetInt32(reader.GetOrdinal("Quantity"))));
                     }
 
                     return items;

@@ -127,6 +127,58 @@ namespace Restaurants_Database
             }
         }
 
+        public double CalcRestExp(int restID)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("Restaurants.CalcRestExp", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("RestaurantID", restID);
+
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+
+                    if (!reader.Read())
+                        return -1;
+
+                    return reader.GetDouble(reader.GetOrdinal("RestExpense"));
+                }
+            }
+        }
+
+        public IReadOnlyList<Tuple<string, string, double, int>> GetEmployeeInfo(int restID)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("Restaurants.GetEmployeeInfo", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("RestaurantID", restID);
+
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+
+                    var rests = new List<Tuple<string, string, double, int>>();
+
+                    while (reader.Read())
+                    {
+                        rests.Add(
+                            new Tuple<string, string, double, int> (
+                                reader.GetString(reader.GetOrdinal("Name")),
+                                reader.GetString(reader.GetOrdinal("JobName")),
+                                reader.GetDouble(reader.GetOrdinal("Salary")),
+                                reader.GetInt32(reader.GetOrdinal("Seniority"))
+                                ));
+                    }
+
+                    return rests;
+                }
+            }
+        }
+
         public IReadOnlyList<Restaurant> RetrieveRestaurants()
         {
             using (var connection = new SqlConnection(connectionString))

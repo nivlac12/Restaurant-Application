@@ -45,6 +45,12 @@ DROP PROCEDURE IF EXISTS Inventory.UpdateStockItem
 DROP PROCEDURE IF EXISTS Food.UpdateFood
 DROP PROCEDURE IF EXISTS Supplier.UpdateSupplier
 
+DROP PROCEDURE IF EXISTS Restaurants.CalcRestExp
+DROP PROCEDURE IF EXISTS Restaurants.CalcOrgExp
+DROP PROCEDURE IF EXISTS Supplier.CalcSuppProfits
+DROP PROCEDURE IF EXISTS Restaurants.GetEmployeeInfo
+
+
 DROP SCHEMA IF EXISTS Inventory
 GO
 DROP SCHEMA IF EXISTS Restaurants

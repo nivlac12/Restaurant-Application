@@ -23,19 +23,19 @@ namespace Restaurants_Database
         {
             Tuple<int, string, bool>[] rests =
             {
-                new Tuple<int, string, bool> (1, "West Manhattan Mcdonald's", true),
-                new Tuple<int, string, bool> (1, "East Manhattan Mcdonald's", true),
-                new Tuple<int, string, bool> (2, "Lansing Dairy Queen", true),
-                new Tuple<int, string, bool> (2, "Manhattan Dairy Queen", true),
-                new Tuple<int, string, bool> (3, "Manhattan Chili's", true),
-                new Tuple<int, string, bool> (4, "Manhattan Applebee's", true),
-                new Tuple<int, string, bool> (5, "Manhattan Buffalo Wild Wings", true),
-                new Tuple<int, string, bool> (5, "Legends Outlet Buffalo Wild Wings", true),                           
-                new Tuple<int, string, bool> (6, "Manhattan Taco Bell", true),
-                new Tuple<int, string, bool> (6, "Kansas City Taco Bell", true),
-                new Tuple<int, string, bool> (7, "Manhattan Tasty China House", true),
-                new Tuple<int, string, bool> (8, "Manhattan Dominos", true),
-                new Tuple<int, string, bool> (8, "Lawrence Dominos", true),
+                new Tuple<int, string, bool> (1, "West Manhattan Mcdonald's", true),                 // 1
+                new Tuple<int, string, bool> (1, "East Manhattan Mcdonald's", true),                 // 2
+                new Tuple<int, string, bool> (2, "Lansing Dairy Queen", true),                       // 3
+                new Tuple<int, string, bool> (2, "Manhattan Dairy Queen", true),                     // 4
+                new Tuple<int, string, bool> (3, "Manhattan Chili's", true),                         // 5
+                new Tuple<int, string, bool> (4, "Manhattan Applebee's", true),                      // 6
+                new Tuple<int, string, bool> (5, "Manhattan Buffalo Wild Wings", true),              // 7
+                new Tuple<int, string, bool> (5, "Legends Outlet Buffalo Wild Wings", true),         // 8                
+                new Tuple<int, string, bool> (6, "Manhattan Taco Bell", true),                       // 9
+                new Tuple<int, string, bool> (6, "Kansas City Taco Bell", true),                     // 10
+                new Tuple<int, string, bool> (7, "Manhattan Tasty China House", true),               // 11
+                new Tuple<int, string, bool> (8, "Manhattan Dominos", true),                         // 12
+                new Tuple<int, string, bool> (8, "Lawrence Dominos", true),                          // 13
 
             };
             foreach (Tuple<int, string, bool> rest in rests)
@@ -183,12 +183,27 @@ namespace Restaurants_Database
                 new Tuple<int, int, int> (5, 1, 400),
                 new Tuple<int, int, int> (6, 1, 200),
                 new Tuple<int, int, int> (7, 1, 650),
-                new Tuple<int, int, int> (8, 2, 7),
-                new Tuple<int, int, int> (9, 2, 8),
-                new Tuple<int, int, int>(10, 2, 300),
-                new Tuple<int, int, int>(11, 3, 250),
-                new Tuple<int, int, int>(12, 3, 10),
-                new Tuple<int, int, int>(13, 3, 6),
+                new Tuple<int, int, int> (1, 2, 800),
+                new Tuple<int, int, int> (2, 2, 30),
+                new Tuple<int, int, int> (3, 2, 16),
+                new Tuple<int, int, int> (4, 2, 1200),
+                new Tuple<int, int, int> (5, 2, 400),
+                new Tuple<int, int, int> (6, 2, 200),
+                new Tuple<int, int, int> (7, 2, 650),
+                new Tuple<int, int, int> (8, 3, 7),
+                new Tuple<int, int, int> (9, 3, 8),
+                new Tuple<int, int, int> (10, 3, 300),
+                new Tuple<int, int, int> (8, 4, 7),
+                new Tuple<int, int, int> (9, 4, 8),
+                new Tuple<int, int, int> (10, 4, 300),
+                new Tuple<int, int, int> (1, 4, 7),
+                new Tuple<int, int, int> (2, 4, 8),
+                new Tuple<int, int, int> (3, 4, 300),
+                new Tuple<int, int, int> (11, 5, 250),
+                new Tuple<int, int, int> (12, 5, 10),
+                new Tuple<int, int, int> (13, 5, 6),
+                new Tuple<int, int, int> (12, 6, 10),
+
                 new Tuple<int, int, int>(14, 4, 13),
                 new Tuple<int, int, int>(15, 4, 6),
                 new Tuple<int, int, int>(16, 4, 10),

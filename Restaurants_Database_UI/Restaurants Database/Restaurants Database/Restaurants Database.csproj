@@ -100,6 +100,7 @@
   <ItemGroup>
     <Content Include="Names\firstNames.txt" />
     <Content Include="Names\lastNames.txt" />
+    <Content Include="Sql\Analysis.sql" />
     <Content Include="Sql\Create Schema.sql" />
     <Content Include="Sql\Employees.sql" />
     <Content Include="Sql\Food.sql" />

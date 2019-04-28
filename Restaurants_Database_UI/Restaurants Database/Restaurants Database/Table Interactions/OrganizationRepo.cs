@@ -123,6 +123,27 @@ namespace Restaurants_Database
             }
         }
 
+        public double CalcOrgExp(int orgID)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("Restaurants.CalcOrgExp", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("OrganizationID", orgID);
+
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+
+                    if (!reader.Read())
+                        return -1;
+
+                    return reader.GetDouble(reader.GetOrdinal("OrgExpense"));
+                }
+            }
+        }
+
         public IReadOnlyList<Organization> RetrieveOrganizations()
         {
             using (var connection = new SqlConnection(connectionString))

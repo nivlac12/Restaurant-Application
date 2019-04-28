@@ -35,30 +35,35 @@ namespace Restaurants_Database
 
             cRestOrgComboBox.Items.Clear();
 
-            init.initOrgs(_org);
-            init.initRests(_rest);
-            init.initJobs(_jobs);
-            init.initSupps(_suppliers);
-            init.initFoods(_food);
+            //init.initOrgs(_org);
+            //init.initRests(_rest);
+            //init.initJobs(_jobs);
+            //init.initSupps(_suppliers);
+            //init.initFoods(_food);
+            //init.initStockItems(_stock);
 
             IReadOnlyList<Organization> orgs = _org.RetrieveOrganizations();
             IReadOnlyList<Restaurant> rests = _rest.RetrieveRestaurants();
             IReadOnlyList<Jobs> jobs = _jobs.RetrieveJobs();
-            init.initEmp(_emp, rests, jobs);
+            //init.initEmp(_emp, rests, jobs);
             IReadOnlyList<Employee> emps = _emp.RetrieveEmployee();
             IReadOnlyList<Supplier> supps = _suppliers.RetrieveSuppliers();
             IReadOnlyList<Food> foods = _food.RetrieveFood();
+            IReadOnlyList<StockItem> stockItems = _stock.RetrieveStockItems();
 
             foreach (var org in orgs)
             {
                 cRestOrgComboBox.Items.Add(org.OrganizationName);
                 orgListBox.Items.Add(org.OrganizationName);
+                cSelectOrgExpendComboBox.Items.Add(org.OrganizationName);
             }
             foreach (var rest in rests)
             {
                 cEmployRestComboBox.Items.Add(rest.RestaurantName);
                 restListBox.Items.Add(rest.RestaurantName);
                 cInventoryRestComboBox.Items.Add(rest.RestaurantName);
+                cSelectRestExpendComboBox.Items.Add(rest.RestaurantName);
+                cSelectRestEmpInfoComboBox.Items.Add(rest.RestaurantName);
             }
             foreach (var emp in emps)
             {
@@ -73,11 +78,16 @@ namespace Restaurants_Database
             {
                 suppListBox.Items.Add(supp.SuppliersName);
                 cFoodSupplierComboBox.Items.Add(supp.SuppliersName);
+                cSelectSupplierSalesComboBox.Items.Add(supp.SuppliersName);
             }
             foreach (var food in foods)
             {
                 foodListBox.Items.Add(food.FoodName);
                 cInventoryFoodComboBox.Items.Add(food.FoodName);
+            }
+            foreach (var si in stockItems)
+            {
+                invListBox.Items.Add(_rest.GetRestaurantByID(si.RestaurantID).RestaurantName + ": " + _food.GetFoodByID(si.FoodID).FoodName);
             }
         }
 
@@ -93,9 +103,6 @@ namespace Restaurants_Database
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //string shellName = "U:\\CIS 560\\Project\\Restaurant - Application\\Restaurants_Database_UI\\Restaurants Database\\Restaurants Database\\BuildDatabase.ps1";
-            //string shellName = "..\\..\\BuildDatabase.ps1";
-            //System.Diagnostics.Process.Start("C:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe ", "-noexit " + shellName);
             if (!String.IsNullOrEmpty(cOrgNameTextBox.Text))
             {
                 OrganizationRepo or = new OrganizationRepo();
@@ -108,6 +115,7 @@ namespace Restaurants_Database
                 cOrgIdNumLabel.Text = o.OrganizationID.ToString();
                 cRestOrgComboBox.Items.Add(cOrgNameTextBox.Text);
                 orgListBox.Items.Add(cOrgNameTextBox.Text);
+                cSelectOrgExpendComboBox.Items.Add(cOrgNameTextBox.Text);
             }
             else
             {
@@ -141,6 +149,7 @@ namespace Restaurants_Database
                 cSupplierIdNumLabel.Text = supp.SuppliersID.ToString();
                 cFoodSupplierComboBox.Items.Add(supp.SuppliersName);
                 suppListBox.Items.Add(supp.SuppliersName);
+                cSelectSupplierSalesComboBox.Items.Add(supp.SuppliersName);
             }
             else
             {
@@ -150,10 +159,19 @@ namespace Restaurants_Database
 
         private void cSupEditButton_Click(object sender, EventArgs e)
         {
-            Supplier supp = _suppliers.CreateSupplier(cSupNameTextBox.Text);
-            cSupplierIdNumLabel.Text = supp.SuppliersID.ToString();
-            suppListBox.Items.Add(supp.SuppliersName);
-            cFoodSupplierComboBox.Items.Add(supp.SuppliersName);
+            int suppID = Convert.ToInt32(cSupplierIdNumLabel.Text);
+            string originalName = _suppliers.GetSupplierByID(suppID).SuppliersName;
+            string newName = cSupNameTextBox.Text;
+            _suppliers.UpdateSupplier(suppID, newName);
+            int len = suppListBox.Items.Count;
+            for(int i = 0; i<len; ++i)
+            {
+                if(Equals(originalName, suppListBox.Items[i]))
+                {
+                    suppListBox.Items[i] = newName;
+                    cFoodSupplierComboBox.Items[i] = newName;
+                }
+            }
         }
 
         private void cFoodAddButton_Click(object sender, EventArgs e)
@@ -176,7 +194,22 @@ namespace Restaurants_Database
         private void cFoodEditButton_Click(object sender, EventArgs e)
         {
             int foodID = Convert.ToInt32(cFoodIdNumLabel.Text);
-            string originalName = _food.GetFoodByID();
+            string originalName = _food.GetFoodByID(foodID).FoodName;
+            string newName = cFoodNameTextBox.Text;
+            _food.UpdateFood(foodID,
+                             _suppliers.GetSupplier(cFoodSupplierComboBox.Text).SuppliersID,
+                             newName,
+                             Convert.ToDouble(cFoodSupPriceNumUpDownBox.Value),
+                             Convert.ToDouble(cFoodRetailNumUpDownBox.Value));
+            int len = foodListBox.Items.Count;
+            for(int i = 0;i<len; ++i)
+            {
+                if(Equals(originalName, foodListBox.Items[i]))
+                {
+                    foodListBox.Items[i] = newName;
+                    cInventoryFoodComboBox.Items[i] = newName;
+                }
+            }
         }
 
         private void cInventoryAddButton_Click(object sender, EventArgs e)
@@ -261,13 +294,11 @@ namespace Restaurants_Database
 
             if(!String.IsNullOrEmpty(cEmployRestComboBox.Text) && !String.IsNullOrEmpty(cEmployeeNameTextBox.Text) && !String.IsNullOrEmpty(cEmployJobTitleComboBox.Text))
             {
-                Restaurant r = _rest.GetRestaurant(cEmployRestComboBox.Items[cEmployRestComboBox.SelectedIndex].ToString());
-                Jobs j = _jobs.GetJobs(cEmployJobTitleComboBox.Items[cEmployJobTitleComboBox.SelectedIndex].ToString());
+                Restaurant r = _rest.GetRestaurant(cEmployRestComboBox.Text);
+                Jobs j = _jobs.GetJobs(cEmployJobTitleComboBox.Text);
                 Employee employee = _emp.CreateEmployee(r.RestaurantID, j.JobTitleID, cEmployeeNameTextBox.Text, Convert.ToInt32(seniorityUpDown.Value));
 
                 cPersonIdNumLabel.Text = employee.PersonID.ToString();
-                cEmployRestComboBox.Text = cEmployRestComboBox.Items[cEmployRestComboBox.SelectedIndex].ToString(); ;
-                cEmployJobTitleComboBox.Text = cEmployJobTitleComboBox.Items[cEmployJobTitleComboBox.SelectedIndex].ToString();
                 empListBox.Items.Add(employee.EmployeeName);
             }
             else
@@ -300,12 +331,14 @@ namespace Restaurants_Database
         {
             if (!String.IsNullOrEmpty(cRestNameTextBox.Text) && !String.IsNullOrEmpty(cRestOpComboBox.Text))
             {
-                Organization o = _org.GetOrganization(cRestOrgComboBox.Items[cRestOrgComboBox.SelectedIndex].ToString());
+                Organization o = _org.GetOrganization(cRestOrgComboBox.Text);
                 bool isOp = string.Equals(cRestOpComboBox.Text, "Yes") ? true : false;
                 Restaurant r = _rest.CreateRestaurant(o.OrganizationID, cRestNameTextBox.Text, isOp);
                 restListBox.Items.Add(r.RestaurantName);
                 cRestIdNumLabel.Text = r.RestaurantID.ToString();
                 cInventoryRestComboBox.Items.Add(r.RestaurantName);
+                cSelectRestExpendComboBox.Items.Add(r.RestaurantName);
+                cSelectRestEmpInfoComboBox.Items.Add(r.RestaurantName);
             }
 
             else
@@ -435,17 +468,17 @@ namespace Restaurants_Database
 
         private void cCalcSupplierSalesButton_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void cCalcOrgExpendButton_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void cCalcRestExpendButton_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void cRestOpLabel_Click(object sender, EventArgs e)
@@ -536,6 +569,217 @@ namespace Restaurants_Database
         }
 
         private void cFoodSupPriceNumUpDownBox_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void orgSearchBtn_Click(object sender, EventArgs e)
+        {
+            string orgName = cOrgNameTextBox.Text;
+            Organization o = _org.GetOrganization(orgName);
+            if (!Equals(o, null))
+            {
+                cOrgIdNumLabel.Text = o.OrganizationID.ToString();
+                cDateFoundedTextBox.Text = o.DateFounded;
+
+                int len = orgListBox.Items.Count;
+                for (int i = 0; i < len; ++i)
+                {
+                    if (Equals(orgName, orgListBox.Items[i]))
+                    {
+                        orgListBox.SelectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void invSearchBtn_Click(object sender, EventArgs e)
+        {
+            StockItem si = _stock.GetStockItem(cInventoryFoodComboBox.Text, cInventoryRestComboBox.Text);
+            if (!Equals(si, null))
+            {
+                cInventoryIdNumLabel.Text = si.InventoryID.ToString();
+                cInventoryQuantityNumUpDownBox.Value = si.Quantity;
+
+                int len = invListBox.Items.Count;
+                for (int i = 0; i < len; ++i)
+                {
+                    if (Equals(cInventoryRestComboBox.Text + ": " + cInventoryFoodComboBox.Text, invListBox.Items[i]))
+                    {
+                        invListBox.SelectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void restSearchBtn_Click(object sender, EventArgs e)
+        {
+            string restName = cRestNameTextBox.Text;
+            Restaurant r = _rest.GetRestaurant(restName);
+            if (!Equals(r, null))
+            {
+                cRestIdNumLabel.Text = r.RestaurantID.ToString();
+                cRestOrgComboBox.Text = _org.GetOrganizationByID(r.OrganizationID).OrganizationName;
+                cRestDateFoundedTextBox.Text = r.DateFounded;
+                cRestOpComboBox.Text = r.IsOperational ? "Yes" : "No";
+
+                int len = restListBox.Items.Count;
+                for (int i = 0; i < len; ++i)
+                {
+                    if (Equals(r.RestaurantName, restListBox.Items[i]))
+                    {
+                        restListBox.SelectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void cInventoryFoodComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void empSearchBtn_Click(object sender, EventArgs e)
+        {
+            Employee emp = _emp.GetEmployee(cEmployeeNameTextBox.Text);
+            if (!Equals(emp, null))
+            {
+                cPersonIdNumLabel.Text = emp.PersonID.ToString();
+                cEmployRestComboBox.Text = _rest.GetRestaurantByID(emp.RestaurantID).RestaurantName;
+                cEmployJobTitleComboBox.Text = _jobs.GetJobByID(emp.JobTitleID).JobName;
+                seniorityUpDown.Value = Convert.ToDecimal(emp.Seniority);
+
+                int len = empListBox.Items.Count;
+                for (int i = 0; i < len; ++i)
+                {
+                    if (Equals(emp.EmployeeName, empListBox.Items[i]))
+                    {
+                        empListBox.SelectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void jobSearchBtn_Click(object sender, EventArgs e)
+        {
+            Jobs j = _jobs.GetJobs(cJobNameTextBox.Text);
+            if (!Equals(j, null))
+            {
+                cJobIdNumLabel.Text = j.JobTitleID.ToString();
+                cJobSalaryNumUpDownBox.Value = Convert.ToDecimal(j.Salary);
+
+                int len = jobsListBox.Items.Count;
+                for (int i = 0; i < len; ++i)
+                {
+                    if (Equals(j.JobName, jobsListBox.Items[i]))
+                    {
+                        jobsListBox.SelectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void foodSearchBtn_Click(object sender, EventArgs e)
+        {
+            Food f = _food.GetFood(cFoodNameTextBox.Text);
+            if (!Equals(f, null))
+            {
+                cFoodIdNumLabel.Text = f.FoodID.ToString();
+                cFoodSupplierComboBox.Text = _suppliers.GetSupplierByID(f.FoodID).SuppliersName;
+                cFoodSupPriceNumUpDownBox.Value = Convert.ToDecimal(f.SupplierPrice);
+                cFoodRetailNumUpDownBox.Value = Convert.ToDecimal(f.RetailPrice);
+
+                int len = foodListBox.Items.Count;
+                for (int i = 0; i < len; ++i)
+                {
+                    if (Equals(f.FoodName, foodListBox.Items[i]))
+                    {
+                        foodListBox.SelectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void suppSearchBtn_Click(object sender, EventArgs e)
+        {
+            Supplier supp = _suppliers.GetSupplier(cSupNameTextBox.Text);
+            if (!Equals(supp, null))
+            {
+                cSupplierIdNumLabel.Text = supp.SuppliersID.ToString();
+
+                int len = suppListBox.Items.Count;
+                for (int i = 0; i < len; ++i)
+                {
+                    if (Equals(supp.SuppliersName, suppListBox.Items[i]))
+                    {
+                        suppListBox.SelectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void cSelectRestEmpInfoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            employeeInfoGridView.Rows.Clear();
+            employeeInfoGridView.Refresh();
+            Restaurant r = _rest.GetRestaurant(cSelectRestEmpInfoComboBox.Text);
+            if (!Equals(r, null))
+            {
+                var employees = _rest.GetEmployeeInfo(r.RestaurantID);
+                foreach (var emp in employees)
+                {
+                    employeeInfoGridView.Rows.Add(emp.Item1, emp.Item2, emp.Item3, emp.Item4);
+                }
+                employeeCountLabel.Text = r.RestaurantName + " has " + employees.Count + " employees";
+            }
+        }
+
+        private void restEmployeeViewBtn_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cAnalysisPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cSelectRestExpendComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Restaurant r = _rest.GetRestaurant(cSelectRestExpendComboBox.Text);
+            if (!Equals(r, null))
+            {
+                double expenses = _rest.CalcRestExp(r.RestaurantID);
+                cRestExpendResultsTextBox.Text = "$" + string.Format("{0:0.00}", expenses);
+            }
+        }
+
+        private void cSelectOrgExpendComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Organization o = _org.GetOrganization(cSelectOrgExpendComboBox.Text);
+            if (!Equals(o, null))
+            {
+                cOrgExpendResultsTexbox.Text = "$" + string.Format("{0:0.00}", _org.CalcOrgExp(o.OrganizationID));
+            }
+        }
+
+        private void cSelectSupplierSalesComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Supplier supp = _suppliers.GetSupplier(cSelectSupplierSalesComboBox.Text);
+            if (!Equals(supp, null))
+            {
+                cSupplierSalesResultsTextBox.Text = "$" + string.Format("{0:0.00}", _suppliers.CalcSuppProf(supp.SuppliersID));
+            }
+        }
+
+        private void cOrgExpendResultsTexbox_TextChanged(object sender, EventArgs e)
         {
 
         }

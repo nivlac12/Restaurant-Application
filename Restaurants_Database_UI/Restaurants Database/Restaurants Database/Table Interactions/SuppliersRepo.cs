@@ -113,6 +113,26 @@ namespace Restaurants_Database
                 }
             }
         }
+        public double CalcSuppProf(int suppID)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("Supplier.CalcSuppProfits", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("SupplierID", suppID);
+
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+
+                    if (!reader.Read())
+                        return -1;
+
+                    return reader.GetDouble(reader.GetOrdinal("Profit"));
+                }
+            }
+        }
 
         public IReadOnlyList<Supplier> RetrieveSuppliers()
         {
