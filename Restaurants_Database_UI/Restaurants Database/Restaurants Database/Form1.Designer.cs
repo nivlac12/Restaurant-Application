@@ -142,10 +142,6 @@
             this.cRestExpendResultsTextBox = new System.Windows.Forms.TextBox();
             this.cSelectRestExpendComboBox = new System.Windows.Forms.ComboBox();
             this.employeeInfoGridView = new System.Windows.Forms.DataGridView();
-            this.employeeNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeJobColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeSalaryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeSeniorityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeCountLabel = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -153,6 +149,10 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.employeeNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeJobColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeSalaryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeSeniorityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cSupplierPage.SuspendLayout();
             this.cFoodPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cFoodRetailNumUpDownBox)).BeginInit();
@@ -724,9 +724,9 @@
             this.cJobSalaryLabel.AutoSize = true;
             this.cJobSalaryLabel.Location = new System.Drawing.Point(24, 184);
             this.cJobSalaryLabel.Name = "cJobSalaryLabel";
-            this.cJobSalaryLabel.Size = new System.Drawing.Size(88, 17);
+            this.cJobSalaryLabel.Size = new System.Drawing.Size(85, 17);
             this.cJobSalaryLabel.TabIndex = 4;
-            this.cJobSalaryLabel.Text = "Base Salary:";
+            this.cJobSalaryLabel.Text = "Base Wage:";
             // 
             // cJobNameTextBox
             // 
@@ -1413,28 +1413,9 @@
             this.employeeInfoGridView.Location = new System.Drawing.Point(665, 420);
             this.employeeInfoGridView.Name = "employeeInfoGridView";
             this.employeeInfoGridView.ReadOnly = true;
-            this.employeeInfoGridView.Size = new System.Drawing.Size(465, 215);
+            this.employeeInfoGridView.Size = new System.Drawing.Size(484, 215);
             this.employeeInfoGridView.TabIndex = 25;
-            // 
-            // employeeNameColumn
-            // 
-            this.employeeNameColumn.HeaderText = "Name";
-            this.employeeNameColumn.Name = "employeeNameColumn";
-            // 
-            // employeeJobColumn
-            // 
-            this.employeeJobColumn.HeaderText = "Job";
-            this.employeeJobColumn.Name = "employeeJobColumn";
-            // 
-            // employeeSalaryColumn
-            // 
-            this.employeeSalaryColumn.HeaderText = "Salary";
-            this.employeeSalaryColumn.Name = "employeeSalaryColumn";
-            // 
-            // employeeSeniorityColumn
-            // 
-            this.employeeSeniorityColumn.HeaderText = "Seniority";
-            this.employeeSeniorityColumn.Name = "employeeSeniorityColumn";
+            this.employeeInfoGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeInfoGridView_CellContentClick);
             // 
             // employeeCountLabel
             // 
@@ -1497,6 +1478,31 @@
             this.label17.Size = new System.Drawing.Size(123, 17);
             this.label17.TabIndex = 32;
             this.label17.Text = "Restaurant Name:";
+            // 
+            // employeeNameColumn
+            // 
+            this.employeeNameColumn.HeaderText = "Name";
+            this.employeeNameColumn.Name = "employeeNameColumn";
+            this.employeeNameColumn.ReadOnly = true;
+            // 
+            // employeeJobColumn
+            // 
+            this.employeeJobColumn.HeaderText = "Job";
+            this.employeeJobColumn.Name = "employeeJobColumn";
+            this.employeeJobColumn.ReadOnly = true;
+            // 
+            // employeeSalaryColumn
+            // 
+            this.employeeSalaryColumn.HeaderText = "Hourly Wage";
+            this.employeeSalaryColumn.Name = "employeeSalaryColumn";
+            this.employeeSalaryColumn.ReadOnly = true;
+            this.employeeSalaryColumn.Width = 120;
+            // 
+            // employeeSeniorityColumn
+            // 
+            this.employeeSeniorityColumn.HeaderText = "Seniority";
+            this.employeeSeniorityColumn.Name = "employeeSeniorityColumn";
+            this.employeeSeniorityColumn.ReadOnly = true;
             // 
             // cDataBaseForm
             // 
@@ -1653,10 +1659,6 @@
         private System.Windows.Forms.Button orgSearchBtn;
         private System.Windows.Forms.ComboBox cSelectRestEmpInfoComboBox;
         private System.Windows.Forms.DataGridView employeeInfoGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeJobColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeSalaryColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeSeniorityColumn;
         private System.Windows.Forms.Label employeeCountLabel;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label17;
@@ -1664,6 +1666,10 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeJobColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeSalaryColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeSeniorityColumn;
     }
 }
 

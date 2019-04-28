@@ -735,7 +735,7 @@ namespace Restaurants_Database
                 var employees = _rest.GetEmployeeInfo(r.RestaurantID);
                 foreach (var emp in employees)
                 {
-                    employeeInfoGridView.Rows.Add(emp.Item1, emp.Item2, emp.Item3, emp.Item4);
+                    employeeInfoGridView.Rows.Add(emp.Item1, emp.Item2, "$" + string.Format("{0:0.00}", emp.Item3), emp.Item4);
                 }
                 employeeCountLabel.Text = r.RestaurantName + " has " + employees.Count + " employees";
             }
@@ -780,6 +780,11 @@ namespace Restaurants_Database
         }
 
         private void cOrgExpendResultsTexbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void employeeInfoGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
