@@ -1,0 +1,73 @@
+DROP TABLE IF EXISTS Employees.Employee
+DROP TABLE IF EXISTS Employees.Jobs
+DROP TABLE IF EXISTS Inventory.StockItems
+DROP TABLE IF EXISTS Restaurants.Restaurant
+DROP TABLE IF EXISTS Restaurants.Organization
+DROP TABLE IF EXISTS Food.Food
+DROP TABLE IF EXISTS Supplier.Suppliers
+
+DROP PROCEDURE IF EXISTS Employees.GetJob
+DROP PROCEDURE IF EXISTS Employees.GetEmployee
+DROP PROCEDURE IF EXISTS Restaurants.GetRestaurant
+DROP PROCEDURE IF EXISTS Restaurants.GetOrganization
+DROP PROCEDURE IF EXISTS Inventory.GetStockItem
+DROP PROCEDURE IF EXISTS Food.GetFood
+DROP PROCEDURE IF EXISTS Supplier.GetSupplier
+
+DROP PROCEDURE IF EXISTS Employees.RetrieveJobs
+DROP PROCEDURE IF EXISTS Employees.RetrieveEmployees
+DROP PROCEDURE IF EXISTS Restaurants.RetrieveRestaurants
+DROP PROCEDURE IF EXISTS Restaurants.RetrieveOrganizations
+DROP PROCEDURE IF EXISTS Inventory.RetrieveStockItems
+DROP PROCEDURE IF EXISTS Food.RetrieveFood
+DROP PROCEDURE IF EXISTS Supplier.RetrieveSuppliers
+
+DROP PROCEDURE IF EXISTS Employees.CreateJob
+DROP PROCEDURE IF EXISTS Employees.CreateEmployee
+DROP PROCEDURE IF EXISTS Restaurants.CreateRestaurant
+DROP PROCEDURE IF EXISTS Restaurants.CreateOrganization
+DROP PROCEDURE IF EXISTS Inventory.CreateStockItem
+DROP PROCEDURE IF EXISTS Food.CreateFood
+DROP PROCEDURE IF EXISTS Supplier.CreateSupplier
+DROP PROCEDURE IF EXISTS Restaurants.GetOrganizationByID
+DROP PROCEDURE IF EXISTS Employees.GetJobByID
+DROP PROCEDURE IF EXISTS Restaurants.GetRestaurantByID
+DROP PROCEDURE IF EXISTS Supplier.GetSupplierByID
+DROP PROCEDURE IF EXISTS Food.GetFoodByID
+DROP PROCEDURE IF EXISTS Employees.GetEmployeeByID
+DROP PROCEDURE IF EXISTS Inventory.GetStockItemByID
+
+DROP PROCEDURE IF EXISTS Restaurants.UpdateRestaurant
+DROP PROCEDURE IF EXISTS Restaurants.UpdateOrganization
+DROP PROCEDURE IF EXISTS Employees.UpdateEmployee
+DROP PROCEDURE IF EXISTS Employees.UpdateJob
+DROP PROCEDURE IF EXISTS Inventory.UpdateStockItem
+DROP PROCEDURE IF EXISTS Food.UpdateFood
+DROP PROCEDURE IF EXISTS Supplier.UpdateSupplier
+
+DROP PROCEDURE IF EXISTS Restaurants.CalcRestExp
+DROP PROCEDURE IF EXISTS Restaurants.CalcOrgExp
+DROP PROCEDURE IF EXISTS Supplier.CalcSuppProfits
+DROP PROCEDURE IF EXISTS Restaurants.GetEmployeeInfo
+
+
+DROP SCHEMA IF EXISTS Inventory
+GO
+DROP SCHEMA IF EXISTS Restaurants
+GO
+DROP SCHEMA IF EXISTS Employees
+GO
+DROP SCHEMA IF EXISTS Food
+GO
+DROP SCHEMA IF EXISTS Supplier
+GO
+CREATE SCHEMA Inventory
+GO
+CREATE SCHEMA Employees
+GO
+CREATE SCHEMA Food
+GO
+CREATE SCHEMA Restaurants
+GO
+CREATE SCHEMA Supplier
+GO
