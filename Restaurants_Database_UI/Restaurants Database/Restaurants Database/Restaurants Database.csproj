@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller.cs" />
     <Compile Include="Table Interactions\Employee.cs" />
     <Compile Include="Table Interactions\EmployeeRepo.cs" />
     <Compile Include="Table Interactions\Food.cs" />
