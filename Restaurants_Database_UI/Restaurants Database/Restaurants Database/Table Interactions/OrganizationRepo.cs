@@ -138,8 +138,15 @@ namespace Restaurants_Database
 
                     if (!reader.Read())
                         return -1;
-
-                    return reader.GetDouble(reader.GetOrdinal("OrgExpense"));
+                    try
+                    {
+                        return reader.GetDouble(reader.GetOrdinal("OrgExpense"));
+                    }
+                    catch (Exception e)
+                    {
+                        return 0;
+                    }
+                    
                 }
             }
         }

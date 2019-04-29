@@ -142,8 +142,14 @@ namespace Restaurants_Database
 
                     if (!reader.Read())
                         return -1;
-
-                    return reader.GetDouble(reader.GetOrdinal("RestExpense"));
+                    try
+                    {
+                        return reader.GetDouble(reader.GetOrdinal("RestExpense"));
+                    }
+                    catch(Exception e)
+                    {
+                        return 0;
+                    }
                 }
             }
         }

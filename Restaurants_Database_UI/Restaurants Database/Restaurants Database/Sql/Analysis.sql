@@ -7,7 +7,7 @@ SELECT
 	FROM Restaurants.Restaurant R
 		INNER JOIN Inventory.StockItems SI ON SI.RestaurantID = R.RestaurantID
 		INNER JOIN Food.Food F ON F.FoodID = SI.FoodID
-	WHERE R.RestaurantID = @RestaurantID
+	WHERE R.RestaurantID = @RestaurantID AND R.IsOperational = 1
 	GROUP BY R.RestaurantID
 ) +
 (
@@ -28,7 +28,7 @@ SELECT
 (
 	SELECT SUM(SI.Quantity*F.RetailPrice) AS Expense
 	FROM Restaurants.Organization O
-		INNER JOIN Restaurants.Restaurant R ON O.OrganizationID = R.OrganizationID
+		INNER JOIN Restaurants.Restaurant R ON O.OrganizationID = R.OrganizationID AND R.IsOperational = 1
 		INNER JOIN Inventory.StockItems SI ON SI.RestaurantID = R.RestaurantID
 		INNER JOIN Food.Food F ON F.FoodID = SI.FoodID
 	WHERE O.OrganizationID = @OrganizationID
@@ -37,7 +37,7 @@ SELECT
 (
 	SELECT SUM(J.Salary*40) AS Expense
 	FROM Restaurants.Organization O
-		INNER JOIN Restaurants.Restaurant R ON O.OrganizationID = R.OrganizationID
+		INNER JOIN Restaurants.Restaurant R ON O.OrganizationID = R.OrganizationID AND R.IsOperational = 1
 		INNER JOIN Employees.Employee E ON R.RestaurantID = E.RestaurantID
 		INNER JOIN Employees.Jobs J ON J.JobTitleID = E.JobTitleID
 	WHERE O.OrganizationID = @OrganizationID
@@ -62,7 +62,7 @@ CREATE OR ALTER PROCEDURE Restaurants.GetEmployeeInfo
 AS
 SELECT E.Name, J.JobName, J.Salary, E.Seniority
 FROM Restaurants.Restaurant R
-	INNER JOIN Employees.Employee E ON E.RestaurantID = R.RestaurantID
+	INNER JOIN Employees.Employee E ON E.RestaurantID = R.RestaurantID AND R.IsOperational = 1
 	INNER JOIN Employees.Jobs J ON J.JobTitleID = E.JobTitleID
 WHERE R.RestaurantID = @RestaurantID
 GO
