@@ -35,17 +35,17 @@ namespace Restaurants_Database
 
             cRestOrgComboBox.Items.Clear();
 
-            //init.initOrgs(_org);
-            //init.initRests(_rest);
-            //init.initJobs(_jobs);
-            //init.initSupps(_suppliers);
-            //init.initFoods(_food);
-            //init.initStockItems(_stock);
+            init.initOrgs(_org);
+            init.initRests(_rest);
+            init.initJobs(_jobs);
+            init.initSupps(_suppliers);
+            init.initFoods(_food);
+            init.initStockItems(_stock);
 
             IReadOnlyList<Organization> orgs = _org.RetrieveOrganizations();
             IReadOnlyList<Restaurant> rests = _rest.RetrieveRestaurants();
             IReadOnlyList<Jobs> jobs = _jobs.RetrieveJobs();
-            //init.initEmp(_emp, rests, jobs);
+            init.initEmp(_emp, rests, jobs);
             IReadOnlyList<Employee> emps = _emp.RetrieveEmployee();
             IReadOnlyList<Supplier> supps = _suppliers.RetrieveSuppliers();
             IReadOnlyList<Food> foods = _food.RetrieveFood();

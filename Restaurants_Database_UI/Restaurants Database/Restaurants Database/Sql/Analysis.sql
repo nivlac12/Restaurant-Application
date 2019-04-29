@@ -5,7 +5,7 @@ SELECT
 (
 	SELECT SUM(SI.Quantity*F.RetailPrice) AS Expense
 	FROM Restaurants.Restaurant R
-		INNER JOIN Inventory.StockItems SI ON SI.RestaurantID = R.RestaurantID
+		INNER JOIN Inventory.StockItems SI ON SI.RestaurantID = R.RestaurantID  AND R.IsOperational = 1
 		INNER JOIN Food.Food F ON F.FoodID = SI.FoodID
 	WHERE R.RestaurantID = @RestaurantID AND R.IsOperational = 1
 	GROUP BY R.RestaurantID
@@ -13,7 +13,7 @@ SELECT
 (
 	SELECT SUM(J.Salary*40) AS Expense
 	FROM Restaurants.Restaurant R
-		INNER JOIN Employees.Employee E ON R.RestaurantID = E.RestaurantID
+		INNER JOIN Employees.Employee E ON R.RestaurantID = E.RestaurantID  AND R.IsOperational = 1
 		INNER JOIN Employees.Jobs J ON J.JobTitleID = E.JobTitleID
 	WHERE R.RestaurantID = @RestaurantID
 	GROUP BY R.RestaurantID
@@ -56,6 +56,7 @@ FROM Supplier.Suppliers S
 WHERE S.SupplierID = @SupplierID
 GROUP BY S.SupplierID
 GO
+
 
 CREATE OR ALTER PROCEDURE Restaurants.GetEmployeeInfo
 @RestaurantID INT
