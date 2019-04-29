@@ -158,11 +158,11 @@ namespace Restaurants_Database
                 new Tuple<int, string, double, double>(6, "Pizza Dough", (20), (60)),                                         //21
                 new Tuple<int, string, double, double>(6, "Marinara Sauce", (3), (7)),                                        //22
                 new Tuple<int, string, double, double>(6, "Cheese", (2.50), (4.50)),                                          //23
-                new Tuple<int, string, double, double>(6, "Taco Shells", (50), (120)),                                        //24
-                new Tuple<int, string, double, double>(7, "Lo Mein Noodles", (20), (42)),                                     //25
-                new Tuple<int, string, double, double>(7, "Rice", (15), (28)),                                                //26
-                new Tuple<int, string, double, double>(7, "Soy Sauce", (5), (8)),                                             //27
-                new Tuple<int, string, double, double>(3, "Broccoli", (17), (27)),                                            //28
+                new Tuple<int, string, double, double>(6, "20 Taco Shells", (2.00), (3.00)),                                  //24
+                new Tuple<int, string, double, double>(7, "Lo Mein Noodles", (1.5), (2.0)),                                   //25
+                new Tuple<int, string, double, double>(7, "1 lb. Rice", (1.5), (2.0)),                                        //26
+                new Tuple<int, string, double, double>(7, "Soy Sauce", (1.7), (2.2)),                                         //27
+                new Tuple<int, string, double, double>(3, "Broccoli", (1.8), (2.4)),                                          //28
 
             };
 
