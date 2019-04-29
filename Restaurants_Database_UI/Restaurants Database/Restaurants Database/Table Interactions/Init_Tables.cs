@@ -176,6 +176,7 @@ namespace Restaurants_Database
         {
             Tuple<int, int, int>[] stockitems =
             {
+                //    West Manhattan Mcdonald's
                 new Tuple<int, int, int> (1, 1, 800),
                 new Tuple<int, int, int> (2, 1, 30),
                 new Tuple<int, int, int> (3, 1, 16),
@@ -183,6 +184,7 @@ namespace Restaurants_Database
                 new Tuple<int, int, int> (5, 1, 400),
                 new Tuple<int, int, int> (6, 1, 200),
                 new Tuple<int, int, int> (7, 1, 650),
+                //    East Manhattan Mcdonald's"
                 new Tuple<int, int, int> (1, 2, 800),
                 new Tuple<int, int, int> (2, 2, 30),
                 new Tuple<int, int, int> (3, 2, 16),
@@ -190,45 +192,65 @@ namespace Restaurants_Database
                 new Tuple<int, int, int> (5, 2, 400),
                 new Tuple<int, int, int> (6, 2, 200),
                 new Tuple<int, int, int> (7, 2, 650),
+                //    Lansing Dairy Queen
                 new Tuple<int, int, int> (8, 3, 7),
                 new Tuple<int, int, int> (9, 3, 8),
-                new Tuple<int, int, int> (10, 3, 300),
+                new Tuple<int, int, int>(10, 3, 300),
+                //    Manhattan Dairy Queen
                 new Tuple<int, int, int> (8, 4, 7),
                 new Tuple<int, int, int> (9, 4, 8),
-                new Tuple<int, int, int> (10, 4, 300),
-                new Tuple<int, int, int> (1, 4, 7),
-                new Tuple<int, int, int> (2, 4, 8),
-                new Tuple<int, int, int> (3, 4, 300),
-                new Tuple<int, int, int> (11, 5, 250),
-                new Tuple<int, int, int> (12, 5, 10),
-                new Tuple<int, int, int> (13, 5, 6),
-                new Tuple<int, int, int> (12, 6, 10),
-
-                new Tuple<int, int, int>(14, 4, 13),
-                new Tuple<int, int, int>(15, 4, 6),
-                new Tuple<int, int, int>(16, 4, 10),
-                new Tuple<int, int, int>(17, 5, 100),
-                new Tuple<int, int, int>(18, 5, 17),
-                new Tuple<int, int, int>(19, 5, 80),
-                new Tuple<int, int, int>(20, 5, 120),
-                new Tuple<int, int, int> (5, 6, 200),
-                new Tuple<int, int, int> (7, 6, 200),
-                new Tuple<int, int, int> (9, 6, 300),
-                new Tuple<int, int, int>(11, 6, 200),
-                new Tuple<int, int, int>(13, 6, 8),
-                new Tuple<int, int, int>(23, 6, 150),
-                new Tuple<int, int, int>(24, 6, 30),
-                new Tuple<int, int, int>(5, 7, 70),
-                new Tuple<int, int, int>(7, 7, 50),
-                new Tuple<int, int, int>(9, 7, 400),
-                new Tuple<int, int, int>(13, 7, 12),
-                new Tuple<int, int, int>(25, 7, 20),
-                new Tuple<int, int, int>(26, 7, 12),
-                new Tuple<int, int, int>(27, 7, 30),
-                new Tuple<int, int, int>(28, 7, 8),
-                new Tuple<int, int, int>(21, 8, 120),
-                new Tuple<int, int, int>(22, 8, 120),
-                new Tuple<int, int, int>(23, 8, 120),
+                new Tuple<int, int, int>(10, 4, 300),
+                //       Manhattan Chili's
+                new Tuple<int, int, int>(11, 5, 250),
+                new Tuple<int, int, int>(12, 5, 10),
+                new Tuple<int, int, int>(13, 5, 6),
+                //      Manhattan Applebee's
+                new Tuple<int, int, int>(14, 6, 13),
+                new Tuple<int, int, int>(15, 6, 6),
+                new Tuple<int, int, int>(16, 6, 10),
+                //   Manhattan Buffalo Wild Wings
+                new Tuple<int, int, int>(17, 7, 100),
+                new Tuple<int, int, int>(18, 7, 17),
+                new Tuple<int, int, int>(19, 7, 80),
+                new Tuple<int, int, int>(20, 7, 120),
+                // Legends Outlet Buffalo Wild Wings
+                new Tuple<int, int, int>(17, 8, 100),
+                new Tuple<int, int, int>(18, 8, 17),
+                new Tuple<int, int, int>(19, 8, 80),
+                new Tuple<int, int, int>(20, 8, 120),
+                //        Manhattan Taco Bell
+                new Tuple<int, int, int> (5, 9, 200),
+                new Tuple<int, int, int> (7, 9, 200),
+                new Tuple<int, int, int> (9, 9, 300),
+                new Tuple<int, int, int>(11, 9, 200),
+                new Tuple<int, int, int>(13, 9, 8),
+                new Tuple<int, int, int>(23, 9, 150),
+                new Tuple<int, int, int>(24, 9, 30),      
+                //      Kansas City Taco Bell
+                new Tuple<int, int, int> (5, 10, 200),
+                new Tuple<int, int, int> (7, 10, 200),
+                new Tuple<int, int, int> (9, 10, 300),
+                new Tuple<int, int, int>(11, 10, 200),
+                new Tuple<int, int, int>(13, 10, 8),
+                new Tuple<int, int, int>(23, 10, 150),
+                new Tuple<int, int, int>(24, 10, 30),
+                //        Tasty China House
+                new Tuple<int, int, int>(5, 11, 70),
+                new Tuple<int, int, int>(7, 11, 50),
+                new Tuple<int, int, int>(9, 11, 400),
+                new Tuple<int, int, int>(13, 11, 12),
+                new Tuple<int, int, int>(25, 11, 20),
+                new Tuple<int, int, int>(26, 11, 12),
+                new Tuple<int, int, int>(27, 11, 30),
+                new Tuple<int, int, int>(28, 11, 8),
+                //        Manhattan Domino's
+                new Tuple<int, int, int>(21, 12, 120),
+                new Tuple<int, int, int>(22, 12, 120),
+                new Tuple<int, int, int>(23, 12, 120),
+                //         Lawrence Domino's
+                new Tuple<int, int, int>(21, 13, 120),
+                new Tuple<int, int, int>(22, 13, 120),
+                new Tuple<int, int, int>(23, 13, 120),
             };
             foreach (Tuple<int,int, int> stockitem in stockitems)
             {
