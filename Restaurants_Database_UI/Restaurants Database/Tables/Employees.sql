@@ -1,5 +1,4 @@
-CREATE SCHEMA Employees;
-
+DROP TABLE IF EXISTS Employees.Employee
 CREATE TABLE Employees.Employee
 (
 	PersonID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
@@ -8,5 +7,5 @@ CREATE TABLE Employees.Employee
 	JobTitleID INT NOT NULL FOREIGN KEY
 		REFERENCES Employees.Jobs(JobTitleID),
 	[Name] NVARCHAR(128) NOT NULL,
-	Seniority NVARCHAR(128) NOT NULL
+	Seniority INT NOT NULL
 )

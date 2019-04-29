@@ -1,9 +1,10 @@
+DROP TABLE IF EXISTS Food.Food
 CREATE TABLE Food.Food
 (
 	FoodID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	SupplierID INT NOT NULL FOREIGN KEY
 		REFERENCES Supplier.Suppliers(SupplierID),
 	[FoodName] NVARCHAR(64) NOT NULL,
-	SupplierPrice DECIMAL NOT NULL,
-	RetailPrice DECIMAL NOT NULL
+	SupplierPrice FLOAT NOT NULL,
+	RetailPrice FLOAT NOT NULL
 )
